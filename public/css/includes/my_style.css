@@ -1,0 +1,477 @@
+#stickyunit
+{
+    position: fixed;
+}
+
+body{
+    padding: 0;margin: 0;width: 100%;font-family: 'open sans', sans-serif;
+}
+p,h1,h2,h3,h4,h5,h6,li{
+}
+#clear{width:100%;clear:both;}
+#main_container{width: 100%;position: fixed;background-color: white;z-index: 9; }
+#main_container_mobile{display: none;z-index: 9;}
+#menu_div{
+    padding-top: 18px;
+    background-color: #019875;
+    padding-bottom: 10px;
+}
+#menu_div a{
+    padding: 15px 15px 15px 15px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1.3em;
+    color: white;
+}
+#menu_div ul li{
+    display: inline;
+}
+#menu_div ul{
+    margin-left: 35px;
+}
+#account_link{
+    float:right;
+    margin-right: 35px;
+}
+
+
+#logo_div{
+    padding-top: 70px;   text-align: center;
+}
+#logo_div img{
+    margin-top: 15px;    float:left; margin-left: 50px;
+}
+#adsense1 {
+    /*border: 1px solid black;*/
+    float: left;
+    margin-left:30px;
+    width:  calc( 100% - 320px );
+    overflow-x: hidden;
+    height: 100px; 
+}
+#wrapper_total{
+    padding-top:0px;
+    width: 100%;
+}
+#social{ 
+    position: absolute;width:4%;float: right;top: 0%; left:100%;z-index:1;clear: both;
+}
+#social img:hover{
+    opacity: 0.6;
+}
+#s2s{
+    position: fixed;width: 35px;
+}
+#s22s{
+    position: fixed;width: 35px;
+}
+
+
+
+#navigate{
+    margin-left: 1%; margin-right:2%;width:95%;float: left;position: relative;
+    }
+#navigate #img_logo img{
+    float:left;margin-left: 1.2%; width: 8.7%;margin-bottom: 5px;border-radius: 90px;
+}
+#navigate #img_logo a:hover img{
+    width: 8.7%; margin-left: 1.2%; border: 4px solid #7FC9B8; margin-bottom: 0px;
+}
+#search_bar{
+    width: 100%;
+    padding-top: 15px ;padding-bottom: 15px ; 
+    background-image: url("../pk_img/background_search.png");
+    background-size: 100% 100%;
+}
+#search_bar input[type=text],#search_bar select{
+    padding: 5px 5px 5px 5px;
+    font-size: 1.5em;
+    color:  #019875;
+}
+#search_bar input[type=submit]{
+    padding: 5px 15px 5px 15px;
+    background-color: #019875;
+    color:white;
+    font-size: 1.5em;
+}
+#newspaper{
+    max-width: 300px;
+    float:right;
+}
+#side-bar-admission-logo{width: 300px;float: right;}
+#side-bar-admission-logo img{ width: 99%;height: 170px;margin: 17px auto; }
+#newspaper img{border-radius: 90px;margin-right: 10px;float: left;}
+#newspaper a img{
+    width: 80px;
+    height: 60px;
+    margin-bottom: 10px; margin-left: 5px;
+}
+#newspaper p{
+    font-size: 1.4em;
+    color: #019875;
+    font-weight: 600;
+}
+#featured_latest_job ul{
+    padding-left: 0px;
+    margin-bottom: 0;
+}
+#featured_latest_job,#featured-company,#jobs-in-pakistan,#login-jobseeker-page-login,#searched-ads-div,#jobseeker-sign-up-form,#show-ad-page-job-details-div {
+    
+    float: left;
+    width: calc( 100% - 320px);
+    min-width: 300px;
+}
+
+#show-ad-page-job-details-div {
+    background: url("../pk_img/background-on-ad-back.png") repeat;
+    color: #019875;
+}
+#login-jobseeker-page-login{
+    background-color: #F2F2F2;
+    margin-top: 70px;
+}
+#searched-ads-div {
+    background-color: #F2F2F2;
+}
+#login-jobseeker-page-login input{
+    font-size: 1.4em;color: #019875;background-color: #D7D7D7;
+    padding: 15px;width: 280px;margin-top: 20px;
+    text-align: center;
+}
+#jobseeker-sign-up-form{
+    background-color: #F2F2F2;
+}
+
+#jobseeker-sign-up-form table  th,#show-ad-page-job-details-div table th{
+    text-align: center;width: 200px; color: #019875;padding-bottom: 10px;
+}
+#jobseeker-sign-up-form table  td input,#jobseeker-sign-up-form table  td select,#jobseeker-sign-up-form table  td textarea,#show-ad-page-job-details-div table td{
+    width: 300px;text-align: center;border: 1px solid #019875;margin-bottom: 10px;
+}
+#show-ad-page-job-details-div table th{border: 0px;width: 130px;}
+#show-ad-page-job-details-div table td{border: 0px;width: 170px;}
+#jobseeker-sign-up-form table  td input[type=checkbox]{
+    width: 30px; 
+}
+#jobseeker-sign-up-form table  td input[type=submit]{
+    width: 90px; background-color: #019875; font-size: 1.5em;
+    font-weight: 600; color: white;padding: 5px 10px 5px 10px; border-radius: 5px;
+}
+#jobseeker-sign-up-form table  td p{color: #019875;}
+#login-jobseeker-page-login h2,#login-jobseeker-page-login h4 a{
+    color: #019875;
+}
+#each-ad-searched{
+    padding: 10px 5px 1px 15px;
+}
+#each-ad-searched h3{
+    color: #019875; font-weight: 700;
+}
+#each-ad-searched i{
+    color: #A4A4A4;font-weight: 700;
+}
+#each-ad-searched h5{
+    font-weight: 700;
+}
+#login-jobseeker-page-login input[type=submit]{
+    color: white;background-color: #019875;
+}
+#jobs-in-pakistan {
+    padding-top: 3px ;
+    background-color: #019875;
+    
+     
+}
+#jobs-in-pakistan #nav,#jobs-in-pakistan #nav2 {
+    float: right;margin-right: 10px;
+}
+#jobs-in-pakistan p{
+    margin-bottom:0px;
+    font-size: 1.7em;
+    color: white;
+    font-weight: 600;
+}
+#show-on-jobs-in-pakistan,#show-on-jobs-in-pakistan2{
+    display: none;
+    background-color: white;
+}
+#featured_latest_job img,#featured-company img{
+    width: 40px;
+    border-radius: 90px;margin-right: 10px;
+}
+#featured_latest_job p,#featured-company p{
+    font-size: 1.7em;
+    color: #019875;
+    font-weight: 600;
+}
+#featured_latest_job ul li{
+    display: inline;
+    margin-left: 0px;
+}
+#featured_latest_job ul li a{
+    font-size: 1.3em;
+    background-color: #e5e5e7;
+    color: #019875;
+    font-size: 1.2em;
+    padding: 2px 9px 2px 1px;
+    font-style: italic;
+}
+#featured_latest_job ul li a:hover{
+    color: white;
+    background-color:  #019875;
+}
+#featured_latest_job #job-table th{
+    background-color: #019875;
+    color:white;
+}
+
+#featured-company #company-img {
+    background-color: #f5f5f5;
+}
+#each_co{
+    float: left; width:12.5%;text-align: center;font-size: 0.8em; height: 130px;
+}
+#company-img  a img{
+    width: 100%;  
+}
+#company-img2  a img{
+    width: 100%;  margin-top: 17px; height: 60px;
+}
+
+#company-img2 div{
+    border: 1px solid rgb(226,226,226);
+}
+#company-img2 div:hover{
+    background-color: #019875;
+    color: white;
+}
+#company-page-link{
+    padding: 1px 5px 1px 5px; background-color: #f5f5f5; font-weight: bolder; color: #019875;
+}
+#company-page-link:hover{
+    background-color: #019875; color: white;
+}
+.my-success{
+    background-color: #019875;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    color:white;
+    font-size: 0.7em;
+    font-style: italic;
+}
+    #google-ad{
+        width: 300px;
+        height: 250px;
+        float:right;
+    }
+    #govt_div,#govt_div2{
+        width: 300px;
+        float: right;
+    }
+    #footer{
+        width: 100%;
+        background-color: rgb(226,226,226);
+    }
+    #footer p{
+        text-transform: uppercase;
+        padding-top: 20px;
+        color: #019875;
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+    #footer a{
+        text-transform: uppercase;
+        color: #019875;
+        font-size: 0.8em;
+        font-weight: bold;
+    }
+    #footer a img{
+        margin-right:20px;float:right;
+    }
+    #copy-right p{
+        width: 100%; color: #019875;background-color: white; text-transform: capitalize;
+        text-align: center; font-size: 0.9em;
+    }
+    #google-ad-ag{display: none;}
+    
+    /* Company page  */
+    #company-page-company-details,#city-page-banner,#single-paper-page-banner,#all-paper-page-banner,#search-results-page-banner,#show-ad-page-banner{
+        width: 100%;
+    padding-top: 15px ;padding-bottom: 15px ; 
+    background-image: url("/img/includes/background-company.png");
+    background-size: 100% 100%;
+    }
+    #show-ad-page-banner{
+        background-image: url("/img/includes/show-ad-banner.png"); color: white;
+    }
+    #search-results-page-banner{
+        background-image: url("/img/includes/search-results-banner.png"); padding-top: 40px;margin-bottom: 30px;height: 150px;
+    }
+    #single-paper-page-banner{
+        background-image: url("../pk_img/single-paper-banner.png"); padding-top: 40px;margin-bottom: 30px;
+    }
+    #city-page-banner{
+        background-image: url("../pk_img/background_city.png"); padding-top: 40px;margin-bottom: 30px;
+    }
+    #all-paper-page-banner{
+        background-image: url("../pk_img/all-paper-banner.png"); padding-top: 40px;margin-bottom: 30px;
+    }
+    #company-page-company-details img{
+        margin-left: 1%;float: left;
+    }
+    #company-page-company-details #star_img{
+        margin-top: 65px;
+        margin-left: 20px;
+    }
+    #company-page-company-details a,#city-page-banner a,#single-paper-page-banner a,#all-paper-page-banner a{
+    background-color: #019875;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    color:white;
+    font-size: 1.7em;
+    font-weight: 800px;
+    margin-right: 8%;
+    float:right;
+    }
+    #company-page-company-details h5,#city-page-banner h5,#single-paper-page-banner h5,#all-paper-page-banner h5{
+        margin-right: 9%;
+        float:right;
+        margin-top: 0px;
+        color: #019875;
+    }
+    #company-page-company-details h2,#city-page-banner h2,#single-paper-page-banner h2,#all-paper-page-banner h2,#search-results-page-banner h2{
+         color: #019875; float: left; margin-top: 20px; margin-left: 20px; font-weight: 800;
+    }
+    #city-page-banner h2,#city-page-banner h5,#city-page-banner h2 a,
+    #single-paper-page-banner h2, #all-paper-page-banner h2 ,#single-paper-page-banner h5,
+    #all-paper-page-banner h5,#search-results-page-banner h2,#search-results-page-banner p{
+        color: white;
+    }
+    #single-paper-page-banner #cat-links,#city-page-banner #cat-links{
+        margin-left: 7%;
+    }
+     #cat-links a{
+        float: left; color: white; font-size: 1.6em; font-weight: 800;background-color: transparent;margin-top: 20px;margin-left:1%;margin-right: 0px;
+    }
+    #about-company{
+        margin-top: 10px;
+        padding: 3% 3% 3% 3%;
+        background-color: #f2f2f2;
+        color: #019875;
+        
+    }
+    #about-company-review{
+        width: calc( 100% - 300px ); text-align: justify; 
+    }
+    #about-company-review h4{
+     font-weight: 900;
+    }
+    #feedback-box{
+        border: 2px solid #019875;
+        float: right;
+        width: 280px;
+        padding: 0px 5px 5px 5px;
+        margin-right:15px;
+        border-radius: 5px;
+    }
+    #feedback-box h4{
+        text-align: center;width: 100%;margin-top: 0px;padding-top: 2px; padding-bottom: 3px; color: white;
+        background-color: #019875;
+        
+    }
+    #feedback-box textarea,#feedback-box input{color:#019875;}
+    #feedback-box button{
+        padding: 3px 14px 3px 14px; border-radius: 5px; color: white; background-color: #019875; font-size: 1.2em;
+    }
+    
+    #feedback-box .rating {
+    overflow: hidden;
+    display: inline-block;
+    font-size: 0;
+    position: relative;
+}
+#feedback-box .rating-input {
+    float: right;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    margin: 0 0 0 -16px;
+    opacity: 0;
+}
+#feedback-box .rating:hover .rating-star:hover,
+#feedback-box .rating:hover .rating-star:hover ~ .rating-star,
+#feedback-box .rating-input:checked ~ .rating-star {
+    background-position: 0 0;
+}
+#feedback-box .rating-star,
+#feedback-box .rating:hover .rating-star {
+    position: relative;
+    float: right;
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url('../star-rating/star.png') 0 -16px;
+}
+#google-ad-600{
+    
+    width: 240px;float: right;
+}
+        #show-ad-img-div a{
+            background-color: #019875;
+            padding: 5px 10px 5px 10px;
+            border-radius: 5px;
+            color:white;
+            font-size: 1.3em;
+    
+        }
+        #show-ad-img-div img{
+            text-align: center;max-width: 100%;
+        }
+        
+        
+        
+    /* width >1200 */
+    @media screen and (min-width:1200px){
+        #logo_div,#copy-right,#wrapper_total{
+            width:1100px;
+            margin: 0 auto;
+        }
+        
+    }
+    
+    @media screen and (max-width:800px){
+        #main_container{display: none;}
+        #logo_div{display: none;}
+        #main_container_mobile{display: block;position: fixed;background-color: white;width: 100%;}
+        #main_container_mobile ul{padding-top: 100px;display:none;font-size:1.3em;z-index: 1;}
+        #main_container_mobile ul li{list-style-type: none; width: 100%;text-align: center;}
+        #adsense1{display: block;}
+        #navigate{width: 98%;}
+        #wrapper_total{padding-top: 70px;clear: both;width: 99%;}
+        #newspaper{ max-width: 99%;}
+        #featured_latest_job,#featured-company,#jobs-in-pakistan,#login-jobseeker-page-login,#searched-ads-div,#jobseeker-sign-up-form,#show-ad-page-job-details-div  { width: 99%;min-width: 200px;}
+        #govt_div2{display: none;}
+        #govt_div{width: 99%;}
+        #social{display: none;}
+        /*#img_logo{position: fixed;background-color: white;}   */
+        #search_bar input[type=text],#search_bar input[type=submit],#search_bar select{width: 70%;}
+        #each_co{width: 20%;}
+        #google-ad{ display:none;}
+        #google-ad-ag{width: 90%; max-height: 150px; text-align: center; display: block;overflow: hidden;}
+        /*company-page*/
+        #google-ad-600{width: 100%; max-height: 200px;overflow: hidden;}
+        /*all-paper side-bar*/
+        #side-bar-admission-logo {width: 99%;}
+    @media screen and (max-width:600px){
+        /*company-page*/
+        #feedback-box{width: 100%;}
+        #about-company{margin-left: 2px;}
+        #about-company-review{width: 100%;}
+    }
+    @media screen and (max-width:480px){
+        .my-success{clear: left;float: left;}
+    }
+     #company_sub_link{
+    color: #cb65dc;
+    font-size:0.8em;
+    }
