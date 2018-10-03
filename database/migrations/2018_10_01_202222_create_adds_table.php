@@ -16,31 +16,17 @@ class CreateAddsTable extends Migration
         Schema::create('adds', function (Blueprint $table) {
             $table->increments('id');
             $table->enum('type' , ['admissions' , 'jobs' , 'tenders']);
-            $table->integer('newspaper_id')->unsigned();
-            $table->foreign('newspaper_id')
-            ->references('id')->on('newspapers')
-            ->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('qualification_id')->unsigned();
-            $table->foreign('qualification_id')
-            ->references('id')->on('qualifications')
-            ->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('city_id')->unsigned();
-            $table->foreign('city_id')
-            ->references('id')->on('cities')
-            ->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('category_id')->unsigned();
-            $table->foreign('category_id')
-            ->references('id')->on('categories')
-            ->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('job_type_id')->unsigned();
-            $table->foreign('job_type_id')
-            ->references('id')->on('job_types')
-            ->onDelete('cascade')->onUpdate('cascade');
-            $table->string('qualification');
-            $table->string('title');
-            $table->string('minimum_requirements');
-            $table->date('apply_by');
-            $table->date('last_date');
+            $table->integer('newspaper_id')->nullable();
+            $table->integer('qualification_id')->nullable();
+            $table->integer('city_id')->nullable();
+            $table->integer('category_id')->nullable();
+            $table->integer('job_type_id')->nullable();
+            $table->string('qualification')->nullable();
+            $table->string('title')->nullable();
+            $table->string('minimum_requirements')->nullable();
+            $table->date('apply_by')->nullable();
+            $table->string('description')->nullable();
+            $table->date('last_date')->nullable();
             $table->timestamps();
         });
     }

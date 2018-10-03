@@ -132,3 +132,11 @@ Route::group([
     Route::get('edit-qualification/{id}' , 'QualificationController@edit')->name('qualification.edit');
     Route::post('update-qualification/{id}' , 'QualificationController@update')->name('qualification.update');
     Route::get('del-qualification/{id}' , 'QualificationController@destroy')->name('qualification.delete');
+
+    // Adds Management
+    Route::get('adds' , 'AddsController@index')->name('adds.index');
+    Route::get('create-adds' , 'AddsController@create')->name('adds.create');
+    Route::post('store-adds' , 'AddsController@store')->name('adds.store');
+    Route::get('edit-adds/{id}' , 'AddsController@edit')->name('adds.edit');
+    Route::post('update-adds/{id}' , 'AddsController@update')->name('adds.update');
+    Route::get('del-adds/{id}' , 'AddsController@destroy')->name('adds.delete');

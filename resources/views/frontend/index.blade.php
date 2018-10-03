@@ -21,32 +21,24 @@
                </div>
                <div style="width: 100%;">
                   <center>
-                     <table width=100% id=table>
+                     <table width=100% class="table table-striped">
                         <tr>
                            <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><b><span style="color:#019875;"><br/>Date - Day<br/>&nbsp;</b></span></td>
                            <!-- <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><img alt="Date - Day" src="images/date.jpg" /></td>  -->
+                           foreach($newspapers as $newspaper)
                            <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><a href="" ><img alt="Jang" src="images/jung.jpg" /></a></td>
-                           <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><a href="" ><img alt="Epress" src="images/express1.jpg" /></a></td>
-                           <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><a href="" ><img alt="Dawn" src="images/dawn1.jpg" /></a></td>
-                           <td style="border: #DBE1E6 1px solid;" class="Newspaper_border">
-                              <a href="" >
-                                 <img alt="NawaiWaqt" src="images/nawai_waqt1.jpg" />
-                           </td>
-                           <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><a href="" ><img alt="The News" src="images/theNEWS1.jpg" /></td>
-                           <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><a href="" ><img alt="The Nation" src="images/the-nation1.jpg" /></td>
-                           <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><a href="" ><img alt="Mashriq" src="images/mashriq.jpg" /></td>
-                           <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><a href="" ><img alt="Kawish" src="images/kawish1.png" /></td>
-                           <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><a href="" ><img alt="Nai Baat" src="images/naibaat.png" /></td>
-                           <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><a href="" ><img alt="Dunya" src="images/dunya.png" /></td>
+                           endforeach
                         </tr>
                         <tr>
                         <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#019875;">12-09-2018<br/>Wednesday</b></span> </td>
                         <td valign="top" class="Newspaper_border">
+                        foreach($newspapers as $newspaper)
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
                         <a id="job-link" href="">Jobs</a><br/>
                         <a  rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=8&amp;date=2018-09-12">Admissions</a><br/>
                         <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=8&amp;date=2018-09-12">Tenders</a>
                         </td>                      
+                        endforeach
                         <td valign="top" class="Newspaper_border">
                         <a id="job-link" href="">Jobs</a><br/>
                         <a  rel="nofollow"  id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=2&amp;date=2018-09-12">Admissions</a><br/>
@@ -440,24 +432,36 @@
                <br/>
                <div id="job-table">
                   <table class="table" style="padding-top:0px;">
+                     <thead>
+                        <tr>
+                           <th>City</th>
+                           <th>View Add</th>
+                        </tr>
+                     </thead>
                      <tbody>
                         <tr>
-                           <td><a href="">Lahore</a></td>
-                           <td><a href="">Karachi</a></td>
-                           <td><a href="">Multan</a></td>
-                           <td><a href="">Peshawar</a></td>
+                           <td>Lahore</td>
+                           <td>View</td>
                         </tr>
                         <tr>
-                           <td><a href="">Islamabad</a></td>
-                           <td><a href="">Rawalpindi</a></td>
-                           <td><a href="">Quetta</a></td>
-                           <td><a href="">Sargodha</a></td>
+                           <td>Lahore</td>
+                           <td>View</td>
                         </tr>
                         <tr>
-                           <td><a href="">Faisalabad</a></td>
-                           <td><a href="">Gujranwala</a></td>
-                           <td><a href="">Gujrat</a></td>
-                           <td><a href="">Hyderabad</a></td>
+                           <td>Lahore</td>
+                           <td>View</td>
+                        </tr>
+                        <tr>
+                           <td>Lahore</td>
+                           <td>View</td>
+                        </tr>
+                        <tr>
+                           <td>Lahore</td>
+                           <td>View</td>
+                        </tr>
+                        <tr>
+                           <td>Lahore</td>
+                           <td>View</td>
                         </tr>
                      </tbody>
                   </table>

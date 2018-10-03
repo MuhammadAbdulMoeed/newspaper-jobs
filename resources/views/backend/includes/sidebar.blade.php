@@ -70,8 +70,13 @@
 
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
-                        <a class="nav-link {{ active_class(Active::checkUriPattern('admin/jobs')) }}" href="{{ route('log-viewer::dashboard') }}">
+                        <a class="nav-link {{ active_class(Active::checkUriPattern('admin/jobs')) }}" href="{{ route('admin.adds.create') }}">
                             Add New Adds
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ active_class(Active::checkUriPattern('admin/jobs')) }}" href="{{ route('admin.adds.index') }}">
+                            All Adds
                         </a>
                     </li>
                 </ul>
