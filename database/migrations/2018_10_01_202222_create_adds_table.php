@@ -24,9 +24,9 @@ class CreateAddsTable extends Migration
             $table->string('qualification')->nullable();
             $table->string('title')->nullable();
             $table->string('minimum_requirements')->nullable();
-            $table->date('apply_by')->nullable();
+            $table->string('apply_by')->nullable();
             $table->string('description')->nullable();
-            $table->date('last_date')->nullable();
+            $table->string('last_date')->nullable();
             $table->timestamps();
         });
     }
