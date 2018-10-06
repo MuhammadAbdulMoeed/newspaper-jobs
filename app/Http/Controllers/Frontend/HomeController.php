@@ -6,6 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Models\Auth;
 use App\Models\Auth\User;
 use Illuminate\Http\Request;
+use App\Newspaper;
+use App\City;
+use App\Category;
+use App\JobType;
+use App\Qualification;
+use App\Add;
 
 /**
  * Class HomeController.
@@ -17,7 +23,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('frontend.index');
+        $newspapers = Newspaper::all();
+        $cities = City::take(5)->get();
+        $category = Category::take(5)->get();
+        $qualification = Qualification::take(5)->get();
+        $jobType = JobType::take(5)->get();
+        $jobs = Add::with('getCity')->where('type' , 'jobs')->paginate(5, ['*'], 'jobs');
+        $admissions = Add::with('getCity')->where('type' , 'admissions')->paginate(5, ['*'], 'admissions');
+        $tenders = Add::with('getCity')->where('type' , 'tenders')->paginate(5, ['*'], 'tenders');
+        return view('frontend.index' , compact('newspapers' , 'cities' , 'category' , 'qualification' , 'jobType' , 'jobs' , 'tenders' , 'admissions'));
     }
 
     public function updateUser(Request $request){
@@ -33,6 +47,10 @@ class HomeController extends Controller
                 $user->assignRole(config('access.users.default_role'));
             }
             return redirect()->back();
+    }
+
+    public function calendarView(){
+        return view('frontend.calendar-list');
     }
 
 }

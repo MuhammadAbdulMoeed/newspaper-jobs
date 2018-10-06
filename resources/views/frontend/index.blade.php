@@ -1,5 +1,6 @@
 @extends('frontend.app')
 @section('content')
+<link rel="stylesheet" href="{{asset('css/includes/fullcalendar.print.min.css')}}" />
         <div id=wrapper_total>
             <div id="navigate">
                <div id=social>
@@ -23,356 +24,100 @@
                   <center>
                      <table width=100% class="table table-striped">
                         <tr>
-                           <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><b><span style="color:#019875;"><br/>Date - Day<br/>&nbsp;</b></span></td>
+                           <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><b><span style="color:#325465;"><br/>Date - Day<br/>&nbsp;</b></span></td>
                            <!-- <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><img alt="Date - Day" src="images/date.jpg" /></td>  -->
-                           foreach($newspapers as $newspaper)
+                           @foreach($newspapers as $newspaper)
                            <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><a href="" ><img alt="Jang" src="images/jung.jpg" /></a></td>
-                           endforeach
+                           @endforeach
                         </tr>
-                        <tr>
-                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#019875;">12-09-2018<br/>Wednesday</b></span> </td>
+                         <tr>
+                           <?php
+                           $date = \Carbon\Carbon::today()->subDays('1');
+                           ?>
+                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->toDateString()}}<br/>{{\Carbon\Carbon::today()->subDays('1')->format('l')}}</b></span> </td>
+                        @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
-                        foreach($newspapers as $newspaper)
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
                         <a id="job-link" href="">Jobs</a><br/>
                         <a  rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=8&amp;date=2018-09-12">Admissions</a><br/>
                         <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=8&amp;date=2018-09-12">Tenders</a>
                         </td>                      
-                        endforeach
-                        <td valign="top" class="Newspaper_border">
-                        <a id="job-link" href="">Jobs</a><br/>
-                        <a  rel="nofollow"  id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=2&amp;date=2018-09-12">Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=2&amp;date=2018-09-12">Tenders</a>
-                        </td>                      
-                        <td valign="top" class="Newspaper_border">
-                        <a id="job-link" href="">Jobs</a><br/>
-                        <a  rel="nofollow"  id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=1&amp;date=2018-09-12">Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=1&amp;date=2018-09-12">Tenders</a>
-                        </td>                      
-                        <td valign="top" class="Newspaper_border">
-                        <a id="job-link" href="">Jobs</a><br/>
-                        <a  rel="nofollow"  id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=3&amp;date=2018-09-12">Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=3&amp;date=2018-09-12">Tenders</a>
-                        </td>                      
-                        <td valign="top" class="Newspaper_border">
-                        <a id="job-link" href="">Jobs</a><br/>
-                        <a  rel="nofollow"  id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=4&amp;date=2018-09-12">Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=4&amp;date=2018-09-12">Tenders</a>
-                        </td>                      
-                        <td valign="top" class="Newspaper_border">
-                        <a id="job-link" href="">Jobs</a><br/>
-                        <a  rel="nofollow"  id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=5&amp;date=2018-09-12">Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=5&amp;date=2018-09-12">Tenders</a>
-                        </td>                      
-                        <td valign="top" class="Newspaper_border">
-                        <a id="job-link" href="">Jobs</a><br/>
-                        <a   rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=6&amp;date=2018-09-12">Admissions</a><br/>
-                        <a   rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=6&amp;date=2018-09-12">Tenders</a>
-                        </td>                      
-                        <td valign="top" class="Newspaper_border">
-                        <a id="job-link" href="">Jobs</a><br/>
-                        <a  rel="nofollow"  id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=7&amp;date=2018-09-12">Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=7&amp;date=2018-09-12">Tenders</a>
-                        </td>                      
-                        <td valign="top" class="Newspaper_border">
-                        <a id="job-link" href="">Jobs</a><br/>
-                        <a  rel="nofollow"  id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=11&amp;date=2018-09-12">Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=11&amp;date=2018-09-12">Tenders</a>
-                        </td>                      
-                        <td valign="top" class="Newspaper_border">
-                        <a id="job-link" href="">Jobs</a><br/>
-                        <a  rel="nofollow"  id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=12&amp;date=2018-09-12">Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=12&amp;date=2018-09-12">Tenders</a>
-                        </td>                   
+                        @endforeach         
                         </tr>
                         <tr>
-                           <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#019875;">11-09-2018<br/>Tuesday</b></span> </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=8&amp;date=2018-09-11">Jobs</a><br/>
-                              <a  rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=8&amp;date=2018-09-11">Admissions</a><br/>
-                              <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=8&amp;date=2018-09-11">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=2&amp;date=2018-09-11">Jobs</a><br/>
-                              <a  rel="nofollow"  id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=2&amp;date=2018-09-11">Admissions</a><br/>
-                              <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=2&amp;date=2018-09-11">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=1&amp;date=2018-09-11">Jobs</a><br/>
-                              <a  rel="nofollow"  id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=1&amp;date=2018-09-11">Admissions</a><br/>
-                              <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=1&amp;date=2018-09-11">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=3&amp;date=2018-09-11">Jobs</a><br/>
-                              <a  rel="nofollow"  id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=3&amp;date=2018-09-11">Admissions</a><br/>
-                              <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=3&amp;date=2018-09-11">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=4&amp;date=2018-09-11">Jobs</a><br/>
-                              <a  rel="nofollow"  id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=4&amp;date=2018-09-11">Admissions</a><br/>
-                              <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=4&amp;date=2018-09-11">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=5&amp;date=2018-09-11">Jobs</a><br/>
-                              <a  rel="nofollow"  id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=5&amp;date=2018-09-11">Admissions</a><br/>
-                              <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=5&amp;date=2018-09-11">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=6&amp;date=2018-09-11">Jobs</a><br/>
-                              <a   rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=6&amp;date=2018-09-11">Admissions</a><br/>
-                              <a   rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=6&amp;date=2018-09-11">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=7&amp;date=2018-09-11">Jobs</a><br/>
-                              <a  rel="nofollow"  id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=7&amp;date=2018-09-11">Admissions</a><br/>
-                              <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=7&amp;date=2018-09-11">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=11&amp;date=2018-09-11">Jobs</a><br/>
-                              <a  rel="nofollow"  id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=11&amp;date=2018-09-11">Admissions</a><br/>
-                              <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=11&amp;date=2018-09-11">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=12&amp;date=2018-09-11">Jobs</a><br/>
-                              <a  rel="nofollow"  id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=12&amp;date=2018-09-11">Admissions</a><br/>
-                              <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=12&amp;date=2018-09-11">Tenders</a>
-                           </td>
+                           <?php
+                           $date = \Carbon\Carbon::today()->subDays('2');
+                           ?>
+                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->toDateString()}}<br/>{{\Carbon\Carbon::today()->subDays('2')->format('l')}}</b></span> </td>
+                        @foreach($newspapers as $newspaper)
+                        <td valign="top" class="Newspaper_border">
+                        <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
+                        <a id="job-link" href="">Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=8&amp;date=2018-09-12">Admissions</a><br/>
+                        <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=8&amp;date=2018-09-12">Tenders</a>
+                        </td>                      
+                        @endforeach         
                         </tr>
-                        <!--  
-                           </table>
-                           
-                           <div id="s-h">
-                           
-                           
-                           
-                           <table width=100% id=table>
-                           
-                              
-                           
-                           
-                           -->
                         <tr>
-                           <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#019875;">10-09-2018<br/>Monday</b></span> </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=8&amp;date=2018-09-10">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=8&amp;date=2018-09-10">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=8&amp;date=2018-09-10">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=2&amp;date=2018-09-10">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=2&amp;date=2018-09-10">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=2&amp;date=2018-09-10">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=1&amp;date=2018-09-10">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=1&amp;date=2018-09-10">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=1&amp;date=2018-09-10">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=3&amp;date=2018-09-10">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=3&amp;date=2018-09-10">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=3&amp;date=2018-09-10">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=4&amp;date=2018-09-10">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=4&amp;date=2018-09-10">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=4&amp;date=2018-09-10">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=5&amp;date=2018-09-10">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=5&amp;date=2018-09-10">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=5&amp;date=2018-09-10">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a rel="nofollow" id="job-link" ?type=1&amp;paper=6&amp;date=2018-09-10">Jobs</a><br/>
-                              <a id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=6&amp;date=2018-09-10">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=6&amp;date=2018-09-10">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=7&amp;date=2018-09-10">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=7&amp;date=2018-09-10">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=7&amp;date=2018-09-10">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=11&amp;date=2018-09-10">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=11&amp;date=2018-09-10">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=11&amp;date=2018-09-10">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=12&amp;date=2018-09-10">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=12&amp;date=2018-09-10">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=12&amp;date=2018-09-10">Tenders</a>
-                           </td>
+                           <?php
+                           $date = \Carbon\Carbon::today()->subDays('3');
+                           ?>
+                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->toDateString()}}<br/>{{\Carbon\Carbon::today()->subDays('3')->format('l')}}</b></span> </td>
+                        @foreach($newspapers as $newspaper)
+                        <td valign="top" class="Newspaper_border">
+                        <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
+                        <a id="job-link" href="">Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=8&amp;date=2018-09-12">Admissions</a><br/>
+                        <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=8&amp;date=2018-09-12">Tenders</a>
+                        </td>                      
+                        @endforeach         
                         </tr>
-                        <!--
-                           -->
                         <tr>
-                           <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#019875;">09-09-2018<br/>Sunday</b></span> </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=8&amp;date=2018-09-09">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=8&amp;date=2018-09-09">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=8&amp;date=2018-09-09">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=2&amp;date=2018-09-09">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=2&amp;date=2018-09-09">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=2&amp;date=2018-09-09">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=1&amp;date=2018-09-09">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=1&amp;date=2018-09-09">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=1&amp;date=2018-09-09">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=3&amp;date=2018-09-09">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=3&amp;date=2018-09-09">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=3&amp;date=2018-09-09">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=4&amp;date=2018-09-09">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=4&amp;date=2018-09-09">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=4&amp;date=2018-09-09">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=5&amp;date=2018-09-09">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=5&amp;date=2018-09-09">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=5&amp;date=2018-09-09">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a rel="nofollow" id="job-link" ?type=1&amp;paper=6&amp;date=2018-09-09">Jobs</a><br/>
-                              <a id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=6&amp;date=2018-09-09">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=6&amp;date=2018-09-09">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=7&amp;date=2018-09-09">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=7&amp;date=2018-09-09">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=7&amp;date=2018-09-09">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=11&amp;date=2018-09-09">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=11&amp;date=2018-09-09">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=11&amp;date=2018-09-09">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=12&amp;date=2018-09-09">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=12&amp;date=2018-09-09">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=12&amp;date=2018-09-09">Tenders</a>
-                           </td>
+                           <?php
+                           $date = \Carbon\Carbon::today()->subDays('4');
+                           ?>
+                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->toDateString()}}<br/>{{\Carbon\Carbon::today()->subDays('4')->format('l')}}</b></span> </td>
+                        @foreach($newspapers as $newspaper)
+                        <td valign="top" class="Newspaper_border">
+                        <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
+                        <a id="job-link" href="">Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=8&amp;date=2018-09-12">Admissions</a><br/>
+                        <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=8&amp;date=2018-09-12">Tenders</a>
+                        </td>                      
+                        @endforeach         
                         </tr>
-                        <!--
-                           -->
                         <tr>
-                           <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#019875;">08-09-2018<br/>Saturday</b></span> </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=8&amp;date=2018-09-08">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=8&amp;date=2018-09-08">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=8&amp;date=2018-09-08">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=2&amp;date=2018-09-08">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=2&amp;date=2018-09-08">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=2&amp;date=2018-09-08">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=1&amp;date=2018-09-08">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=1&amp;date=2018-09-08">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=1&amp;date=2018-09-08">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=3&amp;date=2018-09-08">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=3&amp;date=2018-09-08">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=3&amp;date=2018-09-08">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=4&amp;date=2018-09-08">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=4&amp;date=2018-09-08">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=4&amp;date=2018-09-08">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=5&amp;date=2018-09-08">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=5&amp;date=2018-09-08">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=5&amp;date=2018-09-08">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a rel="nofollow" id="job-link" ?type=1&amp;paper=6&amp;date=2018-09-08">Jobs</a><br/>
-                              <a id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=6&amp;date=2018-09-08">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=6&amp;date=2018-09-08">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=7&amp;date=2018-09-08">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=7&amp;date=2018-09-08">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=7&amp;date=2018-09-08">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=11&amp;date=2018-09-08">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=11&amp;date=2018-09-08">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=11&amp;date=2018-09-08">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=12&amp;date=2018-09-08">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=12&amp;date=2018-09-08">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=12&amp;date=2018-09-08">Tenders</a>
-                           </td>
+                           <?php
+                           $date = \Carbon\Carbon::today()->subDays('5');
+                           ?>
+                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->toDateString()}}<br/>{{\Carbon\Carbon::today()->subDays('5')->format('l')}}</b></span> </td>
+                        @foreach($newspapers as $newspaper)
+                        <td valign="top" class="Newspaper_border">
+                        <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
+                        <a id="job-link" href="">Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=8&amp;date=2018-09-12">Admissions</a><br/>
+                        <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=8&amp;date=2018-09-12">Tenders</a>
+                        </td>                      
+                        @endforeach         
                         </tr>
-                        <!--
-                           -->
                         <tr>
-                           <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#019875;">07-09-2018<br/>Friday</b></span> </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=8&amp;date=2018-09-07">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=8&amp;date=2018-09-07">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=8&amp;date=2018-09-07">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=2&amp;date=2018-09-07">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=2&amp;date=2018-09-07">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=2&amp;date=2018-09-07">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=1&amp;date=2018-09-07">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=1&amp;date=2018-09-07">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=1&amp;date=2018-09-07">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=3&amp;date=2018-09-07">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=3&amp;date=2018-09-07">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=3&amp;date=2018-09-07">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=4&amp;date=2018-09-07">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=4&amp;date=2018-09-07">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=4&amp;date=2018-09-07">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=5&amp;date=2018-09-07">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=5&amp;date=2018-09-07">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=5&amp;date=2018-09-07">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a rel="nofollow" id="job-link" ?type=1&amp;paper=6&amp;date=2018-09-07">Jobs</a><br/>
-                              <a id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=6&amp;date=2018-09-07">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=6&amp;date=2018-09-07">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=7&amp;date=2018-09-07">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=7&amp;date=2018-09-07">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=7&amp;date=2018-09-07">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=11&amp;date=2018-09-07">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=11&amp;date=2018-09-07">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=11&amp;date=2018-09-07">Tenders</a>
-                           </td>
-                           <td valign="top" class="Newspaper_border">
-                              <a id="job-link" ?type=1&amp;paper=12&amp;date=2018-09-07">Jobs</a><br/>
-                              <a rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=12&amp;date=2018-09-07">Admissions</a><br/>
-                              <a rel="nofollow" id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=12&amp;date=2018-09-07">Tenders</a>
-                           </td>
+                           <?php
+                           $date = \Carbon\Carbon::today()->subDays('6');
+                           ?>
+                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->toDateString()}}<br/>{{\Carbon\Carbon::today()->subDays('6')->format('l')}}</b></span> </td>
+                        @foreach($newspapers as $newspaper)
+                        <td valign="top" class="Newspaper_border">
+                        <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
+                        <a id="job-link" href="">Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=8&amp;date=2018-09-12">Admissions</a><br/>
+                        <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=8&amp;date=2018-09-12">Tenders</a>
+                        </td>                      
+                        @endforeach         
                         </tr>
                         <!--
                            -->
                      </table>
-                     <h3><a class="my-success"  "> View more newspapers & jobs by date</a></h3>
+                     <h3><a class="my-success" href="{{route('frontend.calendar.view')}}"> View more newspapers & jobs by date</a></h3>
                </div>
                <!--
                   <button style="width:100%;" id="m-btn">Click to view more dates<img src="images/nav_table.png" style="height: 25px;" /></button>
@@ -439,30 +184,12 @@
                         </tr>
                      </thead>
                      <tbody>
+                        @foreach($cities as $city)
                         <tr>
-                           <td>Lahore</td>
-                           <td>View</td>
+                           <td>{{$city->title}}</td>
+                           <td><a href="#">View</a></td>
                         </tr>
-                        <tr>
-                           <td>Lahore</td>
-                           <td>View</td>
-                        </tr>
-                        <tr>
-                           <td>Lahore</td>
-                           <td>View</td>
-                        </tr>
-                        <tr>
-                           <td>Lahore</td>
-                           <td>View</td>
-                        </tr>
-                        <tr>
-                           <td>Lahore</td>
-                           <td>View</td>
-                        </tr>
-                        <tr>
-                           <td>Lahore</td>
-                           <td>View</td>
-                        </tr>
+                        @endforeach
                      </tbody>
                   </table>
                </div>
@@ -519,26 +246,21 @@
                </div>
                <div id="job-table">
                   <table class="table" style="padding-top:0px;">
+                     <thead>
+                        <tr>
+                           <th>Category</th>
+                           <th>View Add</th>
+                        </tr>
+                     </thead>
                      <tbody>
+                        @foreach($category as $cat)
                         <tr>
-                           <td><a href="">Medical</a></td>
-                           <td><a href="">Government</a></td>
-                           <td><a href="job/">Accounting</a></td>
-                           <td><a href="">Courts</a></td>
+                           <td>{{$cat->title}}</td>
+                           <td><a href="#">View</a></td>
                         </tr>
-                        <tr>
-                           <td><a href="">Education</a></td>
-                           <td><a href="">Banking</a></td>
-                           <td><a href="">Engineering</a></td>
-                           <td><a href="">Forces</a></td>
-                        </tr>
-                        <tr>
-                           <td><a href="">Female</a></td>
-                           <td><a href="">Abroad</a></td>
-                           <td><a href="">Police</a></td>
-                           <td><a href="job/category/">Disabled</a></td>
-                        </tr>
+                        @endforeach
                      </tbody>
+                  
                   </table>
                </div>
                <div id="featured-company">
@@ -550,26 +272,19 @@
                <br/>
                <div id="job-table">
                   <table class="table" style="padding-top:0px;">
+                     <thead>
+                        <tr>
+                           <th>Qualification</th>
+                           <th>View Add</th>
+                        </tr>
+                     </thead>
                      <tbody>
+                        @foreach($qualification as $qualify)
                         <tr>
-                           <td><a href="">BIT</a></td>
-                           <td><a href="">BE </a></td>
-                           <td><a href="">MS</a></td>
-                           <td><a href="">Mphil</a></td>
+                           <td>{{$qualify->title}}</td>
+                           <td><a href="#">View</a></td>
                         </tr>
-                        <tr>
-                           <td><a href="">FSC</a></td>
-                           <td><a href="">ACMA</a></td>
-                           <td><a href="">BSCS</a></td>
-                           <td><a href="">DAE</a></td>
-                        </tr>
-                        <tr>
-                           <td><a href="">Masters</a></td>
-                           <td><a href="">BS</a></td>
-                           <td><a href="">MD</a></td>
-                           <td><a href="">CSA</a></td>
-                        </tr>
-                        <tr></tr>
+                        @endforeach
                      </tbody>
                   </table>
                </div>
@@ -579,850 +294,119 @@
                   </p>
                </div>
                <br/>
-               <div id="job-table">
+                <div id="job-table">
+                   
                   <table class="table" style="padding-top:0px;">
-                     <tbody>
+                     <thead>
                         <tr>
-                           <td><a href="?title=contract">Contract</a></td>
-                           <td><a href="?title=parmanent">Parmanent</a></td>
-                           <td><a href="?title=Parttime">Part Time</a></td>
-                           <td><a href="?title=internship">Internship</a></td>
+                           <th>Types</th>
+                           <th>View Add</th>
                         </tr>
+                     </thead>
+                     <tbody>
+                        @foreach($jobType as $type)
+                        <tr>
+                           <td>{{$type->job_type_title}}</td>
+                           <td><a href="#">View</a></td>
+                        </tr>
+                        @endforeach
                      </tbody>
+                  
                   </table>
                </div>
                <div id=clear></div>
                <div class="container">
-                  <ul>
-                     <li><a style="color:#F60;" id="job-link" ">&nbsp; Jobs</a></li>
-                     <li><a rel="nofollow" style="color:#C00;" id="admission-link" href="https://paperads.pk/admissions/">Admissions</a></li>
-                     <li><a rel="nofollow" style="color:#666;" href="https://paperads.pk/tenders/">Tenders</a></li>
-                  </ul>
-               </div>
-               <div id="job-table">
-                  <table class="table table-striped" style="padding-top:0px;margin-bottom: 0px;">
-                     <tbody>
-                        <tr>
-                           <th>Title</th>
-                           <th>Date</th>
-                           <th>City</th>
-                           <th>View </th>
-                        </tr>
-                     </tbody>
-                     <tbody>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Security Guard</a><br/>
-                              <a id="company_sub_link"  href="company/" target="_blank">Arshman Manpower Bureau</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Faisalabad</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href= >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Program Officer</a><br/>
-                              <a id="company_sub_link"  href="company/punjab-" target="_blank">Punjab Information Technology Board</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Lahore</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href= >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Company Secretary</a><br/>
-                              <a id="company_sub_link"  href="company/punjab-model-" target="_blank">Punjab Model Bazaars Management Company</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Lahore</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href= >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="jobs/" target="_blank">Law & Compliance Executive</a><br/>
-                              <a id="company_sub_link"  href="company/punjab-model-" target="_blank">Punjab Model Bazaars Management Company</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Lahore</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href=jobs/ >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Admin Manager</a><br/>
-                              <a id="company_sub_link"  href="company/punjab-" target="_blank">Punjab Information Technology Board</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Lahore</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href= >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Assistant Admin</a><br/>
-                              <a id="company_sub_link"  href="company/peoples-" target="_blank">Peoples Primary Healthcare Initiative</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Karachi</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href= >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td colspan=4>
-                              <script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
-                              <!-- paperpk -->
-                              <ins class="adsbygoogle"
-                                 style="display:inline-block;width:600px;height:250px"
-                                 data-ad-client="ca-pub-6975300866830988"
-                                 data-ad-slot="2372027694"></ins>
-                              <script>
-                                 (adsbygoogle = window.adsbygoogle || []).push({});
-                              </script>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  " target="_blank">Cardiologist</a><br/>
-                              <a id="company_sub_link"  href="company/peoples-" target="_blank">Peoples Primary Healthcare Initiative</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Karachi</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank  >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Deputy Director</a><br/>
-                              <a id="company_sub_link"  href="company/peoples-" target="_blank">Peoples Primary Healthcare Initiative</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Karachi</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href= >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Shuttering Carpenter</a><br/>
-                              <a id="company_sub_link"  href="company/gondal-trade-" target="_blank">Gondal Trade Test & Training Center</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Rawalpindi</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href= >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  " target="_blank">Mason</a><br/>
-                              <a id="company_sub_link"  href="company/harmain-trade-test-" target="_blank">Harmain Trade Test & Technical Training Center</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Lahore</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank style="background-color: #988C01;" ?ad_id=125618 >apply</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Steel Fixer</a><br/>
-                              <a id="company_sub_link"  href="company/union-" target="_blank">Union Trade Test Center</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Rawalpindi</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank style="background-color: #988C01;" ?ad_id=125619 >apply</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Security Guard</a><br/>
-                              <a id="company_sub_link"  href="company/" target="_blank">Zawer Recruiting Agency</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Rawalpindi</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank style="background-color: #988C01;" ?ad_id=125620 >apply</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  " target="_blank">Technician</a><br/>
-                              <a id="company_sub_link"  href="" target="_blank">Medcon International</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Lahore</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank style="background-color: #988C01;" ?ad_id=125621 >apply</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td colspan=4>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Security Guard</a><br/>
-                              <a id="company_sub_link"  href="company/union-" target="_blank">Union Trade Test Center</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Rawalpindi</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank style="background-color: #988C01;" ?ad_id=125622 >apply</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  " target="_blank">Driver</a><br/>
-                              <a id="company_sub_link"  href="company/faisal-usman-" target="_blank">Faisal Usman Trade Test Center</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Rawalpindi</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank style="background-color: #988C01;" ?ad_id=125623 >apply</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  " target="_blank">Painter</a><br/>
-                              <a id="company_sub_link"  href="company/shahzad-" target="_blank">Shahzad Askari Technical Institute</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Lahore</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank style="background-color: #988C01;" ?ad_id=125624 >apply</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Junior Clerk</a><br/>
-                              <a id="company_sub_link"  href="company/" target="_blank">Sahiwal Medical College</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Sahiwal</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href= >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="jobs/" target="_blank">Data Entry Operator</a><br/>
-                              <a id="company_sub_link"  href="company/" target="_blank">Sahiwal Medical College</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Sahiwal</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href=jobs/ >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  " target="_blank">Electrician</a><br/>
-                              <a id="company_sub_link"  href="company/al-saad-technical-trade-" target="_blank">Al Saad Technical Trade Test & Training Center</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Lahore</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank style="background-color: #988C01;" ?ad_id=125627 >apply</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Accounts Clerk</a><br/>
-                              <a id="company_sub_link"  href="company/" target="_blank">Sahiwal Medical College</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Sahiwal</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href= >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td colspan=4>
-                              <center>
-                                 <script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
-                                 <!-- paperpk big rectangle -->
-                                 <ins class="adsbygoogle"
-                                    style="display:inline-block;width:336px;height:280px"
-                                    data-ad-client="ca-pub-6975300866830988"
-                                    data-ad-slot="8091628542"></ins>
-                                 <script>
-                                    (adsbygoogle = window.adsbygoogle || []).push({});
-                                 </script>
-                              </center>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Supporting Staff</a><br/>
-                              <a id="company_sub_link"  href="company/" target="_blank">Sahiwal Medical College</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Sahiwal</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href= >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Senior Clerk</a><br/>
-                              <a id="company_sub_link"  href="company/punjab-" target="_blank">Punjab Agriculture Research Board</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Lahore</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href= >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Head Nurse</a><br/>
-                              <a id="company_sub_link"  href="" target="_blank">Children Hospital</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Lahore</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href= >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Junior Clerk</a><br/>
-                              <a id="company_sub_link"  href="company/punjab-" target="_blank">Punjab Agriculture Research Board</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Lahore</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href= >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Research Associate</a><br/>
-                              <a id="company_sub_link"  href="company/national-institute-for-" target="_blank">National Institute For Biotechnology & Genetic Engineering</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Faisalabad</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href= >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  " target="_blank">Driver</a><br/>
-                              <a id="company_sub_link"  href="company/punjab-" target="_blank">Punjab Agriculture Research Board</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Lahore</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank  >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  " target="_blank">Consultant</a><br/>
-                              <a id="company_sub_link"  href="company/national-institute-for-" target="_blank">National Institute For Biotechnology & Genetic Engineering</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Faisalabad</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank  >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td colspan=4>
-                              <center>
-                              </center>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Senior Registrar</a><br/>
-                              <a id="company_sub_link"  href="company/shifa-tameer-" target="_blank">Shifa Tameer E Millat University</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Islamabad</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank style="background-color: #988C01;" ?ad_id=125636 >apply</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="jobs/" target="_blank">Business Development Manager</a><br/>
-                              <a id="company_sub_link"  href="company/university-" target="_blank">University Of Engineering & Technology</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Peshawar</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href=jobs/ >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Research Associate</a><br/>
-                              <a id="company_sub_link"  href="company/university-" target="_blank">University Of Engineering & Technology</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Peshawar</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href= >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  " target="_blank">Lecturer</a><br/>
-                              <a id="company_sub_link"  href="company/university-" target="_blank">University Of Engineering & Technology</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Peshawar</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank  >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  " target="_blank">Teacher</a><br/>
-                              <a id="company_sub_link"  href="https:///education-teaching/allied-school_580" target="_blank">Allied School</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Peshawar</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank style="background-color: #988C01;" ?ad_id=125640 >apply</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Medical Officer</a><br/>
-                              <a id="company_sub_link"  href="company/northwest-general-" target="_blank">Northwest General Hospital & Research Centre</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Peshawar</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank style="background-color: #988C01;" ?ad_id=125641 >apply</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  " target="_blank">Professor</a><br/>
-                              <a id="company_sub_link"  href="company/" target="_blank">University Of Loralai</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Loralai</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank  >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td colspan=4>
-                              <center>
-                                 <script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
-                                 <ins class="adsbygoogle"
-                                    style="display:block"
-                                    data-ad-format="autorelaxed"
-                                    data-ad-client="ca-pub-6975300866830988"
-                                    data-ad-slot="8263594492"></ins>
-                                 <script>
-                                    (adsbygoogle = window.adsbygoogle || []).push({});
-                                 </script>
-                              </center>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Security Supervisor</a><br/>
-                              <a id="company_sub_link"  href="company/al-falah-trade-" target="_blank">Al Falah Trade Test & Training Center</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Rawalpindi</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank style="background-color: #988C01;" ?ad_id=125643 >apply</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Shuttering Carpenter</a><br/>
-                              <a id="company_sub_link"  href="company/" target="_blank">Islamic Manpower Promoters</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Rawalpindi</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href= >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="jobs/" target="_blank">Database & System Administrator</a><br/>
-                              <a id="company_sub_link"  href="company/" target="_blank">Labour Welfare Department</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Quetta</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href=jobs/ >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  href="" target="_blank">Clinical Technician</a><br/>
-                              <a id="company_sub_link"  href="company/" target="_blank">District Headquarter Hospital</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Dir</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank href= >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  " target="_blank">Labour</a><br/>
-                              <a id="company_sub_link"  href="company/badshah-" target="_blank">Badshah Trade Test Center</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Peshawar</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank  >Details</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <a id="job-one-lnkl"  " target="_blank">Programmer</a><br/>
-                              <a id="company_sub_link"  href="company/peoples-" target="_blank">Peoples Primary Healthcare Initiative</a>
-                           </td>
-                           <td>
-                              <a ?date=2018-09-12" style="color:black;" >
-                              12,Sep,18
-                              </a>
-                           </td>
-                           <td>
-                              <a href="">Karachi</a>, 
-                           </td>
-                           <td>
-                              <a class=my-success target=_blank  >Details</a>
-                           </td>
-                        </tr>
-                     </tbody>
-                  </table>
-                  <div id=clear></div>
-                  <a id="company-page-link" style="float: right;font-size: 1.4em;" ">Newspapers Jobs</a>
-                  <a id="company-page-link" style="font-size: 1.4em;" ">All Jobs</a>
-                  <div id=clear></div>
-                  <br/>
-               </div>
-            </div>
-            <div id="newspaper">
-               <div style="float:left; margin-left:30px; margin-right: 10px;width:30%;">
-                  <table border="2"style="border-collapse:collapse;  width: 250px;text-align: center; font-size: 1.2em;">
-                     <tr>
-                        <td colspan="7" style="color: white; padding-top:5px; padding-bottom:5px; background-color: #019875; font-weight:bold;">
-                           September 2018        
-                        </td>
-                     </tr>
-                     <tr>
-                        <th>Sun</th>
-                        <th>Mon</th>
-                        <th>Tue</th>
-                        <th>Wed</th>
-                        <th>Thu</th>
-                        <th>Fri</th>
-                        <th>Sat</th>
-                     </tr>
-                     <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td><a style="color: #019875;font-weight:bold;" ?req=2018-09-01">1</a></td>
-                     </tr>
-                     <tr>
-                        <td><a style="color: #019875;font-weight:bold;" ?req=2018-09-02">2</a></td>
-                        <td><a style="color: #019875;font-weight:bold;" ?req=2018-09-03">3</a></td>
-                        <td><a style="color: #019875;font-weight:bold;" ?req=2018-09-04">4</a></td>
-                        <td><a style="color: #019875;font-weight:bold;" ?req=2018-09-05">5</a></td>
-                        <td><a style="color: #019875;font-weight:bold;" ?req=2018-09-06">6</a></td>
-                        <td><a style="color: #019875;font-weight:bold;" ?req=2018-09-07">7</a></td>
-                        <td><a style="color: #019875;font-weight:bold;" ?req=2018-09-08">8</a></td>
-                     </tr>
-                     <tr>
-                        <td><a style="color: #019875;font-weight:bold;" ?req=2018-09-09">9</a></td>
-                        <td><a style="color: #019875;font-weight:bold;" ?req=2018-09-10">10</a></td>
-                        <td><a style="color: #019875;font-weight:bold;" ?req=2018-09-11">11</a></td>
-                        <td><a style="color: #019875;font-weight:bold;" ?req=2018-09-12">12</a></td>
-                        <td>13</td>
-                        <td>14</td>
-                        <td>15</td>
-                     </tr>
-                     <tr>
-                        <td>16</td>
-                        <td>17</td>
-                        <td>18</td>
-                        <td>19</td>
-                        <td>20</td>
-                        <td>21</td>
-                        <td>22</td>
-                     </tr>
-                     <tr>
-                        <td>23</td>
-                        <td>24</td>
-                        <td>25</td>
-                        <td>26</td>
-                        <td>27</td>
-                        <td>28</td>
-                        <td>29</td>
-                     </tr>
-                     <tr>
-                        <td>30</td>
-                     </tr>
-                  </table>
-               </div>
+              <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home">Jobs</a></li>
+  <li><a data-toggle="tab" href="#menu1">Admissions</a></li>
+  <li><a data-toggle="tab" href="#menu2">Tendars</a></li>
+</ul>
+</div>
+<div class="tab-content">
+   <div id="home" class="tab-pane fade in active">
+    <table class="table table-striped">
+     <thead>
+      <tr>
+        <th>title</th>
+        <th>Apply By</th>
+        <th>Last Date</th>
+        <th>City</th>
+        <th>View</th>
+      </tr>
+     </thead>
+     <tbody>
+        @foreach($jobs as $job)
+        <tr>
+        <td>{{$job->title}}</td>
+        <td>{{$job->apply_by}}</td>
+        <td>{{$job->last_date}}</td>
+        <td>{{$job->getCity->title}}</td>
+        <td><a href="#">View</a></td>
+         </tr>
+        @endforeach
+     </tbody>
+
+  </table>
+  {{$jobs->appends(array_except(Request::query(), 'jobs'))->links()}}
+  </div>
+  <div id="menu1" class="tab-pane fade">
+    <table class="table table-striped">
+     <thead>
+      <tr>
+        <th>title</th>
+        <th>Apply By</th>
+        <th>Last Date</th>
+        <th>City</th>
+        <th>View</th>
+      </tr>
+     </thead>
+     <tbody>
+        @foreach($tenders as $job)
+        <tr>
+        <td>{{$job->title}}</td>
+        <td>{{$job->apply_by}}</td>
+        <td>{{$job->last_date}}</td>
+        <td>{{$job->getCity->title}}</td>
+        <td><a href="#">View</a></td>
+         </tr>
+        @endforeach
+     </tbody>
+  </table>
+  {{$tenders->links()}}
+</div>
+  <div id="menu2" class="tab-pane fade">
+     <table class="table table-striped">
+     <thead>
+      <tr>
+        <th>title</th>
+        <th>Apply By</th>
+        <th>Last Date</th>
+        <th>City</th>
+        <th>View</th>
+      </tr>
+     </thead>
+     <tbody>
+        @foreach($admissions as $job)
+        <tr>
+        <td>{{$job->title}}</td>
+        <td>{{$job->apply_by}}</td>
+        <td>{{$job->last_date}}</td>
+        <td>{{$job->getCity->title}}</td>
+        <td><a href="#">View</a></td>
+         </tr>
+        @endforeach
+     </tbody>
+  </table>
+  {{$admissions->links()}}
+</div>
+</div>
+</div>
+<div id="newspaper">
+               <div id="calendar2"></div>
                <div id=clear></div>
                <br/>
                <center>
-                  <h3> <a class="my-success" "> Click to view more Dates</a></h3>
+                  <h3> <a class="my-success" href="calender-list.html"> Click to view more Dates</a></h3>
                </center>
             </div>
             <div id=govt_div2 style="margin-top:5px;clear:right;">
@@ -1478,9 +462,9 @@
             </div>
             <br/>
             <div id=clear></div>
-            <h2 color=#019875>
+            <h2 color=#325465>
             Jobs in Pakistan 2018</h3>
-            <p color=#019875 style="font-size:1em;"><img style="border-radius:0px;max-width:200px;width:80px;" align=left src="pk_img/paperpk-jobs-logo.png"  /> 
+            <p color=#325465 style="font-size:1em;"><img style="border-radius:0px;max-width:200px;width:80px;" align=left src="pk_img/paperpk-jobs-logo.png"  /> 
                At  daily paperpk we provide all jobs in Pakistan publishes in newspaper , other companies websites or posted in FB or linked in at one place so the jobseeker dont need to visit all websites. 
                <br/><br/>
                We are trying to make the process of job search easier for by providing all government and private jobs ads at one website and app with all Jang job ads updated daily.

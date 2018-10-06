@@ -18,8 +18,8 @@
       <script src="{{asset('js/includes/bootstrap.min.js')}}"></script>
       <link rel="stylesheet" href="{{asset('css/includes/my_style.css')}}" />
       <link rel="shortcut icon" href="images/favicon.ico" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.css">
+       <link rel="stylesheet" href="{{asset('css/includes/fullcalendar.min.css')}}" />
+ 
       <style>
          #job-table table a:visited{background-color: black;}
          #company-img2 a:hover img{
@@ -164,6 +164,20 @@
                  $("#s-h").toggle('slow');
          
              });
+             $('#calendar3').fullCalendar({
+               header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+    },
+  dayClick: function(date, jsEvent, view) {
+
+    alert('Clicked on: ' + date.format());
+    // change the day's background color just for fun
+    $(this).css('background-color', 'grey');
+
+  }
+});
          
          });
          

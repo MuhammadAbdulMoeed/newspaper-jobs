@@ -13,7 +13,7 @@ p,h1,h2,h3,h4,h5,h6,li{
 #main_container_mobile{display: none;z-index: 9;}
 #menu_div{
     padding-top: 18px;
-    background-color: #019875;
+    background-color: #325465;
     padding-bottom: 10px;
 }
 #menu_div a{
@@ -86,11 +86,11 @@ p,h1,h2,h3,h4,h5,h6,li{
 #search_bar input[type=text],#search_bar select{
     padding: 5px 5px 5px 5px;
     font-size: 1.5em;
-    color:  #019875;
+    color:  #325465;
 }
 #search_bar input[type=submit]{
     padding: 5px 15px 5px 15px;
-    background-color: #019875;
+    background-color: #325465;
     color:white;
     font-size: 1.5em;
 }
@@ -108,7 +108,7 @@ p,h1,h2,h3,h4,h5,h6,li{
 }
 #newspaper p{
     font-size: 1.4em;
-    color: #019875;
+    color: #325465;
     font-weight: 600;
 }
 #featured_latest_job ul{
@@ -124,7 +124,7 @@ p,h1,h2,h3,h4,h5,h6,li{
 
 #show-ad-page-job-details-div {
     background: url("../pk_img/background-on-ad-back.png") repeat;
-    color: #019875;
+    color: #325465;
 }
 #login-jobseeker-page-login{
     background-color: #F2F2F2;
@@ -134,7 +134,7 @@ p,h1,h2,h3,h4,h5,h6,li{
     background-color: #F2F2F2;
 }
 #login-jobseeker-page-login input{
-    font-size: 1.4em;color: #019875;background-color: #D7D7D7;
+    font-size: 1.4em;color: #325465;background-color: #D7D7D7;
     padding: 15px;width: 280px;margin-top: 20px;
     text-align: center;
 }
@@ -143,10 +143,10 @@ p,h1,h2,h3,h4,h5,h6,li{
 }
 
 #jobseeker-sign-up-form table  th,#show-ad-page-job-details-div table th{
-    text-align: center;width: 200px; color: #019875;padding-bottom: 10px;
+    text-align: center;width: 200px; color: #325465;padding-bottom: 10px;
 }
 #jobseeker-sign-up-form table  td input,#jobseeker-sign-up-form table  td select,#jobseeker-sign-up-form table  td textarea,#show-ad-page-job-details-div table td{
-    width: 300px;text-align: center;border: 1px solid #019875;margin-bottom: 10px;
+    width: 300px;text-align: center;border: 1px solid #325465;margin-bottom: 10px;
 }
 #show-ad-page-job-details-div table th{border: 0px;width: 130px;}
 #show-ad-page-job-details-div table td{border: 0px;width: 170px;}
@@ -154,18 +154,18 @@ p,h1,h2,h3,h4,h5,h6,li{
     width: 30px; 
 }
 #jobseeker-sign-up-form table  td input[type=submit]{
-    width: 90px; background-color: #019875; font-size: 1.5em;
+    width: 90px; background-color: #325465; font-size: 1.5em;
     font-weight: 600; color: white;padding: 5px 10px 5px 10px; border-radius: 5px;
 }
-#jobseeker-sign-up-form table  td p{color: #019875;}
+#jobseeker-sign-up-form table  td p{color: #325465;}
 #login-jobseeker-page-login h2,#login-jobseeker-page-login h4 a{
-    color: #019875;
+    color: #325465;
 }
 #each-ad-searched{
     padding: 10px 5px 1px 15px;
 }
 #each-ad-searched h3{
-    color: #019875; font-weight: 700;
+    color: #325465; font-weight: 700;
 }
 #each-ad-searched i{
     color: #A4A4A4;font-weight: 700;
@@ -174,11 +174,11 @@ p,h1,h2,h3,h4,h5,h6,li{
     font-weight: 700;
 }
 #login-jobseeker-page-login input[type=submit]{
-    color: white;background-color: #019875;
+    color: white;background-color: #325465;
 }
 #jobs-in-pakistan {
     padding-top: 3px ;
-    background-color: #019875;
+    background-color: #325465;
     
      
 }
@@ -201,7 +201,7 @@ p,h1,h2,h3,h4,h5,h6,li{
 }
 #featured_latest_job p,#featured-company p{
     font-size: 1.7em;
-    color: #019875;
+    color: #325465;
     font-weight: 600;
 }
 #featured_latest_job ul li{
@@ -211,17 +211,17 @@ p,h1,h2,h3,h4,h5,h6,li{
 #featured_latest_job ul li a{
     font-size: 1.3em;
     background-color: #e5e5e7;
-    color: #019875;
+    color: #325465;
     font-size: 1.2em;
     padding: 2px 9px 2px 1px;
     font-style: italic;
 }
 #featured_latest_job ul li a:hover{
     color: white;
-    background-color:  #019875;
+    background-color:  #325465;
 }
 #featured_latest_job #job-table th{
-    background-color: #019875;
+    background-color: #325465;
     color:white;
 }
 
@@ -242,17 +242,17 @@ p,h1,h2,h3,h4,h5,h6,li{
     border: 1px solid rgb(226,226,226);
 }
 #company-img2 div:hover{
-    background-color: #019875;
+    background-color: #325465;
     color: white;
 }
 #company-page-link{
-    padding: 1px 5px 1px 5px; background-color: #f5f5f5; font-weight: bolder; color: #019875;
+    padding: 1px 5px 1px 5px; background-color: #f5f5f5; font-weight: bolder; color: #325465;
 }
 #company-page-link:hover{
-    background-color: #019875; color: white;
+    background-color: #325465; color: white;
 }
 .my-success{
-    background-color: #019875;
+    background-color: #325465;
     padding: 5px 10px 5px 10px;
     border-radius: 5px;
     color:white;
@@ -275,13 +275,13 @@ p,h1,h2,h3,h4,h5,h6,li{
     #footer p{
         text-transform: uppercase;
         padding-top: 20px;
-        color: #019875;
+        color: #325465;
         font-size: 1.1em;
         font-weight: bold;
     }
     #footer a{
         text-transform: uppercase;
-        color: #019875;
+        color: #325465;
         font-size: 0.8em;
         font-weight: bold;
     }
@@ -289,7 +289,7 @@ p,h1,h2,h3,h4,h5,h6,li{
         margin-right:20px;float:right;
     }
     #copy-right p{
-        width: 100%; color: #019875;background-color: white; text-transform: capitalize;
+        width: 100%; color: #325465;background-color: white; text-transform: capitalize;
         text-align: center; font-size: 0.9em;
     }
     #google-ad-ag{display: none;}
@@ -324,7 +324,7 @@ p,h1,h2,h3,h4,h5,h6,li{
         margin-left: 20px;
     }
     #company-page-company-details a,#city-page-banner a,#single-paper-page-banner a,#all-paper-page-banner a{
-    background-color: #019875;
+    background-color: #325465;
     padding: 5px 10px 5px 10px;
     border-radius: 5px;
     color:white;
@@ -337,10 +337,10 @@ p,h1,h2,h3,h4,h5,h6,li{
         margin-right: 9%;
         float:right;
         margin-top: 0px;
-        color: #019875;
+        color: #325465;
     }
     #company-page-company-details h2,#city-page-banner h2,#single-paper-page-banner h2,#all-paper-page-banner h2,#search-results-page-banner h2{
-         color: #019875; float: left; margin-top: 20px; margin-left: 20px; font-weight: 800;
+         color: #325465; float: left; margin-top: 20px; margin-left: 20px; font-weight: 800;
     }
     #city-page-banner h2,#city-page-banner h5,#city-page-banner h2 a,
     #single-paper-page-banner h2, #all-paper-page-banner h2 ,#single-paper-page-banner h5,
@@ -357,7 +357,7 @@ p,h1,h2,h3,h4,h5,h6,li{
         margin-top: 10px;
         padding: 3% 3% 3% 3%;
         background-color: #f2f2f2;
-        color: #019875;
+        color: #325465;
         
     }
     #about-company-review{
@@ -367,7 +367,7 @@ p,h1,h2,h3,h4,h5,h6,li{
      font-weight: 900;
     }
     #feedback-box{
-        border: 2px solid #019875;
+        border: 2px solid #325465;
         float: right;
         width: 280px;
         padding: 0px 5px 5px 5px;
@@ -376,12 +376,12 @@ p,h1,h2,h3,h4,h5,h6,li{
     }
     #feedback-box h4{
         text-align: center;width: 100%;margin-top: 0px;padding-top: 2px; padding-bottom: 3px; color: white;
-        background-color: #019875;
+        background-color: #325465;
         
     }
-    #feedback-box textarea,#feedback-box input{color:#019875;}
+    #feedback-box textarea,#feedback-box input{color:#325465;}
     #feedback-box button{
-        padding: 3px 14px 3px 14px; border-radius: 5px; color: white; background-color: #019875; font-size: 1.2em;
+        padding: 3px 14px 3px 14px; border-radius: 5px; color: white; background-color: #325465; font-size: 1.2em;
     }
     
     #feedback-box .rating {
@@ -417,7 +417,7 @@ p,h1,h2,h3,h4,h5,h6,li{
     width: 240px;float: right;
 }
         #show-ad-img-div a{
-            background-color: #019875;
+            background-color: #325465;
             padding: 5px 10px 5px 10px;
             border-radius: 5px;
             color:white;
