@@ -170,13 +170,10 @@
                   (adsbygoogle = window.adsbygoogle || []).push({});
                </script> <br/>
                <div id=clear></div>
-               <div id="featured_latest_job">
-                  <img src="pk_img/city_logo.png"  align=left />
-                  <p>Jobs by City <a " class= "my-success" >View all </a></p>
-               </div>
                <br/>
                <div id="job-table">
                   <table class="table" style="padding-top:0px;">
+                     <caption class="text-center" style="font-weight: bold; font-size: 23px;">Jobs by City</caption>
                      <thead>
                         <tr>
                            <th>City</th>
@@ -238,14 +235,9 @@
                   
                   </div>
                   -->
-               <div id="featured-company">
-                  <img alt="category_logo" src="pk_img/category_logo.png"  align=left />
-                  <p>Jobs by Category 
-                     <a " class= "my-success" >View all </a>
-                  </p>
-               </div>
                <div id="job-table">
                   <table class="table" style="padding-top:0px;">
+                     <caption class="text-center" style="font-weight: bold; font-size: 23px;">Jobs by Category </caption>
                      <thead>
                         <tr>
                            <th>Category</th>
@@ -263,15 +255,10 @@
                   
                   </table>
                </div>
-               <div id="featured-company">
-                  <img alt="city_logo" src="pk_img/city_logo.png"  align=left />
-                  <p>Jobs by Qualification 
-                     <a href="" class= "my-success" >View all </a>
-                  </p>
-               </div>
                <br/>
                <div id="job-table">
                   <table class="table" style="padding-top:0px;">
+                     <caption class="text-center" style="font-weight: bold; font-size: 23px;">Jobs by Qualification </caption>
                      <thead>
                         <tr>
                            <th>Qualification</th>
@@ -288,15 +275,11 @@
                      </tbody>
                   </table>
                </div>
-               <div  id="featured-company">
-                  <img alt="city_logo" src="pk_img/city_logo.png"  align=left />
-                  <p>Jobs by Type 
-                  </p>
-               </div>
                <br/>
                 <div id="job-table">
                    
                   <table class="table" style="padding-top:0px;">
+                     <caption class="text-center" style="font-weight: bold; font-size: 23px;">Jobs by Type </caption>
                      <thead>
                         <tr>
                            <th>Types</th>
