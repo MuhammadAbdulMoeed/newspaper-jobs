@@ -15,6 +15,7 @@ Route::post('customer-update', [HomeController::class, 'updateUser'])->name('cus
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
 Route::get('calendar-view' , [HomeController::class, 'calendarView'])->name('calendar.view');
+Route::get('{slug}/{type}/{date}' ,  [HomeController::class, 'viewSlug']);
 
 /*
  * These frontend controllers require the user to be logged in

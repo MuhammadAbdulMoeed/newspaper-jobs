@@ -37,10 +37,21 @@ class NewspaperController extends Controller
      */
     public function store(Request $request)
     {
+        $validation = $request->validate([
+        'logo' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
+        // for multiple file uploads
+        // 'photo.*' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
+        ]);
+        $file      = $validation['logo']; // get the validated file
+        $extension = $file->getClientOriginalExtension();
+        $filename  = 'newspaper-photo-' . time() . '.' . $extension;
+        $path      = $file->storeAs('photos', $filename);
         $newspaper = new Newspaper;
         $newspaper->title = $request->newspaper_title;
         $newspaper->founded_by = $request->founded_by;
         $newspaper->launch_date = $request->launch_date;
+        $newspaper->slug = $request->slug;
+        $newspaper->logo = $path;
         $newspaper->save();
         return redirect()->back();
     }
@@ -80,9 +91,22 @@ class NewspaperController extends Controller
     public function update(Request $request, $id)
     {
         $newspaper = Newspaper::find($id);
+        $validation = $request->validate([
+        'logo' => 'file|image|mimes:jpeg,png,gif,webp|max:2048'
+        // for multiple file uploads
+        // 'photo.*' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
+        ]);
+        if($validation){
+        $file      = $validation['logo']; // get the validated file
+        $extension = $file->getClientOriginalExtension();
+        $filename  = 'newspaper-photo-' . time() . '.' . $extension;
+        $path      = $file->storeAs('photos', $filename);
+        $newspaper->logo = $path;
+        }
         $newspaper->title = $request->newspaper_title;
         $newspaper->founded_by = $request->founded_by;
         $newspaper->launch_date = $request->launch_date;
+        $newspaper->slug = $request->slug;
         $newspaper->save();
         return redirect()->back();
     }

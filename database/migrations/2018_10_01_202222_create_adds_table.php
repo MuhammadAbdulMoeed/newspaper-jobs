@@ -27,6 +27,8 @@ class CreateAddsTable extends Migration
             $table->string('apply_by')->nullable();
             $table->string('description')->nullable();
             $table->string('last_date')->nullable();
+            $table->string('newspaper_piece')->nullable();
+            $table->string('rel_logo')->nullable();
             $table->timestamps();
         });
     }

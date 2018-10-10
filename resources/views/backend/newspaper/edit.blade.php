@@ -13,7 +13,7 @@ Cities Management
 @endsection
 
 @section('content')
-    <form class="form-horizontal" action="{{route('admin.newspaper.update' , $newspaper->id)}}" method="POST">
+    <form class="form-horizontal" action="{{route('admin.newspaper.update' , $newspaper->id)}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="card">
             <div class="card-body">
@@ -34,7 +34,7 @@ Cities Management
                             <label class="col-md-2 form-control-label">NewsPaper Title</label>
 
                             <div class="col-md-10">
-                                <input type="text" name="newspaper_title" class="form-control" placeholder="Enter NewsPaper title" value="{{$newspaper->title}}">
+                                <input type="text" name="newspaper_title" onkeyup="create_slug(this)" class="form-control" placeholder="Enter NewsPaper title" value="{{$newspaper->title}}">
                             </div><!--col-->
                         </div>
                         <div class="form-group row">
@@ -52,6 +52,22 @@ Cities Management
                             </div><!--col-->
                         </div>
                         <!--form-group-->
+
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">NewsPaper Slug</label>
+
+                            <div class="col-md-10">
+                                <input type="text" name="slug" id="slug" class="form-control" placeholder="Enter Slug" value="{{$newspaper->slug}}" readonly="readonly">
+                            </div><!--col-->
+                        </div>
+
+                         <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Newpaper Logo</label>
+
+                            <div class="col-md-10">
+                                <input type="file" name="logo" class="form-control" placeholder="Enter launch Date">
+                            </div><!--col-->
+                        </div>
 
                        
 
@@ -80,3 +96,16 @@ Cities Management
         </div><!--card-->
     </form>
 @endsection
+
+
+<script type="text/javascript">
+    function create_slug(str) {
+    var $slug = '';
+    var trimmed = $.trim($(str).val());
+    $slug = trimmed.replace(/[^a-z0-9-]/gi, '-').
+    replace(/-+/g, '-').
+    replace(/^-|-$/g, '');
+    $('#slug').val($slug.toLowerCase())
+    console.log($slug.toLowerCase());
+}
+</script>

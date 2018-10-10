@@ -38,9 +38,9 @@
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" href="">Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=8&amp;date=2018-09-12">Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=8&amp;date=2018-09-12">Tenders</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('/'.$newspaper->slug.'/adm/'.$date->toDateString())}}" @else href="#" @endif>Admissions</a><br/>
+                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('/'.$newspaper->slug.'/ten',$date->toDateString())}}" @else href="#" @endif>Tenders</a>
                         </td>                      
                         @endforeach         
                         </tr>
@@ -52,9 +52,9 @@
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" href="">Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=8&amp;date=2018-09-12">Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=8&amp;date=2018-09-12">Tenders</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('/'.$newspaper->slug.'/adm/'.$date->toDateString())}}" @else href="#" @endif>Admissions</a><br/>
+                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('/'.$newspaper->slug.'/ten',$date->toDateString())}}" @else href="#" @endif>Tenders</a>
                         </td>                      
                         @endforeach         
                         </tr>
@@ -80,9 +80,9 @@
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" href="">Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=8&amp;date=2018-09-12">Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=8&amp;date=2018-09-12">Tenders</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('/'.$newspaper->slug.'/adm/'.$date->toDateString())}}" @else href="#" @endif>Admissions</a><br/>
+                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('/'.$newspaper->slug.'/ten',$date->toDateString())}}" @else href="#" @endif>Tenders</a>
                         </td>                      
                         @endforeach         
                         </tr>
@@ -94,9 +94,9 @@
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" href="">Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=8&amp;date=2018-09-12">Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=8&amp;date=2018-09-12">Tenders</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('/'.$newspaper->slug.'/adm/'.$date->toDateString())}}" @else href="#" @endif>Admissions</a><br/>
+                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('/'.$newspaper->slug.'/ten',$date->toDateString())}}" @else href="#" @endif>Tenders</a>
                         </td>                      
                         @endforeach         
                         </tr>
@@ -108,9 +108,9 @@
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" href="">Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link" href="https://paperads.pk/admissions/paper-ads.php?type=2&amp;paper=8&amp;date=2018-09-12">Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link" href="https://paperads.pk/tenders/paper-ads.php?type=3&amp;paper=8&amp;date=2018-09-12">Tenders</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('/'.$newspaper->slug.'/adm/'.$date->toDateString())}}" @else href="#" @endif>Admissions</a><br/>
+                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('/'.$newspaper->slug.'/ten',$date->toDateString())}}" @else href="#" @endif>Tenders</a>
                         </td>                      
                         @endforeach         
                         </tr>

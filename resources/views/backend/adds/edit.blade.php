@@ -13,7 +13,7 @@ Adds Management
 @endsection
 
 @section('content')
-    <form class="form-horizontal" action="{{route('admin.adds.update' , $add->id)}}" method="POST">
+    <form class="form-horizontal" action="{{route('admin.adds.update' , $add->id)}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="card">
             <div class="card-body">
@@ -135,6 +135,20 @@ Adds Management
 
                             <div class="col-md-10">
                                 <input type="date" name="last_date" class="form-control" value="{{$add->last_date}}">
+                            </div><!--col-->
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Newspaper Piece</label>
+
+                            <div class="col-md-10">
+                                <input type="file" name="newspaper_piece" class="form-control" placeholder="Enter launch Date">
+                            </div><!--col-->
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Relevent Logo</label>
+
+                            <div class="col-md-10">
+                                <input type="file" name="rel_logo" class="form-control" placeholder="Enter launch Date">
                             </div><!--col-->
                         </div><!--form-group-->
 
