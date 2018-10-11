@@ -16,6 +16,10 @@ Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
 Route::get('calendar-view' , [HomeController::class, 'calendarView'])->name('calendar.view');
 Route::get('{slug}/{type}/{date}' ,  [HomeController::class, 'viewSlug']);
+Route::get('jobtype/{id}' , [HomeController::class, 'jobType']);
+Route::get('city/{id}' , [HomeController::class, 'cityAdds']);
+Route::get('qualification/{id}' , [HomeController::class, 'QualificationAdds']);
+Route::get('category/{id}' , [HomeController::class, 'CategoryAdds']);
 
 /*
  * These frontend controllers require the user to be logged in

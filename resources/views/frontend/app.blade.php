@@ -63,25 +63,25 @@
       <div id="wrapper">
          <div id="main_container_mobile">
             <img alt=Paperpk src="https://paperpk.com/careers/pk_img/logo.png" align="left" width=180px />
-            <a id="nav_buttonid" ><img alt="navigate-button" src="https://paperpk.com/careers/pk_img/nav_head_logo.png" align="right" width=45px style="margin:7px 14px ;" /></a>
+            <a><img alt="navigate-button" src="https://paperpk.com/careers/pk_img/nav_head_logo.png" align="right" width=45px style="margin:7px 14px ;" /></a>
             <ul id=toggle_ul>
-               <li><a href="submit-cv.html">Sign up</a></li>
-               <li><a href="https://paperpk.com/careers/login.php">Log in</a></li>
-               <li><a href="https://paperpk.com/careers/employer-login.php">Employer</a></li>
-               <li><a href="submit-cv.html">Job Seeker</a></li>
-               <li><a href="https://paperpk.com/newspaper-jobs.php">Newspaper Jobs</a></li>
+               <li><a href="">Sign up</a></li>
+               <li><a href="">Log in</a></li>
+               <li><a href="">Employer</a></li>
+               <li><a href="">Job Seeker</a></li>
+               <li><a href="">Newspaper Jobs</a></li>
             </ul>
          </div>
          <div id="main_container">
             <div id="menu_div">
                <div id="account_link">
-                  <a href="submit-cv.html">Sign up</a><a href="https://paperpk.com/careers/login.php">Log in</a>
+                  <a href="">Sign up</a><a href="https://paperpk.com/careers/login.php">Log in</a>
                </div>
                <ul>
-                  <li><a href="https://paperpk.com/"><img src="https://paperpk.com/careers/images/home.png" height=30px /></a></li>
-                  <li><a href="https://paperpk.com/careers/employer-login.php">Employer</a></li>
-                  <li><a href="submit-cv.html">Job Seeker</a></li>
-                  <li><a href="https://paperpk.com/newspaper-jobs.php">Newspaper Jobs</a></li>
+                  <li><a href=""><img src="https://paperpk.com/careers/images/home.png" height=30px /></a></li>
+                  <li><a href="">Employer</a></li>
+                  <li><a href="">Job Seeker</a></li>
+                  <li><a href="">Newspaper Jobs</a></li>
                </ul>
             </div>
          </div>
@@ -91,9 +91,6 @@
             </div>
          </div>
          <script src="../../clientcdn.pushengage.com/core/4982.js"></script>
-         <script>
-            _pe.subscribe();
-         </script>
          <div id=clear></div>
          @yield('content')
          <div id=footer>
@@ -156,8 +153,17 @@
       <script src="{{asset('js/includes/my_js.js')}}"></script>
       <script src="{{asset('js/includes/moment.min.js')}}"></script>
       <script src="{{asset('js/includes/fullcalendar.min.js')}}"></script>
+      @yield('content')
       <script>
+
          $(document).ready(function(){
+            function search(){
+               var news = $('#newspaper').find(":selected").text();
+               var type = $('#job_type').find(":selected").text();
+               var date = $('#date').val();
+               windows.location = "{{url('/')}}"+news+"/"+type+"/"+date
+
+            }
          
             $('#calendar2').fullCalendar();
              $("#m-btn").click(function(){

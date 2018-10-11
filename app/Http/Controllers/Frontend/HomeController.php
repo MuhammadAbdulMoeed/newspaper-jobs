@@ -24,10 +24,10 @@ class HomeController extends Controller
     public function index()
     {
         $newspapers = Newspaper::all();
-        $cities = City::take(5)->get();
-        $category = Category::take(5)->get();
-        $qualification = Qualification::take(5)->get();
-        $jobType = JobType::take(5)->get();
+        $cities = City::paginate(5, ['*'], 'cities');
+        $category = Category::paginate(5, ['*'], 'categories');
+        $qualification = Qualification::paginate(5, ['*'], 'qualification');
+        $jobType = JobType::paginate(5, ['*'], 'jobtypes');
         $jobs = Add::with('getCity')->where('type' , 'jobs')->paginate(5, ['*'], 'jobs');
         $admissions = Add::with('getCity')->where('type' , 'admissions')->paginate(5, ['*'], 'admissions');
         $tenders = Add::with('getCity')->where('type' , 'tenders')->paginate(5, ['*'], 'tenders');
@@ -53,7 +53,7 @@ class HomeController extends Controller
         return view('frontend.calendar-list');
     }
 
-    public function viewSlug($slug , $type , $date){
+    public function viewSlug($slug , $type , $date , Request $request){
         if($type = "jobs"){
             $type = "jobs";
         }
@@ -67,7 +67,28 @@ class HomeController extends Controller
            $q->where('slug' , $slug); 
         })->whereDate('created_at' , $date)->orWhereDate('last_date' , $date)->orWhereDate('apply_by' , $date)->where('type' , $type)->with('getCity')->get();
         $paper = Newspaper::where('slug' , $slug)->first();
-        return view('frontend.date-adds' , compact('paper' , 'newspaper'));
+        $newspapers = Newspaper::all();
+        return view('frontend.date-adds' , compact('paper' , 'newspaper' , 'newspapers'));
+    }
+    public function jobType($id){
+        $newspaper = Add::where('job_type_id' , $id)->get();
+        $newspapers = Newspaper::all();
+        return view('frontend.jobtype-adds' , compact('newspaper' , 'newspapers'));
+    }
+    public function cityAdds($id){
+        $newspaper = Add::where('city_id' , $id)->get();
+        $newspapers = Newspaper::all();
+        return view('frontend.city-adds' , compact('newspaper' , 'newspapers'));
+    }
+    public function QualificationAdds($id){
+        $newspaper = Add::where('qualification_id' , $id)->get();
+        $newspapers = Newspaper::all();
+        return view('frontend.qualification-adds' , compact('newspaper' , 'newspapers'));
+    }
+    public function CategoryAdds($id){
+        $newspaper = Add::where('category_id' , $id)->get();
+        $newspapers = Newspaper::all();
+        return view('frontend.category-adds' , compact('newspaper' , 'newspapers'));
     }
 
 }

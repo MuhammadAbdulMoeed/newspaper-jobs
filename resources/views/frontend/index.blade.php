@@ -184,11 +184,12 @@
                         @foreach($cities as $city)
                         <tr>
                            <td>{{$city->title}}</td>
-                           <td><a href="#">View</a></td>
+                           <td><a href="{{url('/city/'.$city->id)}}">View</a></td>
                         </tr>
                         @endforeach
                      </tbody>
                   </table>
+                  {{$cities->appends(array_except(Request::query(), 'cities'))->links()}}
                </div>
                <!--    
                   <div id="featured_latest_job">
@@ -248,12 +249,13 @@
                         @foreach($category as $cat)
                         <tr>
                            <td>{{$cat->title}}</td>
-                           <td><a href="#">View</a></td>
+                           <td><a href="{{url('/category/'.$cat->id)}}">View</a></td>
                         </tr>
                         @endforeach
                      </tbody>
                   
                   </table>
+                  {{$category->appends(array_except(Request::query(), 'categories'))->links()}}
                </div>
                <br/>
                <div id="job-table">
@@ -269,11 +271,12 @@
                         @foreach($qualification as $qualify)
                         <tr>
                            <td>{{$qualify->title}}</td>
-                           <td><a href="#">View</a></td>
+                           <td><a href="{{url('/qualification/'.$qualify->id)}}">View</a></td>
                         </tr>
                         @endforeach
                      </tbody>
                   </table>
+                  {{$qualification->appends(array_except(Request::query(), 'qualification'))->links()}}
                </div>
                <br/>
                 <div id="job-table">
@@ -290,12 +293,13 @@
                         @foreach($jobType as $type)
                         <tr>
                            <td>{{$type->job_type_title}}</td>
-                           <td><a href="#">View</a></td>
+                           <td><a href="{{url('/jobtype/'.$type->id)}}">View</a></td>
                         </tr>
                         @endforeach
                      </tbody>
                   
                   </table>
+                  {{$jobType->appends(array_except(Request::query(), 'jobtypes'))->links()}}
                </div>
                <div id=clear></div>
                <div class="container">
@@ -355,7 +359,7 @@
         @endforeach
      </tbody>
   </table>
-  {{$tenders->links()}}
+  {{$tenders->appends(array_except(Request::query(), 'tenders'))->links()}}
 </div>
   <div id="menu2" class="tab-pane fade">
      <table class="table table-striped">
@@ -380,10 +384,11 @@
         @endforeach
      </tbody>
   </table>
-  {{$admissions->links()}}
+  {{$admissions->appends(array_except(Request::query(), 'admissions'))->links()}}
 </div>
 </div>
 </div>
+</br>
 <div id="newspaper">
                <div id="calendar2"></div>
                <div id=clear></div>
@@ -394,12 +399,11 @@
             </div>
             <div id=govt_div2 style="margin-top:5px;clear:right;">
                <br/>
-               <iframe width="300" height="250" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><a href=""><img src="Ads/site/img/govt_logo.png"/></a>
+               <iframe width="300" height="250" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                <br/><br/>
-               <a href="https://cvformats.com/"><img src="Ads/site/img/cv.jpg" width="300"/></a>
                <br/>
                <br/>
-               <"><img src="Ads/site/img/subscribe.jpg" width="300"/></a>
+              
                <br/><br/>
                <script async='async' src='../www.googletagservices.com/tag/js/gpt.js'></script>
                <script>
@@ -420,9 +424,9 @@
                   </script>
                </div>
                <br/><br/>
-               <a href=""><img src="Ads/site/img/work-abroad.jpg" width="300"/></a>
+              
                <br/><br/>
-               <a href="https://play.google.com/store/apps/details?id=paperpktechnologies.paperpks"><img src="Ads/site/img/android.png"/></a>
+              
                <br/><br/><br/>
                <div id="stickyunit">
                   <script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
@@ -438,9 +442,9 @@
                <br/>
                <br/>
                <br/><br/>
-               <a href=""><img src="Ads/site/img/work-abroad.jpg" width="300"/></a>
+              
                <br/><br/>
-               <a href="https://play.google.com/store/apps/details?id=paperpktechnologies.paperpks"><img src="Ads/site/img/android.png"/></a>
+               
                <br/><br/><br/>
             </div>
             <br/>
