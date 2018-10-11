@@ -153,7 +153,7 @@
       <script src="{{asset('js/includes/my_js.js')}}"></script>
       <script src="{{asset('js/includes/moment.min.js')}}"></script>
       <script src="{{asset('js/includes/fullcalendar.min.js')}}"></script>
-      @yield('content')
+      @yield('js-script')
       <script>
 
          $(document).ready(function(){
