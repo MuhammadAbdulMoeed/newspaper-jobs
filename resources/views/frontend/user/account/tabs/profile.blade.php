@@ -20,5 +20,9 @@
             <th>@lang('labels.frontend.user.profile.last_updated')</th>
             <td>{{ timezone()->convertToLocal($logged_in_user->updated_at) }} ({{ $logged_in_user->updated_at->diffForHumans() }})</td>
         </tr>
+        <tr>
+            <th>My CV</th>
+            <td><a href="{{url('donwload-file')}}">Download CV</a></td>
+        </tr>
     </table>
 </div>

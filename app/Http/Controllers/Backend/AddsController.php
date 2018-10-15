@@ -65,6 +65,19 @@ class AddsController extends Controller
         $path1      = $file->storeAs('photos', $filename);
         $adds = new Add;
         $adds->title = $request->adds_title;
+        $adds->company_name = $request->company_name;
+        $adds->total_pos = $request->total_pos;
+        $adds->company_abbrevation = $request->company_abbrevation;
+        $adds->skills = $request->skills;
+        $adds->age_limit = $request->age_limit;
+        $adds->job_loc = $request->job_loc;
+        $adds->gender = $request->gendar;
+        $adds->working_hours = $request->work_hours;
+        $adds->salary = $request->salary;
+        $adds->experience = $request->experience;
+        $adds->contact_number = $request->contact_num;
+        $adds->address = $request->job_address;
+        $adds->job_email = $request->contact_email;
         $adds->newspaper_id = $request->newspaper_id;
         $adds->qualification_id = $request->qualification_id;
         $adds->city_id = $request->city_id;
@@ -106,6 +119,7 @@ class AddsController extends Controller
         $city = City::all();
         $category = Category::all();
         $jobType = JobType::all();
+        // dd($add);
         return view('backend.adds.edit' , compact('newspaper' , 'qualification' , 'city' , 'category' , 'jobType' , 'add'));
     }
 
@@ -134,6 +148,25 @@ class AddsController extends Controller
         $path1      = $file->storeAs('photos', $filename);
         $adds = Add::find($id);
         $adds->title = $request->adds_title;
+        $adds->company_name = $request->company_name;
+        $adds->total_pos = $request->total_pos;
+        $adds->company_abbrevation = $request->company_abbrevation;
+        $adds->skills = $request->skills;
+        $adds->age_limit = $request->age_limit;
+        $adds->job_loc = $request->job_loc;
+        $adds->gender = $request->gendar;
+        $adds->working_hours = $request->work_hours;
+        $adds->salary = $request->salary;
+        $adds->experience = $request->experience;
+        $adds->contact_number = $request->contact_num;
+        $adds->address = $request->job_address;
+        $adds->job_email = $request->contact_email;
+        $adds->newspaper_id = $request->newspaper_id;
+        $adds->qualification_id = $request->qualification_id;
+        $adds->city_id = $request->city_id;
+        $adds->category_id = $request->category_id;
+        $adds->job_type_id = $request->job_type_id;
+        $adds->type = $request->add_types;
         $adds->newspaper_id = $request->newspaper_id;
         $adds->qualification_id = $request->qualification_id;
         $adds->city_id = $request->city_id;

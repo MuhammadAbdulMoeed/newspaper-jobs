@@ -15,11 +15,14 @@ Route::post('customer-update', [HomeController::class, 'updateUser'])->name('cus
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
 Route::get('calendar-view' , [HomeController::class, 'calendarView'])->name('calendar.view');
-Route::get('{slug}/{type}/{date}' ,  [HomeController::class, 'viewSlug']);
+Route::get('search/{slug}/{type}/{date}' ,  [HomeController::class, 'viewSlug']);
 Route::get('jobtype/{id}' , [HomeController::class, 'jobType']);
 Route::get('city/{id}' , [HomeController::class, 'cityAdds']);
 Route::get('qualification/{id}' , [HomeController::class, 'QualificationAdds']);
 Route::get('category/{id}' , [HomeController::class, 'CategoryAdds']);
+Route::get('detail_page/{id}' , [HomeController::class , 'detailPage']);
+Route::post('upload/user/cv' , [HomeController::class , 'uploadCv']);
+Route::get('donwload-file', [HomeController::class , 'downloadFile']);
 
 /*
  * These frontend controllers require the user to be logged in

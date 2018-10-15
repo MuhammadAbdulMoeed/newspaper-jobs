@@ -90,5 +90,51 @@ class HomeController extends Controller
         $newspapers = Newspaper::all();
         return view('frontend.category-adds' , compact('newspaper' , 'newspapers'));
     }
+    public function detailPage($id){
+        $add = Add::with('getCity' , 'getNewsPaper' , 'getCategory', 'getJobType' , 'getQualification')->where('id' , $id)->first();
+        // dd($add);
+        return view('frontend.job_detail' , compact('add'));
+    }
+    public function uploadCv(Request $request){
+        $file = $request->file('file');
+   
+      //Display File Name
+        $file_name = time().$file->getClientOriginalName();
+      echo 'File Name: '.$file->getClientOriginalName();
+      echo '<br>';
+   
+      //Display File Extension
+      echo 'File Extension: '.$file->getClientOriginalExtension();
+      echo '<br>';
+   
+      //Display File Real Path
+      echo 'File Real Path: '.$file->getRealPath();
+      echo '<br>';
+   
+      //Display File Size
+      echo 'File Size: '.$file->getSize();
+      echo '<br>';
+   
+      //Display File Mime Type
+      echo 'File Mime Type: '.$file->getMimeType();
+   
+      //Move Uploaded File
+      $destinationPath = 'uploads';
+      $filee = $file->move($destinationPath,$file_name);
+      $user = \Auth::user();
+      $user->cv = $destinationPath.'/'.$file_name;
+      $user->save();
+        return redirect()->back();
+    }
+    public function downloadFile()
+    {
+        $myFile = \Auth::user()->cv;
+        $headers = ['Content-Type: application/pdf'];
+        $name = str_replace(' ', '_',\Auth::user()->name);
+        $newName = $name.'-CV'.'.pdf';
+
+
+        return response()->download($myFile, $newName, $headers);
+    }
 
 }

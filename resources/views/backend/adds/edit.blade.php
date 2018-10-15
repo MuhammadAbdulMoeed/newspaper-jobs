@@ -110,6 +110,86 @@ Adds Management
                             </div><!--col-->
                         </div><!--form-group-->
                         <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Total Positions</label>
+                            <div class="col-md-10">
+                            <input type="text" name="total_pos" class="form-control" placeholder="Total Positions" value="{{$add->total_pos}}">
+                            </div>
+                            
+                        </div><!--form-group-->
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Company Name</label>
+                            <div class="col-md-10">
+                            <input type="text" name="company_name" class="form-control" placeholder="Company Name" value="{{$add->company_name}}">
+                            </div>
+                            
+                        </div><!--form-group-->
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Company Abbrevation</label>
+                            <div class="col-md-10">
+                            <input type="text" name="company_abbrevation" class="form-control" placeholder="Company Abbrevation" value="{{$add->company_abbrevation}}">
+                            </div>
+                        </div><!--form-group-->
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Job Location</label>
+                            <div class="col-md-10">
+                            <input type="text" name="job_loc" class="form-control" placeholder="Job Location" value="{{$add->job_loc}}">
+                            </div>
+                        </div><!--form-group-->
+                         <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Gendar</label>
+                            <div class="col-md-10">
+                            <input type="text" name="gendar" class="form-control" placeholder="Gendar" value="{{$add->gender}}">
+                            </div>
+                        </div><!--form-group-->
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Salary</label>
+                            <div class="col-md-10">
+                            <input type="text" name="salary" class="form-control" placeholder="Salary" value="{{$add->salary}}">
+                            </div>
+                        </div><!--form-group-->
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Experience</label>
+                            <div class="col-md-10">
+                            <input type="text" name="experience" class="form-control" placeholder="Experience" value="{{$add->experience}}">
+                            </div>
+                        </div><!--form-group-->
+                         <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Age Limit</label>
+                            <div class="col-md-10">
+                            <input type="text" name="age_limit" class="form-control" placeholder="Age Limit" value="{{$add->age_limit}}">
+                            </div>
+                        </div><!--form-group-->
+                         <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Working Hours</label>
+                            <div class="col-md-10">
+                            <input type="text" name="work_hours" class="form-control" placeholder="Working hours" value="{{$add->working_hours}}">
+                            </div>
+                        </div><!--form-group-->
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Skills</label>
+                            <div class="col-md-10">
+                            <input type="text" name="skills" class="form-control" placeholder="skills" value="{{$add->skills}}">
+                            </div>
+                        </div><!--form-group-->
+                         <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Contact Number</label>
+                            <div class="col-md-10">
+                            <input type="text" name="contact_num" class="form-control" placeholder="Contact Number" value="{{$add->contact_number}}">
+                            </div>
+                        </div><!--form-group-->
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Job Address</label>
+                            <div class="col-md-10">
+                            <input type="text" name="job_address" class="form-control" placeholder="Job Address" value="{{$add->address}}">
+                            </div>
+                        </div><!--form-group-->
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Contact Email</label>
+                            <div class="col-md-10">
+                            <input type="text" name="contact_email" class="form-control" placeholder="Contact Email" value="{{$add->job_email}}">
+                            </div>
+                        </div><!--form-group-->
+                        <div class="form-group row">
                             <label class="col-md-2 form-control-label">Minimum Requirements</label>
 
                             <div class="col-md-10">

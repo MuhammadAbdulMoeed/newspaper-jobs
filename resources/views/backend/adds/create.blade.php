@@ -110,10 +110,90 @@ Adds Management
                             </div><!--col-->
                         </div><!--form-group-->
                         <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Total Positions</label>
+                            <div class="col-md-10">
+                            <input type="number" name="total_pos" class="form-control" placeholder="Total Positions">
+                            </div>
+                            
+                        </div><!--form-group-->
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Company Name</label>
+                            <div class="col-md-10">
+                            <input type="text" name="company_name" class="form-control" placeholder="Company Name">
+                            </div>
+                            
+                        </div><!--form-group-->
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Company Abbrevation</label>
+                            <div class="col-md-10">
+                            <input type="text" name="company_abbrevation" class="form-control" placeholder="Company Abbrevation">
+                            </div>
+                        </div><!--form-group-->
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Job Location</label>
+                            <div class="col-md-10">
+                            <input type="text" name="job_loc" class="form-control" placeholder="Job Location">
+                            </div>
+                        </div><!--form-group-->
+                         <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Gendar</label>
+                            <div class="col-md-10">
+                            <input type="text" name="gendar" class="form-control" placeholder="Gendar">
+                            </div>
+                        </div><!--form-group-->
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Salary</label>
+                            <div class="col-md-10">
+                            <input type="text" name="salary" class="form-control" placeholder="Salary">
+                            </div>
+                        </div><!--form-group-->
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Experience</label>
+                            <div class="col-md-10">
+                            <input type="text" name="experience" class="form-control" placeholder="Experience">
+                            </div>
+                        </div><!--form-group-->
+                         <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Age Limit</label>
+                            <div class="col-md-10">
+                            <input type="text" name="age_limit" class="form-control" placeholder="Age Limit">
+                            </div>
+                        </div><!--form-group-->
+                         <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Working Hours</label>
+                            <div class="col-md-10">
+                            <input type="text" name="work_hours" class="form-control" placeholder="Working hours">
+                            </div>
+                        </div><!--form-group-->
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Skills</label>
+                            <div class="col-md-10">
+                            <input type="text" name="skills" class="form-control" placeholder="skills">
+                            </div>
+                        </div><!--form-group-->
+                         <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Contact Number</label>
+                            <div class="col-md-10">
+                            <input type="text" name="contact_num" class="form-control" placeholder="Contact Number">
+                            </div>
+                        </div><!--form-group-->
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Job Address</label>
+                            <div class="col-md-10">
+                            <input type="text" name="job_address" class="form-control" placeholder="Job Address">
+                            </div>
+                        </div><!--form-group-->
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Contact Email</label>
+                            <div class="col-md-10">
+                            <input type="text" name="contact_email" class="form-control" placeholder="Contact Email">
+                            </div>
+                        </div><!--form-group-->
+                        <div class="form-group row">
                             <label class="col-md-2 form-control-label">Minimum Requirements</label>
 
                             <div class="col-md-10">
-                                <input type="text" name="min_req" class="form-control" placeholder="Enter Requirements">
+                                <input type="text" name="min_req" class="form-control" placeholder="Enter Requirements" placeholder="minimum Requirements">
                             </div><!--col-->
                         </div><!--form-group-->
                         <div class="form-group row">
@@ -127,7 +207,7 @@ Adds Management
                             <label class="col-md-2 form-control-label">Apply By Date</label>
 
                             <div class="col-md-10">
-                                <input type="date" name="apply_by" class="form-control">
+                                <input type="date" name="apply_by" class="form-control" >
                             </div><!--col-->
                         </div><!--form-group-->
                         <div class="form-group row">

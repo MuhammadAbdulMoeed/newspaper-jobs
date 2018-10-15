@@ -63,6 +63,7 @@
                      <th>Apply Date</th>
                      <th>Last Date</th>
                      <th>Apply Now</th>
+                     <th>View Date</th>
                   </tr>
                </thead>
                <tbody>
@@ -73,6 +74,7 @@
                      <td>{{$news->apply_by}}</td>
                      <td>{{$news->last_date}}</td>
                      <td><a href="#">Apply Date</a></td>
+                     <td><a href="{{url('detail_page/'.$news->id)}}">View Add</a></td>
                   </tr>
                   @endforeach
                </tbody>
