@@ -42,6 +42,7 @@ class CreateAddsTable extends Migration
             $table->string('last_date')->nullable();
             $table->string('newspaper_piece')->nullable();
             $table->string('rel_logo')->nullable();
+            $table->enum('created_by' , ['admin' , 'executive']);
             $table->timestamps();
         });
     }

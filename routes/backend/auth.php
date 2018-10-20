@@ -140,3 +140,17 @@ Route::group([
     Route::get('edit-adds/{id}' , 'AddsController@edit')->name('adds.edit');
     Route::post('update-adds/{id}' , 'AddsController@update')->name('adds.update');
     Route::get('del-adds/{id}' , 'AddsController@destroy')->name('adds.delete');
+
+    Route::group(['namespace' => 'Executive'], function () {
+    // For executive User
+    Route::get('exec-adds' , 'AddsController@index')->name('ex.adds.index');
+    Route::get('exec-create-adds' , 'AddsController@create')->name('ex.adds.create');
+    Route::post('exec-store-adds' , 'AddsController@store')->name('ex.adds.store');
+    Route::get('exec-edit-adds/{id}' , 'AddsController@edit')->name('ex.adds.edit');
+    Route::post('exec-update-adds/{id}' , 'AddsController@update')->name('ex.adds.update');
+    Route::get('exec-del-adds/{id}' , 'AddsController@destroy')->name('ex.adds.delete');
+    Route::get('exec-adds-applied' , 'AddsController@appliedAds')->name('ex.adds.applied');
+    Route::get('exec-adds-status/{id}' , 'AddsController@AdsStatus')->name('ex.adds.status');
+
+    
+    });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend\User;
 
 use App\Http\Controllers\Controller;
+use App\ApplyJob;
 
 /**
  * Class DashboardController.
@@ -14,6 +15,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('frontend.user.dashboard');
+    	$jobs = ApplyJob::with('getAdds' , 'getUser')->where('user_id' , \Auth::user()->id)->get();
+        return view('frontend.user.dashboard' , compact('jobs'));
     }
 }

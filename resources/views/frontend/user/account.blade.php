@@ -30,6 +30,11 @@
                                     <a href="#password" class="nav-link" aria-controls="password" role="tab" data-toggle="tab">@lang('navs.frontend.user.change_password')</a>
                                 </li>
                             @endif
+                             @if($logged_in_user->canChangePassword())
+                                <li class="nav-item">
+                                    <a href="#detail" class="nav-link" aria-controls="password" role="tab" data-toggle="tab">Add Detail</a>
+                                </li>
+                            @endif
                         </ul>
 
                         <div class="tab-content">
@@ -49,6 +54,34 @@
                                     <tr>
                                     <th>Upload CV</th>
                                     <td><input type="file" name="file"></td>
+                                    </tr>
+                                    </table>
+                                    <input type="submit" name="submit" class="btn btn-default">
+                                    </form>
+                                </div>
+
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane fade show pt-3" id="detail" aria-labelledby="edit-tab">
+                                <div class="table-responsive">
+                                    <form method="POST" action="{{url('upload/user/detail')}}" enctype="multipart/form-data">
+                                        {{csrf_field()}}
+                                    <table class="table table-striped table-hover table-bordered">
+                                    <tr>
+                                    <th>Gendar</th>
+                                    <td><input type="text" name="gendar" value="{{$logged_in_user->gendar}}"></td>
+                                    </tr>
+                                    <tr>
+                                    <th>Institute</th>
+                                    <td><input type="text" name="institute" value="{{$logged_in_user->institution_one}}"></td>
+                                    </tr>
+                                    <tr>
+                                    <th>Degree Title</th>
+                                    <td><input type="text" name="degree_title" value="{{$logged_in_user->degree_title_two}}"></td>
+                                    </tr>
+                                    <tr>
+                                    <th>Passing Year</th>
+                                    <td><input type="text" name="passing_year" value="{{$logged_in_user->passing_year_two}}"></td>
                                     </tr>
                                     </table>
                                     <input type="submit" name="submit" class="btn btn-default">

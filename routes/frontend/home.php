@@ -22,7 +22,9 @@ Route::get('qualification/{id}' , [HomeController::class, 'QualificationAdds']);
 Route::get('category/{id}' , [HomeController::class, 'CategoryAdds']);
 Route::get('detail_page/{id}' , [HomeController::class , 'detailPage']);
 Route::post('upload/user/cv' , [HomeController::class , 'uploadCv']);
+Route::post('upload/user/detail' , [HomeController::class , 'userDetail']);
 Route::get('donwload-file', [HomeController::class , 'downloadFile']);
+Route::get('apply_job/{id}' , [HomeController::class , 'applyJob']);
 
 /*
  * These frontend controllers require the user to be logged in

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Executive;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -21,8 +21,8 @@ class AddsController extends Controller
      */
     public function index()
     {
-        $adds = Add::with('getCity' , 'getNewsPaper' , 'getCategory' , 'getJobType' , 'getQualification')->get();
-        return view('backend.adds.index' , compact('adds'));
+        $adds = Add::where('created_by' , 'executive')->with('getCity' , 'getNewsPaper' , 'getCategory' , 'getJobType' , 'getQualification')->get();
+        return view('backend.executive.index' , compact('adds'));
         
     }
 
@@ -39,7 +39,7 @@ class AddsController extends Controller
         $city = City::all();
         $category = Category::all();
         $jobType = JobType::all();
-        return view('backend.adds.create' , compact('newspaper' , 'qualification' , 'city' , 'category' , 'jobType'));
+        return view('backend.executive.create' , compact('newspaper' , 'qualification' , 'city' , 'category' , 'jobType'));
     }
 
     /**
@@ -91,6 +91,7 @@ class AddsController extends Controller
         $adds->description = $request->description;
         $adds->newspaper_piece = $path;
         $adds->rel_logo = $path1;
+        $adds->created_by = "executive";
         $adds->save();
         return redirect()->back();
     }
@@ -121,7 +122,7 @@ class AddsController extends Controller
         $category = Category::all();
         $jobType = JobType::all();
         // dd($add);
-        return view('backend.adds.edit' , compact('newspaper' , 'qualification' , 'city' , 'category' , 'jobType' , 'add'));
+        return view('backend.executive.edit' , compact('newspaper' , 'qualification' , 'city' , 'category' , 'jobType' , 'add'));
     }
 
     /**
@@ -195,4 +196,22 @@ class AddsController extends Controller
         Add::destroy($id);
         return redirect()->back();
     }
+
+    public function appliedAds(){
+        $adds = ApplyJob::with('getAdds.getNewsPaper' , 'getUser')->get();
+        return view('backend.executive.addsApplied' , compact('adds'));
+    }
+
+    public function AdsStatus($id){
+        $apply_job = ApplyJob::find($id);
+        if($apply_job->status == "pending"){
+        $apply_job->status = "approved";
+        }
+        else{
+         $apply_job->status = "pending";   
+        }
+        $apply_job->save();
+        return redirect()->back();
+    }
 }
+

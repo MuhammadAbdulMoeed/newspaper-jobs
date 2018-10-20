@@ -181,13 +181,26 @@
 
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
-                        <a class="nav-link {{ active_class(Active::checkUriPattern('admin/jobs')) }}" href="{{ route('admin.adds.create') }}">
+                        <a class="nav-link {{ active_class(Active::checkUriPattern('admin/jobs')) }}" href="{{ route('admin.ex.adds.create') }}">
                             Add New Adds
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ active_class(Active::checkUriPattern('admin/jobs')) }}" href="{{ route('admin.adds.index') }}">
+                        <a class="nav-link {{ active_class(Active::checkUriPattern('admin/jobs')) }}" href="{{ route('admin.ex.adds.index') }}">
                             All Adds
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item nav-dropdown {{ active_class(Active::checkUriPattern('admin/jobs*'), 'open') }}">
+                <a class="nav-link nav-dropdown-toggle {{ active_class(Active::checkUriPattern('admin/jobs*')) }}" href="#">
+                    <i class="nav-icon icon-list"></i> Adds Submission
+                </a>
+
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link {{ active_class(Active::checkUriPattern('admin/jobs')) }}" href="{{ route('admin.ex.adds.applied') }}">
+                            Applied Adds
                         </a>
                     </li>
                 </ul>

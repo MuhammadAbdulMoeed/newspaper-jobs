@@ -12,6 +12,7 @@ use App\Category;
 use App\JobType;
 use App\Qualification;
 use App\Add;
+use App\ApplyJob;
 
 /**
  * Class HomeController.
@@ -54,18 +55,13 @@ class HomeController extends Controller
     }
 
     public function viewSlug($slug , $type , $date , Request $request){
-        if($type = "jobs"){
-            $type = "jobs";
-        }
-        else if($type = "adm"){
-            $type = "admissions";
-        }
-        else{
-            $type = "tenders";
-        }
         $newspaper = Add::whereHas('getNewsPaper' , function($q) use ($slug){
            $q->where('slug' , $slug); 
-        })->whereDate('created_at' , $date)->orWhereDate('last_date' , $date)->orWhereDate('apply_by' , $date)->where('type' , $type)->with('getCity')->get();
+        })->where('type' , $type)
+        ->where(function ($query) use ($date){
+          $query->whereDate('created_at' , $date)->orWhereDate('last_date' , $date)->orWhereDate('apply_by' , $date);
+        })
+        ->with('getCity')->get();
         $paper = Newspaper::where('slug' , $slug)->first();
         $newspapers = Newspaper::all();
         return view('frontend.date-adds' , compact('paper' , 'newspaper' , 'newspapers'));
@@ -135,6 +131,28 @@ class HomeController extends Controller
 
 
         return response()->download($myFile, $newName, $headers);
+    }
+
+    public function applyJob($id){
+      $applied_job = ApplyJob::where('user_id' , \Auth::user()->id)->where('newspaper_id' , $id)->first();
+      if($applied_job){
+        return redirect()->back();
+      }
+      $apply_job = new ApplyJob;
+      $apply_job->user_id = \Auth::user()->id;
+      $apply_job->newspaper_id = $id;
+      $apply_job->save();
+      return redirect()->back();
+    }
+
+    public function userDetail(Request $request){
+      $user = User::find(\Auth::user()->id);
+      $user->gendar = $request->gendar;
+      $user->institution_one = $request->institute;
+      $user->degree_title_two = $request->degree_title;
+      $user->passing_year_two = $request->passing_year;
+      $user->save();
+      return redirect()->back();
     }
 
 }

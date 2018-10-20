@@ -63,7 +63,6 @@
                      <th>Apply Date</th>
                      <th>Last Date</th>
                      <th>Apply Now</th>
-                     <th>View Date</th>
                   </tr>
                </thead>
                <tbody>
@@ -73,8 +72,11 @@
                      <td>{{$news->getCity->title}}</td>
                      <td>{{$news->apply_by}}</td>
                      <td>{{$news->last_date}}</td>
-                     <td><a href="#">Apply Date</a></td>
-                     <td><a href="{{url('detail_page/'.$news->id)}}">View Add</a></td>
+                     @if($news->created_by == "executive")
+                     <td><a href="{{url('apply_job/'.$news->id)}}">Apply Now</a></td>
+                     @else
+                     <td><a href="{{url('detail_page/'.$news->id)}}">View Detail</a></td>
+                     @endif
                   </tr>
                   @endforeach
                </tbody>
