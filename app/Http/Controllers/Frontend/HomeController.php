@@ -13,6 +13,7 @@ use App\JobType;
 use App\Qualification;
 use App\Add;
 use App\ApplyJob;
+use App\subscription;
 
 /**
  * Class HomeController.
@@ -79,12 +80,14 @@ class HomeController extends Controller
     public function QualificationAdds($id){
         $newspaper = Add::where('qualification_id' , $id)->get();
         $newspapers = Newspaper::all();
-        return view('frontend.qualification-adds' , compact('newspaper' , 'newspapers'));
+        $qualification_id = $id;
+        return view('frontend.qualification-adds' , compact('newspaper' , 'newspapers' , 'qualification_id'));
     }
     public function CategoryAdds($id){
         $newspaper = Add::where('category_id' , $id)->get();
         $newspapers = Newspaper::all();
-        return view('frontend.category-adds' , compact('newspaper' , 'newspapers'));
+        $cat_id = $id;
+        return view('frontend.category-adds' , compact('newspaper' , 'newspapers' , 'cat_id'));
     }
     public function detailPage($id){
         $add = Add::with('getCity' , 'getNewsPaper' , 'getCategory', 'getJobType' , 'getQualification')->where('id' , $id)->first();
@@ -152,6 +155,40 @@ class HomeController extends Controller
       $user->degree_title_two = $request->degree_title;
       $user->passing_year_two = $request->passing_year;
       $user->save();
+      return redirect()->back();
+    }
+
+    public function subscribeNews($id){
+      $news = subscription::where('user_id' , \Auth::user()->id)->where('newspaper_id' , $id)->first();
+      if($news){
+        return redirect()->back();
+      }
+      $subscription = new subscription;
+      $subscription->newspaper_id = $id;
+      $subscription->user_id = \Auth::user()->id;
+      $subscription->save();
+      return redirect()->back();
+    }
+    public function subscribeCate($id){
+      $news = subscription::where('user_id' , \Auth::user()->id)->where('category_id' , $id)->first();
+      if($news){
+        return redirect()->back();
+      }
+      $subscription = new subscription;
+      $subscription->category_id = $id;
+      $subscription->user_id = \Auth::user()->id;
+      $subscription->save();
+      return redirect()->back();
+    }
+    public function subscribeQual($id){
+      $news = subscription::where('user_id' , \Auth::user()->id)->where('qualification_id' , $id)->first();
+      if($news){
+        return redirect()->back();
+      }
+      $subscription = new subscription;
+      $subscription->qualification_id = $id;
+      $subscription->user_id = \Auth::user()->id;
+      $subscription->save();
       return redirect()->back();
     }
 

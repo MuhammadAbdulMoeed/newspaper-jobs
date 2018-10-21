@@ -101,4 +101,34 @@
             </div><!-- card -->
         </div><!-- col-xs-12 -->
     </div><!-- row -->
+     <div class="row justify-content-center align-items-center mb-3">
+        <div class="col col-sm-10 align-self-center">
+            <div class="card">
+                <div class="card-header">
+                    <strong>
+                        Subscriptions
+                    </strong>
+                </div>
+
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Subscription Type</th>
+                                <th>Subscription Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($subs as $sub)
+                            <tr>
+                                <td>@if($sub->newspaper) {{$sub->newspaper->title}} @elseif($sub->qualification) {{$sub->qualification->title}} @else {{$sub->category->title}} @endif</td>
+                                <td>unsubscribe</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div><!--card body-->
+            </div><!-- card -->
+        </div><!-- col-xs-12 -->
+    </div><!-- row -->
 @endsection

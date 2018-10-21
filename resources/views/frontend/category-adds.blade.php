@@ -48,6 +48,7 @@
       <div id="single-paper-page-banner">
          <h2 itemprop="name">Express Newspaper Jobs  </h2>
          <div id=clear></div>
+         <a href="{{url('user-scribe-category/'.$cat_id)}}">Subscribe</a>
       </div>
       <div id="featured_latest_job">
          <p><img src="pk_img/job_logo.png" align=left  style="border-radius: 90px;" /> Express Jobs Ads 
