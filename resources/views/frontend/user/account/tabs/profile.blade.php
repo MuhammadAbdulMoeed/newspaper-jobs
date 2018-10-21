@@ -22,7 +22,7 @@
         </tr>
         <tr>
             <th>My CV</th>
-            <td><a href="{{url('donwload-file')}}">Download CV</a></td>
+            <td>@if($logged_in_user->cv) <a href="{{url('donwload-file')}}">Download CV</a> @else CV-Not Found @endif</td>
         </tr>
     </table>
 </div>

@@ -1,3 +1,6 @@
+<?php
+$cat = App\Category::take(3)->get();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="https://www.w3.org/1999/xhtml" lang="en">
    <link rel="canonical" href="index.html">
@@ -79,9 +82,11 @@
                </div>
                <ul>
                   <li><a href=""><img src="https://paperpk.com/careers/images/home.png" height=30px /></a></li>
-                  <li><a href="">Employer</a></li>
-                  <li><a href="">Job Seeker</a></li>
-                  <li><a href="">Newspaper Jobs</a></li>
+                  @if($cat)
+                  @foreach($cat as $ca)
+                  <li><a href="">{{$ca->title}}</a></li>
+                  @endforeach
+                  @endif
                </ul>
             </div>
          </div>
