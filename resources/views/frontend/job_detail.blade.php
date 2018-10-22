@@ -46,8 +46,7 @@
             <br/>
             <center>
                <img id="img_path" src="{{asset('/storage/app/'.$add->newspaper_piece)}}" />
-               <br/><a class="btn btn-success" style="    background-color: #019875;color:white;" href="../ads_pic_directory/2018/10/11/nawai_waqat/Civil-Court-Attock-Jobs.jpg" >View Full Image</a>
-               <a class="btn btn-success" style="    background-color: #019875;color:white;"  href="javascript:window.location.href=window.location.href">Refresh</a>
+               <br/><a class="btn btn-success" style="    background-color: #019875;color:white;" href="{{url('/storage/app/'.$add->newspaper_piece)}}" target="_blank">View Full Image</a>
                <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
                <!-- top links -->
                <ins class="adsbygoogle"
@@ -61,10 +60,11 @@
                <div id=clear></div>
                <br/>
                <br/>
-               <a href="http://paperpk.com/company/civil-court_1194" target="_blank"> <img width=170px src="{{asset('/storage/app/'.$add->rel_logo)}}" /></a><br/>
+              
                <fieldset class="scheduler-border" style="float: left;" >
                   <legend class="scheduler-border">Job Details</legend>
-                  <table>
+                  <div class="col-xs-6">
+                  <table class="table">
                      <!--
                         <tr>
                             <th>Industry</th>
@@ -161,6 +161,15 @@
                         </td>
                      </tr>
                   </table>
+                  </div>
+                  <div class="col-xs-6">
+                  <table class="table pull-right">
+                     <tr>
+                        <th>Apply Job</th>
+                        <td><a href="{{url('/')}}">Apply job</a></td>
+                     </tr>
+                  </table>
+               </div>
                </fieldset>
             
                <div id=clear></div>

@@ -10,10 +10,8 @@ $cat = App\Category::take(3)->get();
    <!-- /Added by HTTrack -->
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=BIG5">
-      <title>Online Job Portal</title>
+      <title>Online </title>
       <meta name="description" content="PakistanJobs jobs in Pakistan today as newspapers ads & career classified advertisemnts in Jang, Dawn, Express, Nawaiwaqt. Also post jobs as employer and apply for free on daily jobs in Pakistan online in Lahore , Karachi, Islamabad from Paperpk.com "/>
-      <meta name="keywords" content="Paperpk, Paperpk.com, jobs in Pakistan, 
-         Jobs , Latest jobs , jobs 2018 , Newspaper Jobs , Job portal">
       <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="stylesheet" href="{{asset('css/includes/bootstrap.min.css')}}" />
@@ -65,7 +63,7 @@ $cat = App\Category::take(3)->get();
    <body>
       <div id="wrapper">
          <div id="main_container_mobile">
-            <img alt=Paperpk src="https://paperpk.com/careers/pk_img/logo.png" align="left" width=180px />
+            <img alt=Paperpk src="" align="left" width=180px />
             <a><img alt="navigate-button" src="https://paperpk.com/careers/pk_img/nav_head_logo.png" align="right" width=45px style="margin:7px 14px ;" /></a>
             <ul id=toggle_ul>
                <li><a href="">Sign up</a></li>
@@ -91,7 +89,7 @@ $cat = App\Category::take(3)->get();
             </div>
          </div>
          <div id="logo_div">
-            <a href="https://paperpk.com/"><img alt="PaperPk - Jobs in Pakistan" src="https://paperpk.com/careers/pk_img/logo.png" align="left" width=200px /></a>
+            <a href=""><img alt="" src="" align="left" width=200px /></a>
             <div id="adsense1">
             </div>
          </div>
