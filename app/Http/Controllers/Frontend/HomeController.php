@@ -52,7 +52,8 @@ class HomeController extends Controller
     }
 
     public function calendarView(){
-        return view('frontend.calendar-list');
+       $newspapers = Newspaper::all();
+        return view('frontend.calendar-list' , compact('newspapers'));
     }
 
     public function viewSlug($slug , $type , $date , Request $request){
@@ -190,6 +191,34 @@ class HomeController extends Controller
       $subscription->user_id = \Auth::user()->id;
       $subscription->save();
       return redirect()->back();
+    }
+
+    public function showCalender(){
+      $adds = Add::all();
+      $jobs = '';
+      $admissions = '';
+      $tenders = '';
+      foreach ($adds as $add) {
+        if($add->type == "jobs"){
+        $jobs->title = $add->title;
+        $job->start = $add->created_at;
+        $job->end = $add->created_at;
+        }
+        if($add->type == "tenders"){
+        $tenders->title = $add->title;
+        $tenders->start = $add->created_at;
+        $tenders->end = $add->created_at;
+        }
+        if($add->type == "admissions"){
+        $admissions->title = $add->title;
+        $admissions->start = $add->created_at;
+        $admissions->end = $add->created_at;
+        }
+      }
+      $data = ['jobs' => $jobs];
+      dd($data);
+      return response()->json($adds);
+
     }
 
 }

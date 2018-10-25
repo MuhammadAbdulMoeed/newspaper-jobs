@@ -11,7 +11,6 @@ $cat = App\Category::take(3)->get();
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=BIG5">
       <title>Online </title>
-      <meta name="description" content="PakistanJobs jobs in Pakistan today as newspapers ads & career classified advertisemnts in Jang, Dawn, Express, Nawaiwaqt. Also post jobs as employer and apply for free on daily jobs in Pakistan online in Lahore , Karachi, Islamabad from Paperpk.com "/>
       <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="stylesheet" href="{{asset('css/includes/bootstrap.min.css')}}" />
@@ -90,53 +89,18 @@ $cat = App\Category::take(3)->get();
          </div>
          <div id="logo_div">
             <a href=""><img alt="" src="" align="left" width=200px /></a>
-            <div id="adsense1">
-            </div>
          </div>
-         <script src="../../clientcdn.pushengage.com/core/4982.js"></script>
          <div id=clear></div>
          @yield('content')
          <div id=footer>
-            <div class=col-sm-3>
-               <p>Jobs By CITY</p>
-               <hr color=#019875 />
-               <a href="https://paperpk.com/job/city/lahore">Lahore</a><br/>
-               <a href="https://paperpk.com/job/city/karachi">Karachi</a><br/>
-               <a href="https://paperpk.com/job/city/Islamabad">Islamabad</a><br/>
-               <a href="https://paperpk.com/job/city/multan">Multan</a><br/>
-            </div>
-            <div class=col-sm-3>
-               <p>Jobs By ROLE</p>
-               <hr color=#019875 />
-               <a href="https://paperpk.com/job/category/manager">Manager</a><br/>
-               <a href="https://paperpk.com/job/category/education">Education</a><br/>
-               <a href="https://paperpk.com/job/category/medical">Doctor</a><br/>
-               <a href="https://paperpk.com/job/category/female">Female Jobs</a><br/>
-            </div>
-            <div class=col-sm-3>
-               <p>Other Career Pages</p>
-               <hr color=#019875 />
-               <a href="https://paperpk.com/departments-jobs.php">Govt departments</a><br/>
-               <a href="https://paperpk.com/work.php">Blue Collar Jobs</a><br/>
-               <a href="https://paperpk.com/job/category/Government">Government Jobs</a><br/>
-               <a href="https://paperpk.com/dawn-newspaper-jobs.php">Newspaper Jobs</a><br/>
-            </div>
-            <div class=col-sm-3>
-               <p>PaperPk.com</p>
-               <hr color=#019875 />
-               <a href="https://paperpk.com/contact-us.php">Contact Us</a><br/>
-               <a href="https://paperpk.com/Ads">Advertise with us</a><br/>
-               <a href="https://paperpk.com/blog/index.php/diclaimer/">Disclaimer</a><br/>
-               <a href="https://paperpk.com/privacy-policy.php">Privacy Policy</a><br/>
-               <a href="https://paperpk.com/blog/index.php/about/">About Us</a><br/>
-            </div>
+            
             <img alt="Pk_banner" src="https://paperpk.com/careers/pk_img/background_search.png" style="width:100%;" />
             <div id="copy-right">
                <table bgcolor="white" width="100%">
                   <tr>
                      <td bgcolor="white">
-                        <p>   CopyRight & copy; 2017 & Trademark PaperPk.com Pvt Ltd.
-                           <a href="https://play.google.com/store/apps/details?id=paperpktechnologies.paperpks"><img alt="Play store" src="../pk_img/paperpk-android.png" width="200"/></a>
+                        <p>  
+                           
                         </p>
                      </td>
                   </tr>
@@ -185,12 +149,27 @@ $cat = App\Category::take(3)->get();
     // change the day's background color just for fun
     $(this).css('background-color', 'grey');
 
-  }
+  },
+  events: [
+        {
+            title  : 'event1',
+            start  : '2018-10-25'
+        },
+        {
+            title  : 'event2',
+            start  : '2012-01-05',
+            end    : '2012-01-07'
+        },
+        {
+            title  : 'task',
+            start  : '2012-01-09 12:30:00',
+            allDay : false // will make the time show
+        }
+    ]
 });
          
          });
          
       </script>
    </head>
-   <!-- Mirrored from paperpk.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Sep 2018 02:24:30 GMT -->
 </html>

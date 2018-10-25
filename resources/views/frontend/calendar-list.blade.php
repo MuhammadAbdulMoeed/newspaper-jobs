@@ -27,16 +27,6 @@
                   <!--<p><img alt="Latest Jobs" src="pk_img/job_logo.png" align=left  style="border-radius: 90px;" />Jobs in </p>-->
                   <div id=clear></div>
                   <br/>
-                  <script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
-                  <!-- paperpk -->
-                  <ins class="adsbygoogle"
-                     style="display:inline-block;width:600px;height:250px"
-                     data-ad-client="ca-pub-6975300866830988"
-                     data-ad-slot="2372027694"></ins>
-                  <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                  </script>
-                  <br/>
                   <div id="job-table">
                     <div id="calendar3">
                         
@@ -48,101 +38,12 @@
                   <p>Newspaper Jobs Ads</p>
                   <div id=clear></div>
                   <br/>
-                  <a href=thenews-newspaper-jobs.html><img alt="The News" src="pk_img/thenews.png"  /></a>
-                  <a href=nation-newspaper-jobs.html><img alt="The Nation" src="pk_img/thenation.png"  /></a>
-                  <a href=dawn-newspaper-jobs.html><img alt="Dawn" src="pk_img/dawn.png"  /></a>
-                  <a href=jung-newspaper-jobs.html><img alt="Jang" src="images/jung.jpg"  /></a>
-                  <a href=express-newspaper-jobs.html><img alt="Express" src="pk_img/express.png"  /></a>
-                  <a href=nawaiwaqt-newspaper-jobs.html><img alt="NawaiWaqt" src="pk_img/nawaiwaqt.png"  /></a>
-                  <a href=aaj-newspaper-jobs.html><img alt="Daily Aaj" src="pk_img/aaj.png"  /></a>
-                  <a href=mashriq-newspaper-jobs.html><img alt="Mashriq" src="pk_img/mashriq.png"  /></a>
-                  <a href=naibaat-newspaper-jobs.html><img alt="Nai Baat" src="pk_img/naibaat.png"  /></a>
-                  <a href=dunya-newspaper-jobs.html><img alt="Dunya" src="pk_img/dunya.png"  /></a>
-                  <a href=kawish-newspaper-jobs.html><img alt="Kawish" src="pk_img/kawish.png"  /></a>
-                  <a href=khabrain-newspaper-jobs.html><img alt="Khabrain" src="pk_img/khabrain.png"  /></a>
+                 @foreach($newspapers as $newspaper)
+               <a href=><img alt="The News" src="pk_img/thenews.png"  /></a>
+               @endforeach
                </div>
-               <div id=google-ad style="height: auto;overflow: hidden;clear:right;">
-                  <script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
-                  <!-- Paperpk job detail page sidebar -->
-                  <ins class="adsbygoogle"
-                     style="display:inline-block;width:300px;height:250px"
-                     data-ad-client="ca-pub-6975300866830988"
-                     data-ad-slot="7879988095"></ins>
-                  <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                  </script>
-               </div>
-               <div id=google-ad-ag>
-                  <script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
-                  <!-- paperpk mobile site responsive -->
-                  <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-6975300866830988"
-                     data-ad-slot="8154393294"
-                     data-ad-format="auto"></ins>
-                  <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                  </script>
-               </div>
-               <div id=govt_div2 style="margin-top:5px;clear:right;">
-                  <a href="job/category/Government.html" ><img alt="Govt_logo" src="pk_img/govt_logo.png" width=300px  /></a>
-               </div>
-               <div id=govt_div style="clear:right;">
-                  <table class=" table  table-striped">
-                     <tbody>
-                        <tr>
-                           <th colspan=3 style="background-color: #019875;color: white;width: 300px;text-align: center;">Latest Jobs in Pakistan</th>
-                        </tr>
-                     </tbody>
-                     <tbody>
-                        <tr>
-                           <td  colspan=3><a target=_blank href="company/chip-training-consulting-private-limited_19592.html">Chip Training & Consulting Private Limited Pakistan Jobs</a></td>
-                        </tr>
-                        <tr>
-                           <td  colspan=3><a target=_blank href="company/kkt-orthopedic-spine-center_19158.html">Kkt Orthopedic Spine Center Hyderabad Jobs</a></td>
-                        </tr>
-                        <tr>
-                           <td  colspan=3><a target=_blank href="company/road-construction-company_20652.html">Road Construction Company Hyderabad Jobs</a></td>
-                        </tr>
-                        <tr>
-                           <td  colspan=3><a target=_blank href="company/al-falah-trade-test-training-center_12365.html">Security Supervisor Jobs In Qatar</a></td>
-                        </tr>
-                        <tr>
-                           <td  colspan=3><a target=_blank href="company/islamic-manpower-promoters_3153.html">Shuttering Carpenter Jobs In Qatar</a></td>
-                        </tr>
-                        <tr>
-                           <td  colspan=3><a target=_blank href="company/badshah-trade-test-center_15667.html">Labour Jobs In Uae</a></td>
-                        </tr>
-                        <tr>
-                           <td  colspan=3><a target=_blank href="company/labour-welfare-department_13393.html">Labour Welfare Department Balochistan Jobs</a></td>
-                        </tr>
-                        <tr>
-                           <td  colspan=3><a target=_blank href="company/national-institute-for-biotechnology-genetic-engineering_14199.html">National Institute For Biotechnology & Genetic Engineering Faisalabad Jobs</a></td>
-                        </tr>
-                        <tr>
-                           <td  colspan=3><a target=_blank href="company/al-khaleeg-group-trade-test-center_7249.html">Driver Jobs In Saudi Arabia</a></td>
-                        </tr>
-                        <tr>
-                           <td  colspan=3><a target=_blank href="company/naveed-trade-test-technical-training-center_10617.html">Cleaner Jobs In Dubai</a></td>
-                        </tr>
-                        <tr>
-                           <td  colspan=3><a target=_blank href="company/children-hospital_381.html">Children Hospital & The Institute Of Child Health Lahore Jobs</a></td>
-                        </tr>
-                        <tr>
-                           <td  colspan=3><a target=_blank href="company/hg-markets-private-limited_5653.html">Hg Markets Pvt Ltd Multan Jobs</a></td>
-                        </tr>
-                        <tr>
-                           <td  colspan=3><a target=_blank href="company/peoples-primary-healthcare-initiative_5154.html">Peoples Primary Healthcare Initiative Karachi Jobs</a></td>
-                        </tr>
-                        <tr>
-                           <td  colspan=3><a target=_blank href="company/parc-employees-cooperative-housing-society_20653.html">Parc Employees Cooperative Housing Society Islamabad Jobs</a></td>
-                        </tr>
-                        <tr>
-                           <td  colspan=3><a target=_blank href="company/shifa-tameer-e-millat-university_15724.html">Shifa Tameer E Millat University Islamabad Jobs</a></td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </div>
+               
+               
             </div>
             <div id="navigate">
                <h3 color=#019875>Newspaper Jobs / Careers:</h3>

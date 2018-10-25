@@ -6,37 +6,7 @@
          <div id="s2s">
          </div>
       </div>
-      <div id=social>
-         <div id=s2s class="soc_lnk">
-            <br/>
-            =
-         </div>
-         <script>
-            function socialHide(){
-            document.getElementsByClassName("soc_lnk")[0].style.display="none";
-            }
-         </script>
-      </div>
-      <div id=clear></div>
-      <br/>
-      <div id="show-ad-page-banner">
-         <div>
-            <h2  style="padding-left:5%;">Process Server jobs in Civil Court in Attock, </h2>
-         </div>
-         <h5> &nbsp; &nbsp; &nbsp;   &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Posted Date: October 11,2018</h5>
-      </div>
-      <div id=clear></div>
-      <br/>
-      <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
-      <!-- Paperpk job city labove and bottom list -->
-      <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6975300866830988"
-         data-ad-slot="2205434093"
-         data-ad-format="auto"></ins>
-      <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>  
+      <img src="{{asset('public/images.jpg')}}" width="100%" height="200px">
       <br/>
       <div id="show-ad-page-job-details-div" >
          <div id="show-ad-img-div">
@@ -179,71 +149,18 @@
             <br/><br/>
          </div>
       </div>
-      <div id=google-ad>
-         <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
-         <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
-         <!-- Paperpk job detail page sidebar -->
-         <ins class="adsbygoogle"
-            style="display:inline-block;width:300px;height:250px"
-            data-ad-client="ca-pub-6975300866830988"
-            data-ad-slot="7879988095"></ins>
-         <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-         </script>
-         <br/>
-      </div>
-      <div id=google-ad-ag>
-         <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
-         <!-- paperpk job detail new side bar bottom responsive -->
-         <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-6975300866830988"
-            data-ad-slot="4368118498"
-            data-ad-format="auto"></ins>
-         <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-         </script>
-      </div>
+      
       <br/>
       <div id=govt_div style="clear:right;">
-         <center>
-            <img width=170px src="../uploads/co_img/1536661619.jpg" /><br/>
-            <a style="font-size:1em;" href="http://paperpk.com/company/civil-court_1194" class="my-success" style="color: white;" target="_blank">More Civil Court Jobs</a>
-         </center>
-         <br/>
-         <iframe width="300" height="250" src="https://www.youtube.com/embed/vhC55VfZMxE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><a href="https://paperpk.com/job/category/government"><img src="../Ads/site/img/govt_logo.png"/></a>
+        <a href=""><img src="{{asset('public/cv.jpg')}}"/></a>
          <br/><br/>
-         <a href="https://cvformats.com/"><img src="../Ads/site/img/cv.jpg" width="300"/></a>
+         <a href=""><img src="{{asset('public/cv.jpg')}}" width="300"/></a>
          <br/>
          <br/>
-         <a href="http://paperpk.com/subscribe.php"><img src="../Ads/site/img/subscribe.jpg" width="300"/></a>
-         <br/><br/>
-         <a href="http://paperpk.com/book-newspaper-ads/"><img src="../Ads/site/img/book-newspaper-ads.png" width="300"/></a>
-         <br/>
-         <br/>
-         <script async='async' src='../../www.googletagservices.com/tag/js/gpt.js'></script>
-         <script>
-            var googletag = googletag || {};
-            googletag.cmd = googletag.cmd || [];
-         </script>
-         <script>
-            googletag.cmd.push(function() {
-              googletag.defineSlot('/43651300/Paperpk', [300, 250], 'div-gpt-ad-1493978923175-0').addService(googletag.pubads());
-              googletag.pubads().enableSingleRequest();
-              googletag.enableServices();
-            });
-         </script>
+         
          <!-- /43651300/Paperpk -->
-         <div id='div-gpt-ad-1493978923175-0' style='height:250px; width:300px;'>
-            <script>
-               googletag.cmd.push(function() { googletag.display('div-gpt-ad-1493978923175-0'); });
-            </script>
-         </div>
-         <br/><br/>
-         <a href="https://paperads.pk/job/category/abroad"><img src="../Ads/site/img/work-abroad.jpg" width="300"/></a>
-         <br/><br/>
-         <a href="https://play.google.com/store/apps/details?id=paperpktechnologies.paperpks"><img src="../Ads/site/img/android.png"/></a>
-         <br/><br/><br/>
+         
+         
          <!--
             <table class=" table  table-striped">
                 <tbody>

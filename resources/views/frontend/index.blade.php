@@ -3,23 +3,6 @@
 <link rel="stylesheet" href="{{asset('css/includes/fullcalendar.print.min.css')}}" />
         <div id=wrapper_total>
             <div id="navigate">
-               <div id=social>
-                  <!-- <div id=s2s class="soc_lnk">
-                     <br/>
-                     
-                     <a  onclick="socialHide()">x</a>
-                     <a href="https://www.facebook.com/paperpkDotcom/"><img title="Facebook" src="pk_img/fb_logo.png" alt="Facebook" width="100%"  /></a>
-                     <a href="https://twitter.com/paperpk"><img title="Twitter" src="pk_img/twitter_logo.png" alt="Twitter" width="100%"  /></a>
-                     <a href="https://pk.linkedin.com/in/faheem-mumtaz-27bab8105"><img title="Linkedin" src="pk_img/in_logo.png" alt="Linkedin" width="100%"  /></a>
-                     <a href="https://feedburner.google.com/fb/a/mailverify?uri=paperpk/blog"><img title="Subscribe" src="pk_img/s_logo.png" alt="Subscribe" width="100%"  /></a>
-                     
-                     </div> -->
-                  <script>
-                     function socialHide(){
-                     document.getElementsByClassName("soc_lnk")[0].style.display="none";
-                     }
-                  </script>
-               </div>
                <div style="width: 100%;">
                   <center>
                      <table width=100% class="table table-striped">
@@ -27,7 +10,7 @@
                            <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><b><span style="color:#325465;"><br/>Date - Day<br/>&nbsp;</b></span></td>
                            <!-- <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><img alt="Date - Day" src="images/date.jpg" /></td>  -->
                            @foreach($newspapers as $newspaper)
-                           <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><a href="" ><img alt="Jang" src="images/jung.jpg" /></a></td>
+                           <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><a href="" ><img alt="Jang" src="{{asset('public/download.png')}}" width="50" height="50" /></a></td>
                            @endforeach
                         </tr>
                          <tr>
@@ -119,6 +102,9 @@
                      </table>
                      <h3><a class="my-success" href="{{route('frontend.calendar.view')}}"> View more newspapers & jobs by date</a></h3>
                </div>
+
+               <img src="{{asset('public/images.jpg')}}" width="100%" height="200px">
+
                <!--
                   <button style="width:100%;" id="m-btn">Click to view more dates<img src="images/nav_table.png" style="height: 25px;" /></button>
                   
@@ -126,49 +112,33 @@
                </center>
             </div>
             <div id="newspaper">
-               <script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
-               <!-- Paperpk job city labove and bottom list -->
-               <ins class="adsbygoogle"
-                  style="display:block"
-                  data-ad-client="ca-pub-6975300866830988"
-                  data-ad-slot="2205434093"
-                  data-ad-format="auto"></ins>
-               <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-               </script>  
                <br/>
-               <img alt=" " src="pk_img/star_logo.png" style="width:30px;height:30px;"  align=left  />
                <p>Latest Newspaper Ads</p>
                <br/>
-               <a href=><img alt="The News" src="pk_img/thenews.png"  /></a>
-               <a href=><img alt="The Nation" src="pk_img/thenation.png"  /></a>
-               <a href=><img alt="Dawn" src="pk_img/dawn.png"  /></a>
-               <a href=><img alt="Jang" src="images/jung.jpg"  /></a>
-               <a href=><img alt="Express" src="pk_img/express.png"  /></a>
-               <a href=><img alt="NawaiWaqt" src="pk_img/nawaiwaqt.png"  /></a>
-               <a href=><img alt="Daily Aaj" src="pk_img/aaj.png"  /></a>
-               <a href=><img alt="Mashriq" src="pk_img/mashriq.png"  /></a>
-               <a href=><img alt="Nai Baat" src="pk_img/naibaat.png"  /></a>
-               <a href=><img alt="Dunya" src="pk_img/dunya.png"  /></a>
-               <a href=><img alt="Kawish" src="pk_img/kawish.png"  /></a>
-               <a href=><img alt="Khabrain" src="pk_img/khabrain.png"  /></a>
+               <a href=><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
+               <a href=><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
+               <a href=><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
+               <a href=><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
+               <a href=><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
+               <a href=><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
+               <a href=><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
+               <a href=><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
             </div>
+            <div id="govt_div2" style="margin-top:5px;clear:right;">
+
+<br>
+
+
+
+                </div>
+
             <div id="featured_latest_job">
                <div id=clear></div>
                <p>
-               <h1><img alt="" src="pk_img/featured_job_logo.png" align=left  />Latest jobs in Pakistan ads</h1>
+               <h1>Latest jobs in Pakistan ads</h1>
                </p> 
-               If you are looking for jobs in Pakistan then Paperpk jobs portal is the best place to start your search. We promice to deliver you the multiple options for jobs according to your qualification , skills and experince 
-               <script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
-               <!-- top links -->
-               <ins class="adsbygoogle"
-                  style="display:block"
-                  data-ad-client="ca-pub-6975300866830988"
-                  data-ad-slot="9847020896"
-                  data-ad-format="link"></ins>
-               <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-               </script> <br/>
+              <br/>
+
                <div id=clear></div>
                <br/>
                <div id="job-table">
@@ -191,51 +161,7 @@
                   </table>
                   {{$cities->appends(array_except(Request::query(), 'cities'))->links()}}
                </div>
-               <!--    
-                  <div id="featured_latest_job">
-                  
-                   <img src="pk_img/city_logo.png"  align=left /><p>Jobs by Titles 
-                  
-                  <a href="all-job-title.php" class= "my-success" >View all </a></p>
-                  
-                  
-                  
-                  
-                  </div>            
-                  
-                  
-                  
-                  <div id="job-table">
-                  
-                    <table class="table" style="padding-top:0px;">
-                  
-                  <tbody>
-                  
-                  <tr>
-                  
-                  <td><a href="job-title-list.php?title=Teacher">Teacher</a></td>
-                  <td><a href="/job/title/distributor-staff_11111">Distributor Staff</a></td>    
-                  <td><a href="/job/title/chief-resident-engineer_8916">Chief Resident Engineer</a></td>    
-                  <td><a href="/job/title/fgdf_14911">fgdf</a></td>    
-                  <td><a href="/job/title/sales-executive-modern_17736">Sales Executive Modern</a></td>    
-                  </tr><tr><td><a href="/job/title/female-marketing-officer_3541">Female Marketing Officer</a></td>    
-                  <td><a href="/job/title/principal-director_3378">Principal/Director</a></td>    
-                  <td><a href="/job/title/suveyor_11740">Suveyor</a></td>    
-                  <td><a href="/job/title/assistant-news-editor_526">Assistant News Editor</a></td>    
-                  </tr><tr><td><a href="/job/title/urban-planner-designer-town-planner_10229">Urban Planner Designer & Town Planner</a></td>    
-                  <td><a href="/job/title/csr-tsr_3434">CSR/TSR</a></td>    
-                  <td><a href="/job/title/content-coordinator_7078">Content Coordinator</a></td>    
-                  <td><a href="/job/title/flat-catering-officer_15488">Flat Catering Officer</a></td>    
-                  </tr><tr>
-                  </tr>
-                  
-                  </tbody>
-                  
-                  </table>
-                  
-                  
-                  </div>
-                  -->
+              
                <div id="job-table">
                   <table class="table" style="padding-top:0px;">
                      <caption class="text-center" style="font-weight: bold; font-size: 23px;">Jobs by Category </caption>
@@ -397,72 +323,10 @@
                   <h3> <a class="my-success" href="calender-list.html"> Click to view more Dates</a></h3>
                </center>
             </div>
-            <div id=govt_div2 style="margin-top:5px;clear:right;">
-               <br/>
-               <iframe width="300" height="250" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-               <br/><br/>
-               <br/>
-               <br/>
-              
-               <br/><br/>
-               <script async='async' src='../www.googletagservices.com/tag/js/gpt.js'></script>
-               <script>
-                  var googletag = googletag || {};
-                  googletag.cmd = googletag.cmd || [];
-               </script>
-               <script>
-                  googletag.cmd.push(function() {
-                    googletag.defineSlot('/43651300/Paperpk', [300, 250], 'div-gpt-ad-1493978923175-0').addService(googletag.pubads());
-                    googletag.pubads().enableSingleRequest();
-                    googletag.enableServices();
-                  });
-               </script>
-               <!-- /43651300/Paperpk -->
-               <div id='div-gpt-ad-1493978923175-0' style='height:250px; width:300px;'>
-                  <script>
-                     googletag.cmd.push(function() { googletag.display('div-gpt-ad-1493978923175-0'); });
-                  </script>
-               </div>
-               <br/><br/>
-              
-               <br/><br/>
-              
-               <br/><br/><br/>
-               <div id="stickyunit">
-                  <script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
-                  <!-- Paperpk job list new design Side bar -->
-                  <ins class="adsbygoogle"
-                     style="display:inline-block;width:300px;height:600px"
-                     data-ad-client="ca-pub-6975300866830988"
-                     data-ad-slot="4717712091"></ins>
-                  <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                  </script>
-               </div>
-               <br/>
-               <br/>
-               <br/><br/>
-              
-               <br/><br/>
-               
-               <br/><br/><br/>
-            </div>
             <br/>
             <div id=clear></div>
             <h2 color=#325465>
             Jobs in Pakistan 2018</h3>
-            <p color=#325465 style="font-size:1em;"><img style="border-radius:0px;max-width:200px;width:80px;" align=left src="pk_img/paperpk-jobs-logo.png"  /> 
-               At  daily paperpk we provide all jobs in Pakistan publishes in newspaper , other companies websites or posted in FB or linked in at one place so the jobseeker dont need to visit all websites. 
-               <br/><br/>
-               We are trying to make the process of job search easier for by providing all government and private jobs ads at one website and app with all Jang job ads updated daily.
-               <br/><br/>
-               We are not related to websites like daily , jobsy.pk , paperpk-jobs.com , paper.jobs.com.pk , pakistanjobsbank.com , paperpk4u.com , dailypaperpkjobs.com , ilmkidunya.com , jobz.pk , papers.com.pk , paperpkads.pk , paperpkjobs, paperpkjobs.pk or any other website / App using the name of  or trying to copy its idea. Also we dont represent any international or Pakistani newspaper. 
-               <br/>       <br/>  
-               Paperpk provide newspaper ads with latest jobs in Pakistan from Karachi, Lahore , Islamabad and all major cities. Tenders , admissions and newspaper jobs cuttings are in scanned forms and are updated daily. On paperpkads.com , paper.pk or  you can search blog Jobs in newspapers like Jang , Dawn, Express Nawai Waqt and other today news papers. 
-               <br/><br/>
-               Daily paper advertisements are for information purpose only.  don't claim any type of copy rights or responsibility of ads. This is not the alternative of epaper or newspaper. We dont verify ads with companies those publish ads or the publisher, so be carefull at time of applying specially sharing your personal and financial information .
-               <br/> 
-            </p>
             <div id=clear></div>
             <br/>
             <div id=search_bar>
@@ -921,4 +785,5 @@
          </div>
          <div id=clear></div>
       </div>
+      
 @endsection
