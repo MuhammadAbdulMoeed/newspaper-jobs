@@ -232,4 +232,12 @@ class HomeController extends Controller
 
     }
 
+    public function userSpeciality(Request $request){
+      $cat = implode(',' , $request->categories);
+      $user = \Auth::user();
+      $user->speciality = $cat;
+      $user->save();
+      return redirect()->back();
+    }
+
 }

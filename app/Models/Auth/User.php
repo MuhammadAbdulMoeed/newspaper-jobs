@@ -77,4 +77,15 @@ class User extends Authenticatable
         'active' => 'boolean',
         'confirmed' => 'boolean',
     ];
+
+    public function explo(){
+        $explode = explode(',', $this->speciality);
+        return $explode;
+    }
+
+    public function findExplo($id){
+        $explode = explode(',', $this->speciality);
+        $array = in_array($id, $explode);
+        return $array;
+    }
 }

@@ -34,6 +34,9 @@
                                 <li class="nav-item">
                                     <a href="#detail" class="nav-link" aria-controls="password" role="tab" data-toggle="tab">Add Detail</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="#spec" class="nav-link" aria-controls="password" role="tab" data-toggle="tab">Add Speciality</a>
+                                </li>
                             @endif
                         </ul>
 
@@ -85,6 +88,21 @@
                                     </tr>
                                     </table>
                                     <input type="submit" name="submit" class="btn btn-default">
+                                    </form>
+                                </div>
+
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane fade show pt-3" id="spec" aria-labelledby="edit-tab">
+                                <div class="table-responsive">
+                                    <form method="POST" action="{{url('upload/user/speciality')}}" enctype="multipart/form-data">
+                                        {{csrf_field()}}
+                                    <select name="categories[]" multiple="multiple">
+                                        @foreach($cats as $cat)
+                                        <option value="{{$cat->id}}" @if(auth()->user()->findExplo($cat->id)) selected @endif >{{$cat->title}}</option>
+                                        @endforeach
+                                    </select>
+                                    <input type="submit" name="submit" class="btn btn-primary">
                                     </form>
                                 </div>
 

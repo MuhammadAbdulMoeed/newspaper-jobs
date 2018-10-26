@@ -11,6 +11,8 @@ use App\JobType;
 use App\Qualification;
 use App\Add;
 use App\ApplyJob;
+use App\Mail\TestMail;
+use App\Models\Auth\User;
 
 class AddsController extends Controller
 {
@@ -92,6 +94,14 @@ class AddsController extends Controller
         $adds->newspaper_piece = $path;
         $adds->rel_logo = $path1;
         $adds->save();
+        $user = User::all();
+        foreach ($user as $key => $value) {
+            $array = $value->findExplo($request->category_id);
+            if($array){
+                \Mail::to($value->email)->send(new TestMail);
+            }
+        }
+
         return redirect()->back();
     }
 
