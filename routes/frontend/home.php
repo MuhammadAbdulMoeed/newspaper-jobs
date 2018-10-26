@@ -11,6 +11,9 @@ use App\Http\Controllers\Frontend\User\DashboardController;
  * All route names are prefixed with 'frontend.'.
  */
 Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('testmail' , function(){
+\Mail::to('mashhoodr.rehman@gmail.com')->send(new App\Mail\TestMail);
+});
 Route::post('customer-update', [HomeController::class, 'updateUser'])->name('customer.update');
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
