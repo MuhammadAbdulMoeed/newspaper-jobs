@@ -138,13 +138,16 @@ class HomeController extends Controller
     }
 
     public function applyJob($id){
-      $applied_job = ApplyJob::where('user_id' , \Auth::user()->id)->where('newspaper_id' , $id)->first();
+      if(!\Auth::check()){
+        return redirect()->back();
+      }
+      $applied_job = ApplyJob::where('user_id' , \Auth::user()->id)->where('adds_id' , $id)->first();
       if($applied_job){
         return redirect()->back();
       }
       $apply_job = new ApplyJob;
       $apply_job->user_id = \Auth::user()->id;
-      $apply_job->newspaper_id = $id;
+      $apply_job->adds_id = $id;
       $apply_job->save();
       return redirect()->back();
     }
@@ -193,30 +196,38 @@ class HomeController extends Controller
       return redirect()->back();
     }
 
-    public function showCalender(){
-      $adds = Add::all();
-      $jobs = '';
-      $admissions = '';
-      $tenders = '';
-      foreach ($adds as $add) {
-        if($add->type == "jobs"){
-        $jobs->title = $add->title;
-        $job->start = $add->created_at;
-        $job->end = $add->created_at;
-        }
-        if($add->type == "tenders"){
-        $tenders->title = $add->title;
-        $tenders->start = $add->created_at;
-        $tenders->end = $add->created_at;
-        }
-        if($add->type == "admissions"){
-        $admissions->title = $add->title;
-        $admissions->start = $add->created_at;
-        $admissions->end = $add->created_at;
-        }
-      }
-      $data = ['jobs' => $jobs];
-      dd($data);
+    public function showCalenderJob(){
+      $adds = Add::where('type' , 'jobs')->groupBy(\DB::raw('Date(created_at)'))->select('created_at' , \DB::raw('count(*) as count') , 'type')->get();
+      $adds->map(function ($add) {
+        $add['title'] = $add->type . ": ".$add->count;
+        $add['start'] = $add->created_at->toDateString();
+        $add['end'] = $add->created_at->toDateString();
+        return $add;
+    });
+      return response()->json($adds);
+
+    }
+
+    public function showCalenderTender(){
+      $adds = Add::where('type' , 'tenders')->groupBy(\DB::raw('Date(created_at)'))->select('created_at' , \DB::raw('count(*) as count') , 'type')->get();
+      $adds->map(function ($add) {
+        $add['title'] = $add->type . ": ".$add->count;
+        $add['start'] = $add->created_at->toDateString();
+        $add['end'] = $add->created_at->toDateString();
+        return $add;
+    });
+      return response()->json($adds);
+
+    }
+
+    public function showCalenderAdmission(){
+      $adds = Add::where('type' , 'admissions')->groupBy(\DB::raw('Date(created_at)'))->select('created_at' , \DB::raw('count(*) as count') , 'type')->get();
+      $adds->map(function ($add) {
+        $add['title'] = $add->type . ": ".$add->count;
+        $add['start'] = $add->created_at->toDateString();
+        $add['end'] = $add->created_at->toDateString();
+        return $add;
+    });
       return response()->json($adds);
 
     }

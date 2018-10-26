@@ -62,20 +62,27 @@ $cat = App\Category::take(3)->get();
    <body>
       <div id="wrapper">
          <div id="main_container_mobile">
-            <img alt=Paperpk src="" align="left" width=180px />
-            <a><img alt="navigate-button" src="https://paperpk.com/careers/pk_img/nav_head_logo.png" align="right" width=45px style="margin:7px 14px ;" /></a>
-            <ul id=toggle_ul>
-               <li><a href="">Sign up</a></li>
-               <li><a href="">Log in</a></li>
-               <li><a href="">Employer</a></li>
-               <li><a href="">Job Seeker</a></li>
-               <li><a href="">Newspaper Jobs</a></li>
-            </ul>
-         </div>
+                <img alt="AddLogo" src="pk_img/logo.png" align="left" width="180px">
+                <a id="nav_buttonid"><img alt="navigate-button" src="{{asset('public/nav_head_logo.png')}}" align="right" width="45px" style="margin:7px 14px ;"></a>
+                
+                    <ul id="toggle_ul">
+                        @if(auth()->user())
+                  <a href="{{url('/account')}}">My Account</a>
+                  @else
+                  <a href="{{url('/register')}}">Sign up</a>
+                  <br>
+                  <a href="{{url('/login')}}">Log in</a>
+                  @endif
+                    </ul>
+            </div>
          <div id="main_container">
             <div id="menu_div">
                <div id="account_link">
-                  <a href="">Sign up</a><a href="https://paperpk.com/careers/login.php">Log in</a>
+                @if(auth()->user())
+                  <a href="{{url('/account')}}">My Account</a>
+                  @else
+                  <a href="{{url('/register')}}">Sign up</a><a href="{{url('/login')}}">Log in</a>
+                  @endif
                </div>
                <ul>
                   <li><a href=""><img src="https://paperpk.com/careers/images/home.png" height=30px /></a></li>
@@ -124,6 +131,10 @@ $cat = App\Category::take(3)->get();
       <script>
 
          $(document).ready(function(){
+
+var url1 = "{{url('showcalenderjobs')}}"
+var url2 = "{{url('showcalendertender')}}"
+var url3 = "{{url('showcalenderadmissions')}}"
             function search(){
                var news = $('#newspaper').find(":selected").text();
                var type = $('#job_type').find(":selected").text();
@@ -150,22 +161,11 @@ $cat = App\Category::take(3)->get();
     $(this).css('background-color', 'grey');
 
   },
-  events: [
-        {
-            title  : 'event1',
-            start  : '2018-10-25'
-        },
-        {
-            title  : 'event2',
-            start  : '2012-01-05',
-            end    : '2012-01-07'
-        },
-        {
-            title  : 'task',
-            start  : '2012-01-09 12:30:00',
-            allDay : false // will make the time show
-        }
-    ]
+   eventSources: [
+    url1,
+    url2,
+    url3
+  ]
 });
          
          });

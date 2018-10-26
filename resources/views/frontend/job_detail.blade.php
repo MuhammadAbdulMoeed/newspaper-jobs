@@ -17,16 +17,6 @@
             <center>
                <img id="img_path" src="{{asset('/storage/app/'.$add->newspaper_piece)}}" />
                <br/><a class="btn btn-success" style="    background-color: #019875;color:white;" href="{{url('/storage/app/'.$add->newspaper_piece)}}" target="_blank">View Full Image</a>
-               <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
-               <!-- top links -->
-               <ins class="adsbygoogle"
-                  style="display:block"
-                  data-ad-client="ca-pub-6975300866830988"
-                  data-ad-slot="9847020896"
-                  data-ad-format="link"></ins>
-               <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-               </script> 
                <div id=clear></div>
                <br/>
                <br/>
@@ -35,16 +25,6 @@
                   <legend class="scheduler-border">Job Details</legend>
                   <div class="col-xs-6">
                   <table class="table">
-                     <!--
-                        <tr>
-                            <th>Industry</th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th>Functional Area</th>
-                            <td></td>
-                        </tr>
-                        -->
                      <tr>
                         <th>Total Positions</th>
                         <td>{{$add->total_pos}}</td>
@@ -136,7 +116,7 @@
                   <table class="table pull-right">
                      <tr>
                         <th>Apply Job</th>
-                        <td><a href="{{url('/')}}">Apply job</a></td>
+                        <td><a href="{{url('apply_job/'.$add->id)}}">Apply job</a></td>
                      </tr>
                   </table>
                </div>

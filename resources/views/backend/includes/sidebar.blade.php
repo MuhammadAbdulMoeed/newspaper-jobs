@@ -172,6 +172,21 @@
                     </li>
                 </ul>
             </li>
+
+            <li class="nav-item nav-dropdown {{ active_class(Active::checkUriPattern('admin/jobs*'), 'open') }}">
+                <a class="nav-link nav-dropdown-toggle {{ active_class(Active::checkUriPattern('admin/jobs*')) }}" href="#">
+                    <i class="nav-icon icon-list"></i> Ad Management
+                </a>
+
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link {{ active_class(Active::checkUriPattern('admin/jobs')) }}" href="{{ route('admin.mgmt.create') }}">
+                            Ad Management
+                        </a>
+                    </li>
+                </ul>
+            </li>            
+
             @endif
             @if($logged_in_user->hasRole('executive'))
             <li class="nav-item nav-dropdown {{ active_class(Active::checkUriPattern('admin/jobs*'), 'open') }}">

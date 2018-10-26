@@ -152,5 +152,8 @@ Route::group([
     Route::get('exec-adds-applied' , 'AddsController@appliedAds')->name('ex.adds.applied');
     Route::get('exec-adds-status/{id}' , 'AddsController@AdsStatus')->name('ex.adds.status');
 
-    
+    // Ads Managment
+    Route::get('create-addsen' , 'AddsController@createAdd')->name('mgmt.create');
+
+
     });

@@ -28,7 +28,9 @@ Route::get('apply_job/{id}' , [HomeController::class , 'applyJob']);
 Route::get('user-scribe-news/{id}' , [HomeController::class , 'subscribeNews']);
 Route::get('user-scribe-category/{id}' , [HomeController::class , 'subscribeCate']);    
 Route::get('user-scribe-qual/{id}' , [HomeController::class , 'subscribeQual']);    
-Route::get('showcalender' , [HomeController::class , 'showCalender']);    
+Route::get('showcalenderjobs' , [HomeController::class , 'showCalenderJob']);    
+Route::get('showcalendertender' , [HomeController::class , 'showCalenderTender']);    
+Route::get('showcalenderadmissions' , [HomeController::class , 'showCalenderAdmission']);    
 
 /*
  * These frontend controllers require the user to be logged in
