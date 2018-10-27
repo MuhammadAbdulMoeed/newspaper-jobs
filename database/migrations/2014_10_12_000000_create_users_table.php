@@ -60,7 +60,6 @@ class CreateUsersTable extends Migration
             $table->string('company_description')->nullable();
             $table->string('website')->nullable();
             $table->string('sector')->nullable();
-            $table->string('speciality')->nullable();
         });
     }
 
