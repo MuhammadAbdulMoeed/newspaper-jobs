@@ -35,6 +35,10 @@ Route::get('user-scribe-qual/{id}' , [HomeController::class , 'subscribeQual']);
 Route::get('showcalenderjobs' , [HomeController::class , 'showCalenderJob']);    
 Route::get('showcalendertender' , [HomeController::class , 'showCalenderTender']);    
 Route::get('showcalenderadmissions' , [HomeController::class , 'showCalenderAdmission']);    
+Route::get('company_add/{slug}' , [HomeController::class , 'showCompanyAdd']);
+Route::get('apply_date/{slug}' , [HomeController::class , 'showDateApply']);
+Route::get('last_date/{slug}' , [HomeController::class , 'showDateLast']);
+Route::get('datetype/{slug}/{type}' , [HomeController::class , 'showDateType']);
 
 /*
  * These frontend controllers require the user to be logged in

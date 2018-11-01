@@ -69,7 +69,7 @@ $cat = App\Category::take(3)->get();
                         @if(auth()->user())
                   <a href="{{url('/account')}}">My Account</a>
                   @else
-                  <a href="{{url('/register')}}">Sign up</a>
+                  <a href="{{url('/register')}}">Job Seeker</a>
                   <br>
                   <a href="{{url('/login')}}">Log in</a>
                   @endif
@@ -81,14 +81,14 @@ $cat = App\Category::take(3)->get();
                 @if(auth()->user())
                   <a href="{{url('/account')}}">My Account</a>
                   @else
-                  <a href="{{url('/register')}}">Sign up</a><a href="{{url('/login')}}">Log in</a>
+                  <a href="{{url('/register')}}">Job Seeker</a><a href="{{url('/es-register')}}">Employee Seeker</a>
                   @endif
                </div>
                <ul>
-                  <li><a href=""><img src="https://paperpk.com/careers/images/home.png" height=30px /></a></li>
+                  <li><a href="{{url('/')}}"><img src="https://paperpk.com/careers/images/home.png" height=30px /></a></li>
                   @if($cat)
                   @foreach($cat as $ca)
-                  <li><a href="">{{$ca->title}}</a></li>
+                  <li><a href="{{url('category/'.$ca->id)}}">{{$ca->title}}</a></li>
                   @endforeach
                   @endif
                </ul>
@@ -154,18 +154,15 @@ var url3 = "{{url('showcalenderadmissions')}}"
         center: 'title',
         right: 'month,agendaWeek,agendaDay'
     },
-  dayClick: function(date, jsEvent, view) {
-
-    alert('Clicked on: ' + date.format());
-    // change the day's background color just for fun
-    $(this).css('background-color', 'grey');
-
-  },
    eventSources: [
     url1,
     url2,
     url3
-  ]
+  ],
+  eventClick: function (calEvent, jsEvent, view) {
+    console.log('html' , calEvent)
+    window.location = calEvent.html;
+},
 });
          
          });

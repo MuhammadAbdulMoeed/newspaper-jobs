@@ -153,7 +153,7 @@
                      <tbody>
                         @foreach($cities as $city)
                         <tr>
-                           <td>{{$city->title}}</td>
+                           <td><a href="{{url('city/'.$city->id)}}">{{$city->title}}</a></td>
                            <td><a href="{{url('/city/'.$city->id)}}">View</a></td>
                         </tr>
                         @endforeach
@@ -251,10 +251,10 @@
         @foreach($jobs as $job)
         <tr>
         <td>{{$job->title}}</td>
-        <td>{{$job->apply_by}}</td>
-        <td>{{$job->last_date}}</td>
-        <td>{{$job->getCity->title}}</td>
-        <td><a href="#">View</a></td>
+        <td><a href="{{url('apply_date/'.$job->apply_by)}}"> {{$job->apply_by}}</a></td>
+        <td><a href="{{url('last_date/'.$job->last_date)}}">{{$job->last_date}}</a></td>
+        <td><a href="{{url('city/'.$job->getCity->id)}}">{{$job->getCity->title}}</a></td>
+        <td><a href="{{url('detail_page/'.$job->id)}}">View</a></td>
          </tr>
         @endforeach
      </tbody>
@@ -279,8 +279,8 @@
         <td>{{$job->title}}</td>
         <td>{{$job->apply_by}}</td>
         <td>{{$job->last_date}}</td>
-        <td>{{$job->getCity->title}}</td>
-        <td><a href="#">View</a></td>
+        <td><a href="{{url('city/'.$job->getCity->id)}}">{{$job->getCity->title}}</a></td>
+        <td><a href="{{url('detail_page/'.$job->id)}}">View</a></td>
          </tr>
         @endforeach
      </tbody>
@@ -304,8 +304,8 @@
         <td>{{$job->title}}</td>
         <td>{{$job->apply_by}}</td>
         <td>{{$job->last_date}}</td>
-        <td>{{$job->getCity->title}}</td>
-        <td><a href="#">View</a></td>
+        <td><a href="{{url('city/'.$job->getCity->id)}}">{{$job->getCity->title}}</a></td>
+        <td><a href="{{url('detail_page/'.$job->id)}}">View</a></td>
          </tr>
         @endforeach
      </tbody>

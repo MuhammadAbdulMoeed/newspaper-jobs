@@ -123,7 +123,7 @@ p,h1,h2,h3,h4,h5,h6,li{
 }
 
 #show-ad-page-job-details-div {
-    background: url("../pk_img/background-on-ad-back.png") repeat;
+    background: url("public/background-on-ad-back.png") repeat;
     color: #325465;
 }
 #login-jobseeker-page-login{

@@ -56,6 +56,14 @@ class RegisterController extends Controller
             ->withSocialiteLinks((new Socialite)->getSocialLinks());
     }
 
+    public function showEmployeeRegistrationForm()
+    {
+        abort_unless(config('access.registration'), 404);
+
+        return view('frontend.auth.exe-register')
+            ->withSocialiteLinks((new Socialite)->getSocialLinks());
+    }
+
     /**
      * @param RegisterRequest $request
      *
@@ -63,6 +71,38 @@ class RegisterController extends Controller
      * @throws \Throwable
      */
     public function register(Request $request)
+    {
+        $user = User::where('email' , '=' , $request->email)->first();
+        if($user){
+            return redirect()->back()->withFlashDanger('sorry Email was already found');
+        }
+        $user = $this->userRepository->create($request->all());
+
+        auth()->login($user);
+        // event(new UserRegistered($user));
+
+        return redirect()->back();
+
+        // If the user must confirm their email or their account requires approval,
+        // create the account but don't log them in.
+        if (config('access.users.confirm_email') || config('access.users.requires_approval')) {
+            event(new UserRegistered($user));
+
+            return redirect($this->redirectPath())->withFlashSuccess(
+                config('access.users.requires_approval') ?
+                    __('exceptions.frontend.auth.confirmation.created_pending') :
+                    __('exceptions.frontend.auth.confirmation.created_confirm')
+            );
+        } else {
+            auth()->login($user);
+
+            event(new UserRegistered($user));
+
+            return redirect($this->redirectPath());
+        }
+    }
+
+    public function employeeRegistrationForm(Request $request)
     {
         $user = User::where('email' , '=' , $request->email)->first();
         if($user){

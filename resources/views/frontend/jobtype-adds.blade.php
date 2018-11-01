@@ -63,7 +63,7 @@
                   @foreach($newspaper as $news)
                   <tr>
                      <td>{{$news->title}}</td>
-                     <td>{{$news->getCity->title}}</td>
+                     <td><a href="{{url('city/'.$news->getCity->id)}}">{{$news->getCity->title}}</a></td>
                      <td>{{$news->apply_by}}</td>
                      <td>{{$news->last_date}}</td>
                      @if($news->created_by == "executive")

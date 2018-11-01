@@ -89,6 +89,8 @@
                             </div><!--col-->
                         </div><!--row-->
 
+                        <input type="hidden" name="emploe_status" value="1">
+
                         @if(config('access.captcha.registration'))
                             <div class="row">
                                 <div class="col">

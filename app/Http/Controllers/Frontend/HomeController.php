@@ -202,6 +202,7 @@ class HomeController extends Controller
         $add['title'] = $add->type . ": ".$add->count;
         $add['start'] = $add->created_at->toDateString();
         $add['end'] = $add->created_at->toDateString();
+        $add['html'] = url('datetype/').'/'.$add->created_at->toDateString().'/'.'jobs';
         return $add;
     });
       return response()->json($adds);
@@ -214,6 +215,7 @@ class HomeController extends Controller
         $add['title'] = $add->type . ": ".$add->count;
         $add['start'] = $add->created_at->toDateString();
         $add['end'] = $add->created_at->toDateString();
+        $add['html'] = url('datetype/').'/'.$add->created_at->toDateString().'/'.'tenders';
         return $add;
     });
       return response()->json($adds);
@@ -226,6 +228,7 @@ class HomeController extends Controller
         $add['title'] = $add->type . ": ".$add->count;
         $add['start'] = $add->created_at->toDateString();
         $add['end'] = $add->created_at->toDateString();
+        $add['html'] = url('datetype/').'/'.$add->created_at->toDateString().'/'.'admissions';
         return $add;
     });
       return response()->json($adds);
@@ -238,6 +241,42 @@ class HomeController extends Controller
       $user->speciality = $cat;
       $user->save();
       return redirect()->back();
+    }
+
+    public function showCompanyAdd($slug){
+
+      $newspaper = Add::where('company_name' , $slug)->get();
+      $newspapers = Newspaper::all();
+      return view('frontend.company-add', compact('newspaper' , 'newspapers'));
+    
+    }
+
+    public function showDateLast($date){
+
+      $newspaper = Add::whereDate('last_date' , $date)->get();
+      $newspapers = Newspaper::all();
+      return view('frontend.last-date', compact('newspaper' , 'newspapers'));
+    
+    }
+
+    public function showDateApply($date){
+
+      $newspaper = Add::whereDate('apply_by' , $date)->get();
+      $newspapers = Newspaper::all();
+      return view('frontend.apply-date-ad', compact('newspaper' , 'newspapers'));
+    
+    }
+
+    public function showDateType($date , $type){
+
+      $newspaper = Add::where('type' , $type)
+        ->where(function ($query) use ($date){
+          $query->whereDate('created_at' , $date)->orWhereDate('last_date' , $date)->orWhereDate('apply_by' , $date);
+        })
+        ->with('getCity')->get();
+      $newspapers = Newspaper::all();
+      return view('frontend.type-date-add', compact('newspaper' , 'newspapers'));
+    
     }
 
 }

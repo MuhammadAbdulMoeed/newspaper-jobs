@@ -53,6 +53,8 @@ Route::group(['namespace' => 'Auth', 'as' => 'auth.'], function () {
         if (config('access.registration')) {
             Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
             Route::post('register', [RegisterController::class, 'register'])->name('register.post');
+            Route::get('es-register', [RegisterController::class, 'showEmployeeRegistrationForm'])->name('ex.register');
+            Route::post('es-register', [RegisterController::class, 'employeeRegistrationForm'])->name('ex.register');
         }
 
         // Confirm Account Routes
