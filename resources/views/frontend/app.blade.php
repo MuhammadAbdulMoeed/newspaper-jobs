@@ -127,6 +127,7 @@ $cat = App\Category::take(3)->get();
       <script src="{{asset('js/includes/my_js.js')}}"></script>
       <script src="{{asset('js/includes/moment.min.js')}}"></script>
       <script src="{{asset('js/includes/fullcalendar.min.js')}}"></script>
+      <script src="{{url('js/includes/jquery.validate.js')}}"></script>
       @yield('js-script')
       <script>
 

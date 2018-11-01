@@ -13,7 +13,7 @@ Adds Management
 @endsection
 
 @section('content')
-    <form class="form-horizontal" action="{{route('admin.adds.store')}}" method="POST" enctype="multipart/form-data">
+    <form class="form-horizontal" id="loginForm" action="{{route('admin.adds.store')}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="card">
             <div class="card-body">

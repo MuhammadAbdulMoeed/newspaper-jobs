@@ -55,5 +55,22 @@
     {!! script(mix('js/vendor.js')) !!}
     {!! script(mix('js/backend.js')) !!}
     @stack('after-scripts')
+    <script src="{{url('js/includes/jquery.validate.js')}}"></script>
+    <script type="text/javascript">
+        $("#loginForm").validate({
+   rules: {
+   
+   adds_title: {
+     required: true,
+     minlength: 6
+   }
+   },
+   messages: {
+   adds_title: {
+     required: "Please provide title"
+   }
+}
+   });
+    </script>
 </body>
 </html>
