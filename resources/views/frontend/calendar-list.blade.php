@@ -34,12 +34,11 @@
                   </div>
                </div>
                <div id="newspaper">
-                  <img alt="Newspapers_logo" src="pk_img/star_logo.png"  align=left  />
                   <p>Newspaper Jobs Ads</p>
                   <div id=clear></div>
                   <br/>
-                 @foreach($newspapers as $newspaper)
-               <a href=><img alt="The News" src="pk_img/thenews.png"  /></a>
+                @foreach($newspapers as $newspaper)
+               <a href=><img alt="The News" src="{{asset('/storage/app/'.$newspaper->logo)}}"  /></a>
                @endforeach
                </div>
                
