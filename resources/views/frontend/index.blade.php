@@ -10,7 +10,7 @@
                            <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><b><span style="color:#325465;"><br/>Date - Day<br/>&nbsp;</b></span></td>
                            <!-- <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><img alt="Date - Day" src="images/date.jpg" /></td>  -->
                            @foreach($newspapers as $newspaper)
-                           <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><a href="" ><img alt="Jang" src="{{asset('public/download.png')}}" width="50" height="50" /></a></td>
+                           <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><a href="" ><img alt="Jang" src="{{asset('/storage/app/'.$newspaper->logo)}}" width="50" height="50" /></a></td>
                            @endforeach
                         </tr>
                          <tr>
@@ -129,14 +129,9 @@
                <br/>
                <p>Latest Newspaper Ads</p>
                <br/>
-               <a href=><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
-               <a href=><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
-               <a href=><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
-               <a href=><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
-               <a href=><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
-               <a href=><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
-               <a href=><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
-               <a href=><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
+               @foreach($newspapers as $newspaper)
+               <a href=><img alt="The News" src="{{asset('/storage/app/'.$newspaper->logo)}}"  /></a>
+               @endforeach
             </div>
             <div id="govt_div2" style="margin-top:5px;clear:right;">
 

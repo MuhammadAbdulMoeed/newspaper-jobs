@@ -64,8 +64,8 @@
                   <tr>
                      <td>{{$news->title}}</td>
                      <td><a href="{{url('city/'.$news->getCity->id)}}">{{$news->getCity->title}}</a></td>
-                     <td><a href="{{url('apply_date/'.$job->apply_by)}}">{{$news->apply_by}}</a></td>
-                     <td><a href="{{url('apply_date/'.$job->apply_by)}}">{{$news->last_date}}</a></td>
+                     <td><a href="{{url('apply_date/'.$news->apply_by)}}">{{$news->apply_by}}</a></td>
+                     <td><a href="{{url('apply_date/'.$news->apply_by)}}">{{$news->last_date}}</a></td>
                      @if($news->created_by == "executive")
                      <td><a href="{{url('apply_job/'.$news->id)}}">Apply Now</a></td>
                      @else
@@ -84,12 +84,9 @@
          <div id=clear></div>
          <br/>
          
-         <a href=thenews-newspaper-jobs.html><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
-         <a href=thenews-newspaper-jobs.html><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
-         <a href=thenews-newspaper-jobs.html><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
-         <a href=thenews-newspaper-jobs.html><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
-         <a href=thenews-newspaper-jobs.html><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
-         <a href=thenews-newspaper-jobs.html><img alt="The News" src="{{asset('public/download.png')}}"  /></a>
+          @foreach($newspapers as $newspaper)
+               <a href=><img alt="The News" src="{{asset('/storage/app/'.$newspaper->logo)}}"  /></a>
+               @endforeach
       </div>
       <div id=govt_div2 style="margin-top:5px;clear:right;">
          <a href=""><img src="{{asset('public/cv.jpg')}}"/></a>
