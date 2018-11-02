@@ -64,8 +64,8 @@
                   <tr>
                      <td>{{$news->title}}</td>
                      <td><a href="{{url('city/'.$news->getCity->id)}}">{{$news->getCity->title}}</a></td>
-                     <td>{{$news->apply_by}}</td>
-                     <td>{{$news->last_date}}</td>
+                     <td><a href="{{url('apply_date/'.$job->apply_by)}}">{{$news->apply_by}}</a></td>
+                     <td><a href="{{url('last_date/'.$job->last_date)}}">{{$news->last_date}}</a></td>
                      @if($news->created_by == "executive")
                      <td><a href="{{url('apply_job/'.$news->id)}}">Apply Now</a></td>
                      @else

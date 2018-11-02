@@ -15,6 +15,20 @@
                         </tr>
                          <tr>
                            <?php
+                           $date = \Carbon\Carbon::today();
+                           ?>
+                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->toDateString()}}<br/>{{\Carbon\Carbon::today()->format('l')}}</b></span> </td>
+                        @foreach($newspapers as $newspaper)
+                        <td valign="top" class="Newspaper_border">
+                        <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
+                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Admissions</a><br/>
+                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->toDateString())}}" @else href="#" @endif>Tenders</a>
+                        </td>                      
+                        @endforeach         
+                        </tr>
+                         <tr>
+                           <?php
                            $date = \Carbon\Carbon::today()->subDays('1');
                            ?>
                         <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->toDateString()}}<br/>{{\Carbon\Carbon::today()->subDays('1')->format('l')}}</b></span> </td>
@@ -277,8 +291,8 @@
         @foreach($tenders as $job)
         <tr>
         <td>{{$job->title}}</td>
-        <td>{{$job->apply_by}}</td>
-        <td>{{$job->last_date}}</td>
+        <td><a href="{{url('apply_date/'.$job->apply_by)}}">{{$job->apply_by}}</a></td>
+        <td><a href="{{url('last_date/'.$job->last_date)}}">{{$job->last_date}}</a></td>
         <td><a href="{{url('city/'.$job->getCity->id)}}">{{$job->getCity->title}}</a></td>
         <td><a href="{{url('detail_page/'.$job->id)}}">View</a></td>
          </tr>
@@ -302,8 +316,8 @@
         @foreach($admissions as $job)
         <tr>
         <td>{{$job->title}}</td>
-        <td>{{$job->apply_by}}</td>
-        <td>{{$job->last_date}}</td>
+        <td><a href="{{url('apply_date/'.$job->apply_by)}}">{{$job->apply_by}}</a></td>
+        <td><a href="{{url('last_date/'.$job->last_date)}}">{{$job->last_date}}</a></td>
         <td><a href="{{url('city/'.$job->getCity->id)}}">{{$job->getCity->title}}</a></td>
         <td><a href="{{url('detail_page/'.$job->id)}}">View</a></td>
          </tr>
