@@ -57,18 +57,43 @@
     @stack('after-scripts')
     <script src="{{url('js/includes/jquery.validate.js')}}"></script>
     <script type="text/javascript">
-        $("#loginForm").validate({
+        $.validator.addMethod("valueNotEquals", function(value, element, arg){
+  return arg != value;
+ }, "Value must not equal arg.");
+        $.validator.addMethod('filesize', function(value, element, param) {
+    // param = size (in bytes) 
+    // element = element to validate (<input>)
+    // value = value of the element (file name)
+    return this.optional(element) || (element.files[0].size <= param) 
+});
+
+        $("#addForm").validate({
    rules: {
    
    adds_title: {
      required: true,
      minlength: 6
-   }
+   },
+   newspaper_id: { valueNotEquals: "0" },
+   qualification_id: { valueNotEquals: "0" },
+   city_id: { valueNotEquals: "0" },
+   category_id: { valueNotEquals: "0" },
+   job_type_id: { valueNotEquals: "0" },
+   newspaper_piece: { required: true, extension: "png|jpe?g|gif", filesize: 1048576  },
+   rel_logo: { required: true, extension: "png|jpe?g|gif", filesize: 1048576  }
    },
    messages: {
    adds_title: {
      required: "Please provide title"
-   }
+   },
+   newspaper_id: { valueNotEquals: "Please select NewsPaper" },
+   qualification_id: { valueNotEquals: "Please select Qualification" },
+   city_id: { valueNotEquals: "Please select City" },
+   category_id: { valueNotEquals: "Please select Category" },
+   job_type_id: { valueNotEquals: "Please select Job Type" },
+   job_type_id: { valueNotEquals: "Please select Job Type" },
+   newspaper_piece: "Please Select File & File must be JPG, GIF or PNG, less than 1MB",
+   rel_logo: "Please Select File & File must be JPG, GIF or PNG, less than 1MB"
 }
    });
     </script>
