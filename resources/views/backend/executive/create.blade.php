@@ -13,7 +13,7 @@ Adds Management
 @endsection
 
 @section('content')
-    <form class="form-horizontal" action="{{route('admin.ex.adds.store')}}" method="POST" enctype="multipart/form-data">
+    <form class="form-horizontal" id="addForm" action="{{route('admin.ex.adds.store')}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="card">
             <div class="card-body">
@@ -42,7 +42,7 @@ Adds Management
 
                             <div class="col-md-10">
                                 <select name="newspaper_id" class="form-control">
-                                    <option>Select NewsPaper</option>
+                                    <option value="0">Select NewsPaper</option>
                                     @foreach($newspaper as $data)
                                     <option value="{{$data->id}}">{{$data->title}}</option>
                                     @endforeach
@@ -54,7 +54,7 @@ Adds Management
 
                             <div class="col-md-10">
                                 <select name="qualification_id" class="form-control">
-                                    <option>Select Qualification</option>
+                                    <option value="0">Select Qualification</option>
                                     @foreach($qualification as $data)
                                     <option value="{{$data->id}}">{{$data->title}}</option>
                                     @endforeach
@@ -66,7 +66,7 @@ Adds Management
 
                             <div class="col-md-10">
                                 <select name="city_id" class="form-control">
-                                    <option value="null">Select City</option>
+                                    <option value="0">Select City</option>
                                     @foreach($city as $data)
                                     <option value="{{$data->id}}">{{$data->title}}</option>
                                     @endforeach
@@ -78,7 +78,7 @@ Adds Management
 
                             <div class="col-md-10">
                                 <select name="category_id" class="form-control">
-                                    <option>Select Category</option>
+                                    <option value="0">Select Category</option>
                                     @foreach($category as $data)
                                     <option value="{{$data->id}}">{{$data->title}}</option>
                                     @endforeach
@@ -90,7 +90,7 @@ Adds Management
 
                             <div class="col-md-10">
                                 <select name="job_type_id" class="form-control">
-                                    <option>Select Job Type</option>
+                                    <option value="0">Select Job Type</option>
                                     @foreach($jobType as $data)
                                     <option value="{{$data->id}}">{{$data->job_type_title}}</option>
                                     @endforeach
