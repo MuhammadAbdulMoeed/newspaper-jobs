@@ -106,7 +106,8 @@ class UserRepository extends BaseRepository
                 /*
                  * Add the default site role to the new user
                  */
-                if($data['emploe_status']){
+
+                if(array_key_exists('emploe_status',$data)){
                 $user->assignRole('executive');
                 }
                 else{
