@@ -262,7 +262,7 @@
         <td>{{$job->title}}</td>
         <td><a href="{{url('apply_date/'.$job->apply_by)}}"> {{$job->apply_by}}</a></td>
         <td><a href="{{url('last_date/'.$job->last_date)}}">{{$job->last_date}}</a></td>
-        <td><a href="{{url('city/'.$job->getCity->id)}}">{{$job->getCity->title}}</a></td>
+        <td>@if($job->getCity) <a href="{{url('city/'.$job->getCity->id)}}">{{$job->getCity->title}}</a>@endif</td>
         <td><a href="{{url('detail_page/'.$job->id)}}">View</a></td>
          </tr>
         @endforeach
