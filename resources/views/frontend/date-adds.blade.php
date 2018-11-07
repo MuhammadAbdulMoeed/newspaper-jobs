@@ -37,13 +37,13 @@
       </div>
       <div id=clear></div>
       <div id="single-paper-page-banner">
-         <h2 itemprop="name">Express Newspaper Jobs  </h2>
+         <h2 itemprop="name">{{$paper->title}}</h2>
          <div id=clear></div>
           <a href="{{url('user-scribe-news/'.$paper->id)}}">Subscribe</a>
       </div>
       <div id="featured_latest_job">
-         <p>Express Jobs Ads 
-         <p style="font-size:1em; color:black; font-weight: 100;">Latest Express newspaper jobs ads today and archive see all carrer classifieds form Daily Express epaper at one place . Express jobs are updated daily and provided here with company name and job title.  </p>
+         <p>{{$paper->title}} 
+         <p style="font-size:1em; color:black; font-weight: 100;">{{$paper->title}}</p>
          <div id=clear></div>
          <div id="job-table">
             <table class="table">
@@ -51,8 +51,7 @@
                   <tr>
                      <th>Title</th>
                      <th>City</th>
-                     <th>Apply Date</th>
-                     <th>Last Date</th>
+                     <th>Date</th>
                      <th>Apply Now</th>
                   </tr>
                </thead>
@@ -61,9 +60,7 @@
                   <tr>
                      <td>{{$news->title}}</td>
                      <td><a href="{{url('city/'.$news->getCity->id)}}">{{$news->getCity->title}}</a></td>
-                     <td><a href="{{url('apply_date/'.$news->apply_by)}}">
-{{$news->apply_by}}</a></td>
-                     <td><a href="{{url('last_date/'.$news->last_date)}}">{{$news->last_date}}</a></td>
+<td><a href="{{url('apply_date/'.$news->created_at->toDateString())}}">{{$news->created_at->toDateString()}}</a></td>
                      @if($news->created_by == "executive")
                      <td><a href="{{url('apply_job/'.$news->id)}}">Apply Now</a></td>
                      @else
@@ -97,9 +94,8 @@
          <br/>
          <br/>
       <div id=clear></div>
-      <h3 color=#019875>About Express Jobs / Careers:</h3>
-      <p itemprop="description" color=#019875 style="font-size:1em;"><img itemprop="primaryImageOfPage" style="border-radius:0px;max-width:200px;width:80px;" align=left src="pk_img/express.png"  /> Express newspaper job ads printed in all edition of daily Express tribune and its epaper website express.com.pk . We at PaperPk believes that all rights are reserved by Express and the advertiser company for the images scanned or saved and will be removed if both company and Express asked us to do so.
-         <br/><br/> Express newspaper mostly covers abroad jobs or manpower or overseas employment companies ads . Paperpk covers all those jobs ads in Todat newspaper as weel as complete previous archive.
+      <h3 color=#019875>About {{$paper->title}}:</h3>
+      <p itemprop="description" color=#019875 style="font-size:1em;"><img itemprop="primaryImageOfPage" style="border-radius:0px;max-width:200px;width:80px;" align=left src="{{asset('/storage/app/'.$paper->logo)}}"  /> {{$paper->description}}
       </p>
       <div id=clear></div>
    </div>

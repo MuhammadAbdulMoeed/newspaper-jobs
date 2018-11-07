@@ -49,6 +49,20 @@ Cities Management
 
                     </div><!--col-->
                 </div><!--row-->
+
+
+                <div class="row mt-4 mb-4">
+                    <div class="col">
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Categories Display</label>
+
+                            <div class="col-md-10">
+                                <input type="checkbox" name="cat">
+                            </div><!--col-->
+                        </div><!--form-group-->
+
+                    </div><!--col-->
+                </div>
             </div><!--card-body-->
 
             <div class="card-footer clearfix">

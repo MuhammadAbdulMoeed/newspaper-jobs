@@ -63,10 +63,11 @@ class HomeController extends Controller
         ->where(function ($query) use ($date){
           $query->whereDate('created_at' , $date)->orWhereDate('last_date' , $date)->orWhereDate('apply_by' , $date);
         })
+        ->with('getNewsPaper')
         ->with('getCity')->get();
         $paper = Newspaper::where('slug' , $slug)->first();
         $newspapers = Newspaper::all();
-        return view('frontend.date-adds' , compact('paper' , 'newspaper' , 'newspapers'));
+        return view('frontend.date-adds' , compact('paper' , 'newspaper' , 'newspapers' , 'slug'));
     }
     public function jobType($id){
         $newspaper = Add::where('job_type_id' , $id)->get();
@@ -92,8 +93,8 @@ class HomeController extends Controller
     }
     public function detailPage($id){
         $add = Add::with('getCity' , 'getNewsPaper' , 'getCategory', 'getJobType' , 'getQualification')->where('id' , $id)->first();
-        // dd($add);
-        return view('frontend.job_detail' , compact('add'));
+        $rel = Add::select('id' , 'title')->where('category_id' , $add->category_id)->take(8)->get();
+        return view('frontend.job_detail' , compact('add' , 'rel'));
     }
     public function uploadCv(Request $request){
         $file = $request->file('file');
@@ -261,7 +262,7 @@ class HomeController extends Controller
 
     public function showDateApply($date){
 
-      $newspaper = Add::whereDate('apply_by' , $date)->get();
+      $newspaper = Add::whereDate('created_at' , $date)->get();
       $newspapers = Newspaper::all();
       return view('frontend.apply-date-ad', compact('newspaper' , 'newspapers'));
     

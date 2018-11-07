@@ -39,6 +39,12 @@ class CategoriesController extends Controller
     {
         $category = new Category;
         $category->title = $request->category_title;
+        if($request->cat == "on"){
+            $category->status = '1';
+        }
+        else{
+            $category->status = '0';
+        }
         $category->save();
         return redirect()->back();
     }

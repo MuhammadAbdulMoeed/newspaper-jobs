@@ -60,6 +60,14 @@ Cities Management
                             </div><!--col-->
                         </div>
 
+                         <div class="form-group row">
+                            <label class="col-md-2 form-control-label">NewsPaper Description</label>
+
+                            <div class="col-md-10">
+                                <textarea placeholder="Description" name="desc"></textarea>
+                            </div><!--col-->
+                        </div>
+
                         <div class="form-group row">
                             <label class="col-md-2 form-control-label">Newpaper Logo</label>
 

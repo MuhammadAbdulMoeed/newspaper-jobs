@@ -20,6 +20,7 @@ class CreateNewspapersTable extends Migration
             $table->string('founded_by');
             $table->string('logo')->nullable();
             $table->string('slug')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

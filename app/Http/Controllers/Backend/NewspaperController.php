@@ -52,6 +52,7 @@ class NewspaperController extends Controller
         $newspaper->launch_date = $request->launch_date;
         $newspaper->slug = $request->slug;
         $newspaper->logo = $path;
+        $newspaper->description = $request->desc;
         $newspaper->save();
         return redirect()->back();
     }
@@ -107,6 +108,7 @@ class NewspaperController extends Controller
         $newspaper->founded_by = $request->founded_by;
         $newspaper->launch_date = $request->launch_date;
         $newspaper->slug = $request->slug;
+        $newspaper->description = $request->desc;
         $newspaper->save();
         return redirect()->back();
     }

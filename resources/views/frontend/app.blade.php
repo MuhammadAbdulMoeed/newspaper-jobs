@@ -1,5 +1,5 @@
 <?php
-$cat = App\Category::take(3)->get();
+$cat = App\Category::where('status' , '1')->get();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="https://www.w3.org/1999/xhtml" lang="en">
@@ -144,7 +144,17 @@ var url3 = "{{url('showcalenderadmissions')}}"
 
             }
          
-            $('#calendar2').fullCalendar();
+            $('#calendar2').fullCalendar({
+              header: {
+        left: '',
+        center: '',
+        right: ''
+    },
+              dayClick: function(date, jsEvent, view) {
+    window.location = "{{url('apply_date/')}}"+'/'+date.format()
+
+  }
+            });
              $("#m-btn").click(function(){
                  $("#s-h").toggle('slow');
          
