@@ -98,7 +98,7 @@ class AddsController extends Controller
         foreach ($user as $key => $value) {
             $array = $value->findExplo($request->category_id);
             if($array){
-                \Mail::to($value->email)->send(new TestMail);
+                // \Mail::to($value->email)->send(new TestMail);
             }
         }
 
