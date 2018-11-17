@@ -20,6 +20,7 @@ Route::post('contact/send', [ContactController::class, 'send'])->name('contact.s
 Route::get('calendar-view' , [HomeController::class, 'calendarView'])->name('calendar.view');
 Route::get('search/{slug}/{type}/{date}' ,  [HomeController::class, 'viewSlug']);
 Route::get('jobtype/{id}' , [HomeController::class, 'jobType']);
+Route::get('newspaper/{id}' , [HomeController::class, 'NewspaperJobs']);
 Route::get('city/{id}' , [HomeController::class, 'cityAdds']);
 Route::get('qualification/{id}' , [HomeController::class, 'QualificationAdds']);
 Route::get('category/{id}' , [HomeController::class, 'CategoryAdds']);

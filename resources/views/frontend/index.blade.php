@@ -1,5 +1,39 @@
 @extends('frontend.app')
 @section('content')
+
+        <div id="thumbnail-slider">
+            <div class="inner">
+                <ul>
+                    
+                    @foreach($cities as $city)
+                    <li>
+                     <a href="{{url('city/'.$city->id)}}">
+                      <div class="container">
+                        <span class="thumb" style="background-image:url({{asset('/storage/app/'.$city->logo)}})"></span>
+                        <p style="font-size: 10px;display:block;
+        position:absolute;
+        top:7px;
+        right:8px;
+        font:bold 9px/18px Arial;
+        color:white;
+        width:60px;
+        height:18px;
+        border:1px solid rgba(255,255,255,0.4);
+        background-color:rgba(0,0,0,0.5);
+        z-index:2;
+        cursor:pointer;        
+        text-align:center;">{{$city->title}}</p>
+                                              </div>
+                                            </a>
+                    </li>
+                    @endforeach
+                    
+                </ul>
+            </div>
+        
+
+        
+    </div>
         <div id=wrapper_total>
             <div id="navigate">
                <div style="width: 100%;">
@@ -9,20 +43,20 @@
                            <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><b><span style="color:#325465;"><br/>Date - Day<br/>&nbsp;</b></span></td>
                            <!-- <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><img alt="Date - Day" src="images/date.jpg" /></td>  -->
                            @foreach($newspapers as $newspaper)
-                           <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><a href="" ><img alt="Jang" src="{{asset('/storage/app/'.$newspaper->logo)}}" width="50" height="50" /></a></td>
+                           <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><a href="{{url('newspaper/'.$newspaper->id)}}" ><img alt="Jang" src="{{asset('/storage/app/'.$newspaper->logo)}}" width="50" height="50" /></a></td>
                            @endforeach
                         </tr>
                          <tr>
                            <?php
                            $date = \Carbon\Carbon::today();
                            ?>
-                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->toDateString()}}<br/>{{\Carbon\Carbon::today()->format('l')}}</b></span> </td>
+                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->format('d-m-Y')}}<br/>{{\Carbon\Carbon::today()->format('l')}}</b></span> </td>
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->toDateString())}}" @else href="#" @endif>Tenders</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Admissions</a><br/>
+                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->format('d-m-Y'))}}" @else href="#" @endif>Tenders</a>
                         </td>                      
                         @endforeach         
                         </tr>
@@ -30,13 +64,13 @@
                            <?php
                            $date = \Carbon\Carbon::today()->subDays('1');
                            ?>
-                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->toDateString()}}<br/>{{\Carbon\Carbon::today()->subDays('1')->format('l')}}</b></span> </td>
+                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->format('d-m-Y')}}<br/>{{\Carbon\Carbon::today()->subDays('1')->format('l')}}</b></span> </td>
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->toDateString())}}" @else href="#" @endif>Tenders</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Admissions</a><br/>
+                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->format('d-m-Y'))}}" @else href="#" @endif>Tenders</a>
                         </td>                      
                         @endforeach         
                         </tr>
@@ -44,13 +78,13 @@
                            <?php
                            $date = \Carbon\Carbon::today()->subDays('2');
                            ?>
-                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->toDateString()}}<br/>{{\Carbon\Carbon::today()->subDays('2')->format('l')}}</b></span> </td>
+                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->format('d-m-Y')}}<br/>{{\Carbon\Carbon::today()->subDays('2')->format('l')}}</b></span> </td>
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->toDateString())}}" @else href="#" @endif>Tenders</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Admissions</a><br/>
+                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->format('d-m-Y'))}}" @else href="#" @endif>Tenders</a>
                         </td>                      
                         @endforeach         
                         </tr>
@@ -58,13 +92,13 @@
                            <?php
                            $date = \Carbon\Carbon::today()->subDays('3');
                            ?>
-                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->toDateString()}}<br/>{{\Carbon\Carbon::today()->subDays('3')->format('l')}}</b></span> </td>
+                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->format('d-m-Y')}}<br/>{{\Carbon\Carbon::today()->subDays('3')->format('l')}}</b></span> </td>
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link"@if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->toDateString())}}" @else href="#" @endif>Tenders</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"@if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Admissions</a><br/>
+                        <a  rel="nofollow"  id="tender-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->format('d-m-Y'))}}" @else href="#" @endif>Tenders</a>
                         </td>                      
                         @endforeach         
                         </tr>
@@ -72,13 +106,13 @@
                            <?php
                            $date = \Carbon\Carbon::today()->subDays('4');
                            ?>
-                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->toDateString()}}<br/>{{\Carbon\Carbon::today()->subDays('4')->format('l')}}</b></span> </td>
+                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->format('d-m-Y')}}<br/>{{\Carbon\Carbon::today()->subDays('4')->format('l')}}</b></span> </td>
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->toDateString())}}" @else href="#" @endif>Tenders</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Admissions</a><br/>
+                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->format('d-m-Y'))}}" @else href="#" @endif>Tenders</a>
                         </td>                      
                         @endforeach         
                         </tr>
@@ -86,13 +120,13 @@
                            <?php
                            $date = \Carbon\Carbon::today()->subDays('5');
                            ?>
-                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->toDateString()}}<br/>{{\Carbon\Carbon::today()->subDays('5')->format('l')}}</b></span> </td>
+                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->format('d-m-Y')}}<br/>{{\Carbon\Carbon::today()->subDays('5')->format('l')}}</b></span> </td>
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->toDateString())}}" @else href="#" @endif>Tenders</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Admissions</a><br/>
+                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->format('d-m-Y'))}}" @else href="#" @endif>Tenders</a>
                         </td>                      
                         @endforeach         
                         </tr>
@@ -100,13 +134,13 @@
                            <?php
                            $date = \Carbon\Carbon::today()->subDays('6');
                            ?>
-                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->toDateString()}}<br/>{{\Carbon\Carbon::today()->subDays('6')->format('l')}}</b></span> </td>
+                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->format('d-m-Y')}}<br/>{{\Carbon\Carbon::today()->subDays('6')->format('l')}}</b></span> </td>
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Admissions</a><br/>
-                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->toDateString())}}" @else href="#" @endif>Tenders</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Admissions</a><br/>
+                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->format('d-m-Y'))}}" @else href="#" @endif>Tenders</a>
                         </td>                      
                         @endforeach         
                         </tr>
@@ -129,7 +163,7 @@
                <p>Latest Newspaper Ads</p>
                <br/>
                @foreach($newspapers as $newspaper)
-               <a href=><img alt="The News" src="{{asset('/storage/app/'.$newspaper->logo)}}"  /></a>
+               <a href="{{url('newspaper/'.$newspaper->id)}}"><img alt="The News" src="{{asset('/storage/app/'.$newspaper->logo)}}"  /></a>
                @endforeach
             </div>
             <div id="govt_div2" style="margin-top:5px;clear:right;">
@@ -152,88 +186,89 @@
                <div id="job-table">
                   <table class="table" style="padding-top:0px;">
                      <caption class="text-center" style="font-weight: bold; font-size: 23px;">Jobs by City</caption>
-                     <thead>
-                        <tr>
-                           <th>City</th>
-                           <th>View Add</th>
-                        </tr>
-                     </thead>
                      <tbody>
-                        @foreach($cities as $city)
-                        <tr>
-                           <td><a href="{{url('city/'.$city->id)}}">{{$city->title}}</a></td>
-                           <td><a href="{{url('/city/'.$city->id)}}">View</a></td>
-                        </tr>
-                        @endforeach
+                      <?php
+
+                      \App\City::chunk(4,function($cities){
+                        $c = 1;
+                        echo '<tr>';
+   foreach($cities as $city){
+    $url = url('city/'.$city->id);
+       echo '<td><a href="'.$url.'">'.$city->title.'</a></td>';
+                        $c++;
+   }
+   echo '</tr>';
+});
+                      ?>
+
+                     
+                        
                      </tbody>
                   </table>
-                  {{$cities->appends(array_except(Request::query(), 'cities'))->links()}}
                </div>
               
                <div id="job-table">
                   <table class="table" style="padding-top:0px;">
                      <caption class="text-center" style="font-weight: bold; font-size: 23px;">Jobs by Category </caption>
-                     <thead>
-                        <tr>
-                           <th>Category</th>
-                           <th>View Add</th>
-                        </tr>
-                     </thead>
                      <tbody>
-                        @foreach($category as $cat)
-                        <tr>
-                           <td><a href="{{url('category/'.$cat->id)}}">{{$cat->title}}</a></td>
-                           <td><a href="{{url('/category/'.$cat->id)}}">View</a></td>
-                        </tr>
-                        @endforeach
+                      <?php
+
+                      \App\Category::chunk(4,function($category){
+                        $c = 1;
+                        echo '<tr>';
+   foreach($category as $cat){
+    $url = url('cat/'.$cat->id);
+       echo '<td><a href="'.$url.'">'.$cat->title.'</a></td>';
+   }
+   echo '</tr>';
+});
+                      ?>
+                       
                      </tbody>
                   
                   </table>
-                  {{$category->appends(array_except(Request::query(), 'categories'))->links()}}
                </div>
                <br/>
                <div id="job-table">
                   <table class="table" style="padding-top:0px;">
                      <caption class="text-center" style="font-weight: bold; font-size: 23px;">Jobs by Qualification </caption>
-                     <thead>
-                        <tr>
-                           <th>Qualification</th>
-                           <th>View Add</th>
-                        </tr>
-                     </thead>
                      <tbody>
-                        @foreach($qualification as $qualify)
-                        <tr>
-                           <td><a href="{{url('qualification/'.$qualify->id)}}">{{$qualify->title}}</a></td>
-                           <td><a href="{{url('/qualification/'.$qualify->id)}}">View</a></td>
-                        </tr>
-                        @endforeach
+                      <?php
+
+                      \App\Qualification::chunk(4,function($qualification){
+                        $c = 1;
+                        echo '<tr>';
+   foreach($qualification as $qualify){
+    $url = url('qualify/'.$qualify->id);
+       echo '<td><a href="'.$url.'">'.$qualify->title.'</a></td>';
+   }
+   echo '</tr>';
+});
+                      ?>
                      </tbody>
                   </table>
-                  {{$qualification->appends(array_except(Request::query(), 'qualification'))->links()}}
                </div>
                <br/>
                 <div id="job-table">
                    
                   <table class="table" style="padding-top:0px;">
                      <caption class="text-center" style="font-weight: bold; font-size: 23px;">Jobs by Type </caption>
-                     <thead>
-                        <tr>
-                           <th>Types</th>
-                           <th>View Add</th>
-                        </tr>
-                     </thead>
                      <tbody>
-                        @foreach($jobType as $type)
-                        <tr>
-                           <td><a href="{{url('jobtype/'.$type->id)}}">{{$type->job_type_title}}</a></td>
-                           <td><a href="{{url('/jobtype/'.$type->id)}}">View</a></td>
-                        </tr>
-                        @endforeach
+                      <?php
+
+                      \App\JobType::chunk(4,function($jobType){
+                        $c = 1;
+                        echo '<tr>';
+   foreach($jobType as $type){
+    $url = url('type/'.$type->id);
+       echo '<td><a href="'.$url.'">'.$type->title.'</a></td>';
+   }
+   echo '</tr>';
+});
+                      ?>
                      </tbody>
                   
                   </table>
-                  {{$jobType->appends(array_except(Request::query(), 'jobtypes'))->links()}}
                </div>
                <div id=clear></div>
                <div class="container">
@@ -260,8 +295,8 @@
         <tr>
         <td>{{$job->title}}
          <br> <a href="{{url('company_add/'.$job->company_name)}}"><p style="font-size: 15px">{{$job->company_name}} </p> </a></td>
-        <td><a href="{{url('apply_date/'.$job->apply_by)}}"> {{$job->apply_by}}</a></td>
-        <td><a href="{{url('last_date/'.$job->last_date)}}">{{$job->last_date}}</a></td>
+        <td><a href="{{url('apply_date/'.$job->apply_by)}}"> {{date('d-m-Y', strtotime($job->apply_by))}}</a></td>
+        <td><a href="{{url('last_date/'.$job->last_date)}}">{{date('d-m-Y', strtotime($job->last_date))}}</a></td>
         <td>@if($job->getCity) <a href="{{url('city/'.$job->getCity->id)}}">{{$job->getCity->title}}</a>@endif</td>
         <td><a href="{{url('detail_page/'.$job->id)}}">View</a></td>
          </tr>
@@ -287,8 +322,8 @@
         <tr>
         <td>{{$job->title}}
         <br> <a href="{{url('company_add/'.$job->company_name)}}"><p style="font-size: 15px">{{$job->company_name}} </p> </a></td>
-        <td><a href="{{url('apply_date/'.$job->apply_by)}}">{{$job->apply_by}}</a></td>
-        <td><a href="{{url('last_date/'.$job->last_date)}}">{{$job->last_date}}</a></td>
+        <td><a href="{{url('apply_date/'.$job->apply_by)}}">{{date('d-m-Y', strtotime($job->apply_by))}}</a></td>
+        <td><a href="{{url('last_date/'.$job->last_date)}}">{{date('d-m-Y', strtotime($job->last_date))}}</a></td>
         <td><a href="{{url('city/'.$job->getCity->id)}}">{{$job->getCity->title}}</a></td>
         <td><a href="{{url('detail_page/'.$job->id)}}">View</a></td>
          </tr>
@@ -313,8 +348,8 @@
         <tr>
         <td>{{$job->title}}
         <br> <a href="{{url('company_add/'.$job->company_name)}}"><p style="font-size: 15px">{{$job->company_name}} </p> </a></td>
-        <td><a href="{{url('apply_date/'.$job->apply_by)}}">{{$job->apply_by}}</a></td>
-        <td><a href="{{url('last_date/'.$job->last_date)}}">{{$job->last_date}}</a></td>
+        <td><a href="{{url('apply_date/'.$job->apply_by)}}">{{date('d-m-Y', strtotime($job->apply_by))}}</a></td>
+        <td><a href="{{url('last_date/'.$job->last_date)}}">{{date('d-m-Y', strtotime($job->last_date))}}</a></td>
         <td><a href="{{url('city/'.$job->getCity->id)}}">{{$job->getCity->title}}</a></td>
         <td><a href="{{url('detail_page/'.$job->id)}}">View</a></td>
          </tr>

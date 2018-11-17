@@ -2,49 +2,53 @@
 @section('content')
 <div id=wrapper_total>
    <div id="navigate">
-      <div id=left-ad-social style="position: absolute; width: 125px; float: left; top: -95px; left: -125px; z-index: 1; clear: both;">
-         <div id="s2s">
-            <!--  <img src=http://islamictiming.com/img/ad.jpg width=125px />  -->
+      <div id=social>
+         <div id=s2s class="soc_lnk">
+            <br/>
          </div>
+         <script>
+            function socialHide(){
+            document.getElementsByClassName("soc_lnk")[0].style.display="none";
+            }
+         </script>
       </div>
       <div class="container">
-         <form method="POST">
-         <div class="row">
-            <div class="col-md-3">
-               <select class="form-control" id="newspaper" required="required">
-                  @foreach($newspapers as $news)
-                  <option value="{{$news->slug}}">{{$news->title}}</option>
-                  @endforeach
-               </select>
-            </div>
-            <div class="col-md-3" id="date">
-               <input type="date" name="date" id="datepicker" class="form-control" required="required">
-            </div>
-            <div class="col-md-3">
-               <select class="form-control" id="job_type" required="required">
-                  <option value="jobs">Jobs</option>
-                  <option value="tendars">Tendars</option>
-                  <option value="admissions">Admissions</option>
-               </select>
-            </div>
-            <div class="col-md-3">
-               <input type="button" onclick="searchVal(this)" name="submit" value="submit" class="btn btn-primary">
-            </div>
-         </div>
+      	<form method="POST">
+      	<div class="row">
+      		<div class="col-md-3">
+      			<select class="form-control" id="newspaper" required="required">
+      				@foreach($newspapers as $news)
+      				<option value="{{$news->slug}}">{{$news->title}}</option>
+      				@endforeach
+      			</select>
+      		</div>
+      		<div class="col-md-3" id="date">
+      			<input type="date" name="date" id="datepicker" class="form-control" required="required">
+      		</div>
+      		<div class="col-md-3">
+      			<select class="form-control" id="job_type" required="required">
+      				<option value="jobs">Jobs</option>
+      				<option value="tendars">Tendars</option>
+      				<option value="admissions">Admissions</option>
+      			</select>
+      		</div>
+      		<div class="col-md-3">
+      			<input type="button" onclick="searchVal(this)" name="submit" value="submit" class="btn btn-primary">
+      		</div>
+      	</div>
       </form>
-      <br/>
-       <img src="{{asset('public/images.jpg')}}" width="100%" height="200px">
       </div>
       <div id=clear></div>
-      <div id="single-paper-page-banner">
-         <h2 itemprop="name">{{$paper->title}}</h2>
+      <br/>
+      <p style="font-size: 16px; font-weight: bold;">{{$news->title}}</p>
+      <img src="{{asset('public/images.jpg')}}" width="100%" height="200px">
          <div id=clear></div>
-          <a href="{{url('user-scribe-news/'.$paper->id)}}">Subscribe</a>
-      </div>
+         <br>
+
       <div id="featured_latest_job">
-         <p>{{$paper->title}} 
-         <p style="font-size:1em; color:black; font-weight: 100;">{{$paper->title}}</p>
+        
          <div id=clear></div>
+         <br/>
          <div id="job-table">
             <table class="table">
                <thead>
@@ -58,9 +62,10 @@
                <tbody>
                   @foreach($newspaper as $news)
                   <tr>
-                     <td><img src="{{asset('/storage/app/'.$news->rel_logo)}}" width="50" height="50"> {{$news->title}}</td>
+                     <td> <img src="{{asset('/storage/app/'.$news->rel_logo)}}" width="50" height="50"> {{$news->title}}
+                        <br> <a href="{{url('company_add/'.$news->company_name)}}"><p style="font-size: 15px">{{$news->company_name}} </p> </a></td>
                      <td><a href="{{url('city/'.$news->getCity->id)}}">{{$news->getCity->title}}</a></td>
-<td><a href="{{url('apply_date/'.$news->created_at->toDateString())}}">{{$news->created_at->format('d-m-Y')}}</a></td>
+                     <td><a href="{{url('apply_date/'.$news->created_at->toDateString())}}">{{$news->created_at->format('d-m-Y')}}</a></td>
                      @if($news->created_by == "executive")
                      <td><a href="{{url('apply_job/'.$news->id)}}">Apply Now</a></td>
                      @else
@@ -93,11 +98,12 @@
          </div>
          <br/>
          <br/>
+         <br/><br/>
+         
+      </div>
+      
       <div id=clear></div>
-      <h3 color=#019875>About {{$paper->title}}:</h3>
-      <p itemprop="description" color=#019875 style="font-size:1em;"><img itemprop="primaryImageOfPage" style="border-radius:0px;max-width:200px;width:80px;" align=left src="{{asset('/storage/app/'.$paper->logo)}}"  /> {{$paper->description}}
-      </p>
-      <div id=clear></div>
+      
    </div>
    <div id=clear></div>
    <br/>

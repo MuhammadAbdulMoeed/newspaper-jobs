@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $newspapers = Newspaper::all();
-        $cities = City::paginate(5, ['*'], 'cities');
+        $cities = City::all();
         $category = Category::paginate(5, ['*'], 'categories');
         $qualification = Qualification::paginate(5, ['*'], 'qualification');
         $jobType = JobType::paginate(5, ['*'], 'jobtypes');
@@ -278,6 +278,14 @@ class HomeController extends Controller
       $newspapers = Newspaper::all();
       return view('frontend.type-date-add', compact('newspaper' , 'newspapers'));
     
+    }
+
+    public function NewspaperJobs($id){
+      $newspaper = Add::where('newspaper_id' , $id)->get();
+      $news = Newspaper::find($id);
+        $newspapers = Newspaper::all();
+        return view('frontend.newspaper-adds' , compact('newspaper' , 'newspapers' , 'news'));
+
     }
 
 }

@@ -60,10 +60,10 @@
                <tbody>
                   @foreach($newspaper as $news)
                   <tr>
-                     <td>{{$news->title}}
+                     <td><img src="{{asset('/storage/app/'.$news->rel_logo)}}" width="50" height="50"> {{$news->title}}
                         <br> <a href="{{url('company_add/'.$news->company_name)}}"><p style="font-size: 15px">{{$news->company_name}} </p> </a></td>
                      <td><a href="{{url('city/'.$news->getCity->id)}}">{{$news->getCity->title}}</a></td>
-                     <td><a href="{{url('apply_date/'.$news->created_at->toDateString())}}">{{$news->created_at->toDateString()}}</a></td>
+                     <td><a href="{{url('apply_date/'.$news->created_at->toDateString())}}">{{$news->created_at->format('d-m-Y')}}</a></td>
                      @if($news->created_by == "executive")
                      <td><a href="{{url('apply_job/'.$news->id)}}">Apply Now</a></td>
                      @else
@@ -83,7 +83,7 @@
          <br/>
          
           @foreach($newspapers as $newspaper)
-               <a href=><img alt="The News" src="{{asset('/storage/app/'.$newspaper->logo)}}"  /></a>
+               <a href="{{url('newspaper/'.$newspaper->id)}}"><img alt="The News" src="{{asset('/storage/app/'.$newspaper->logo)}}"  /></a>
                @endforeach
       </div>
       <div id=govt_div2 style="margin-top:5px;clear:right;">

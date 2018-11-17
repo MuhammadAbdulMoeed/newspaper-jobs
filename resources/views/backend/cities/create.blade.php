@@ -13,7 +13,7 @@ Cities Management
 @endsection
 
 @section('content')
-    <form class="form-horizontal" action="{{route('admin.cities.store')}}" method="POST">
+    <form class="form-horizontal" action="{{route('admin.cities.store')}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="card">
             <div class="card-body">
@@ -24,7 +24,9 @@ Cities Management
                             <small class="text-muted">Cities Create</small>
                         </h4>
                     </div><!--col-->
+
                 </div><!--row-->
+
 
                 <hr>
 
@@ -49,6 +51,14 @@ Cities Management
 
                     </div><!--col-->
                 </div><!--row-->
+                 <div class="form-group row">
+                            <label class="col-md-2 form-control-label">City Logo</label>
+
+                            <div class="col-md-10">
+                                <input type="file" name="logo" class="form-control" placeholder="Enter launch Date">
+                            </div><!--col-->
+                        </div>
+
             </div><!--card-body-->
 
             <div class="card-footer clearfix">

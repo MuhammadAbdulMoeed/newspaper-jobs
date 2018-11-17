@@ -18,7 +18,10 @@ $cat = App\Category::where('status' , '1')->get();
       <script src="{{asset('js/includes/bootstrap.min.js')}}"></script>
       <link rel="stylesheet" href="{{asset('css/includes/my_style.css')}}" />
       <link rel="shortcut icon" href="images/favicon.ico" />
-       <link rel="stylesheet" href="{{asset('css/includes/fullcalendar.min.css')}}" />
+       <link rel="stylesheet" href="{{asset('public/css/includes/fullcalendar.min.css')}}" />
+       <link rel="stylesheet" href="{{asset('public/css/slider/thumbnail-slider.css')}}" />
+       <link rel="stylesheet" href="{{asset('public/css/slider/thumbs2.css')}}" />
+       <script src="{{asset('public/css/slider/thumbnail-slider.js')}}"></script>
  
       <style>
          #job-table table a:visited{background-color: black;}

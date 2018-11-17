@@ -37,8 +37,18 @@ class CitiesController extends Controller
      */
     public function store(Request $request)
     {
+         $validation = $request->validate([
+        'logo' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
+        // for multiple file uploads
+        // 'photo.*' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
+        ]);
+        $file      = $validation['logo']; // get the validated file
+        $extension = $file->getClientOriginalExtension();
+        $filename  = 'city-photo-' . time() . '.' . $extension;
+        $path      = $file->storeAs('photos', $filename);
         $cities = new City;
         $cities->title = $request->city_title;
+        $cities->logo = $path;
         $cities->save();
         return redirect()->back();
     }
@@ -76,6 +86,18 @@ class CitiesController extends Controller
     public function update(Request $request, $id)
     {
         $city = City::find($id);
+        $validation = $request->validate([
+        'logo' => 'file|image|mimes:jpeg,png,gif,webp|max:2048'
+        // for multiple file uploads
+        // 'photo.*' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
+        ]);
+        if($validation){
+        $file      = $validation['logo']; // get the validated file
+        $extension = $file->getClientOriginalExtension();
+        $filename  = 'newspaper-photo-' . time() . '.' . $extension;
+        $path      = $file->storeAs('photos', $filename);
+        $city->logo = $path;
+        }
         $city->title = $request->city_title;
         $city->save();
         return redirect()->back();

@@ -38,7 +38,7 @@
                   <div id=clear></div>
                   <br/>
                 @foreach($newspapers as $newspaper)
-               <a href=><img alt="The News" src="{{asset('/storage/app/'.$newspaper->logo)}}"  /></a>
+               <a href="{{url('newspaper/'.$newspaper->id)}}"><img alt="The News" src="{{asset('/storage/app/'.$newspaper->logo)}}"  /></a>
                @endforeach
                </div>
                

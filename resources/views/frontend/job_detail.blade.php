@@ -252,7 +252,7 @@
  <fieldset class="scheduler-border" style="float: right;min-height: 340px;">
     <legend class="scheduler-border">Related</legend>
     @foreach($rel as $re)
-    <a href="{{url('detail_page'.$re->id)}}">{{$re->title}}</a>
+    <a href="{{url('detail_page/'.$re->id)}}">{{$re->title}}</a>
   </br>
     @endforeach
     
