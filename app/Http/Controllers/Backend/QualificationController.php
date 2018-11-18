@@ -37,6 +37,10 @@ class QualificationController extends Controller
      */
     public function store(Request $request)
     {
+        $qual = Qualification::where('title' , $request->qualification_title)->first();
+        if($qual){
+            return redirect()->back()->withErrors(['category_title' => 'Qualification already added']);
+        }
         $qualification = new Qualification;
         $qualification->title = $request->qualification_title;
         $qualification->save();

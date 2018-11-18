@@ -42,6 +42,10 @@ class NewspaperController extends Controller
         // for multiple file uploads
         // 'photo.*' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
         ]);
+        $new = Newspaper::where('title' , $request->newspaper_title)->first();
+        if($new){
+            return redirect()->back()->withErrors(['newspaper_title' => 'News Paper Title already added']);
+        }
         $file      = $validation['logo']; // get the validated file
         $extension = $file->getClientOriginalExtension();
         $filename  = 'newspaper-photo-' . time() . '.' . $extension;

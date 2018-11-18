@@ -42,6 +42,11 @@ class CitiesController extends Controller
         // for multiple file uploads
         // 'photo.*' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
         ]);
+        $city = City::where('title' , $request->city_title)->first();
+        // dd($city , $request->all());
+        if($city){
+            return redirect()->back()->withErrors(['title', 'Title already added']);
+        }
         $file      = $validation['logo']; // get the validated file
         $extension = $file->getClientOriginalExtension();
         $filename  = 'city-photo-' . time() . '.' . $extension;

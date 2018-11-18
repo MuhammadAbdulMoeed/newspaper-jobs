@@ -38,6 +38,10 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         $category = new Category;
+        $cate = Category::where('title' , $request->category_title)->first();
+        if($cate){
+                    return redirect()->back()->withErrors(['category_title' => 'Category Title already added']);
+        }
         $category->title = $request->category_title;
         if($request->cat == "on"){
             $category->status = '1';

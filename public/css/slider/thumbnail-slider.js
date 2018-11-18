@@ -3,8 +3,8 @@ var thumbnailSliderOptions =
 {
     sliderId: "thumbnail-slider",
     orientation: "horizontal",
-    thumbWidth: "300px",
-    thumbHeight: "150px",
+    thumbWidth: "100px",
+    thumbHeight: "100px",
     showMode: 3,
     autoAdvance: false,
     selectable: true,

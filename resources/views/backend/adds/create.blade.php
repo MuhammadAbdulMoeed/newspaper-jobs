@@ -31,10 +31,15 @@ Adds Management
                 <div class="row mt-4 mb-4">
                     <div class="col">
                         <div class="form-group row">
-                            <label class="col-md-2 form-control-label">Adds Title</label>
+                            <label class="col-md-2 form-control-label">Add Type</label>
 
                             <div class="col-md-10">
-                                <input type="text" name="adds_title" class="form-control" placeholder="Enter Adds">
+                                <select name="add_types" class="form-control">
+                                    <option value="jobs">Select Add Type</option>
+                                    <option value="jobs">Jobs</option>
+                                    <option value="tenders">Tendars</option>
+                                    <option value="admissions">Addmissions</option>
+                                </select>
                             </div><!--col-->
                         </div><!--form-group-->
                         <div class="form-group row">
@@ -50,13 +55,20 @@ Adds Management
                             </div><!--col-->
                         </div><!--form-group-->
                         <div class="form-group row">
-                            <label class="col-md-2 form-control-label">Qualifications</label>
+                            <label class="col-md-2 form-control-label">Adds Title</label>
 
                             <div class="col-md-10">
-                                <select name="qualification_id" class="form-control">
-                                    <option value="0">Select Qualification</option>
-                                    @foreach($qualification as $data)
-                                    <option value="{{$data->id}}">{{$data->title}}</option>
+                                <input type="text" name="adds_title" class="form-control" placeholder="Enter Adds">
+                            </div><!--col-->
+                        </div><!--form-group-->
+                         <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Job Type</label>
+
+                            <div class="col-md-10">
+                                <select name="job_type_id" class="form-control">
+                                    <option value="0">Select Job Type</option>
+                                    @foreach($jobType as $data)
+                                    <option value="{{$data->id}}">{{$data->job_type_title}}</option>
                                     @endforeach
                                 </select>
                             </div><!--col-->
@@ -86,29 +98,20 @@ Adds Management
                             </div><!--col-->
                         </div><!--form-group-->
                         <div class="form-group row">
-                            <label class="col-md-2 form-control-label">Job Type</label>
+                            <label class="col-md-2 form-control-label">Qualifications</label>
 
                             <div class="col-md-10">
-                                <select name="job_type_id" class="form-control">
-                                    <option value="0">Select Job Type</option>
-                                    @foreach($jobType as $data)
-                                    <option value="{{$data->id}}">{{$data->job_type_title}}</option>
+                                <select name="qualification_id" class="form-control">
+                                    <option value="0">Select Qualification</option>
+                                    @foreach($qualification as $data)
+                                    <option value="{{$data->id}}">{{$data->title}}</option>
                                     @endforeach
                                 </select>
                             </div><!--col-->
                         </div><!--form-group-->
-                        <div class="form-group row">
-                            <label class="col-md-2 form-control-label">Add Type</label>
-
-                            <div class="col-md-10">
-                                <select name="add_types" class="form-control">
-                                    <option value="jobs">Select Add Type</option>
-                                    <option value="jobs">Jobs</option>
-                                    <option value="tenders">Tendars</option>
-                                    <option value="admissions">Addmissions</option>
-                                </select>
-                            </div><!--col-->
-                        </div><!--form-group-->
+                        
+                        
+                       
                         <div class="form-group row">
                             <label class="col-md-2 form-control-label">Total Positions</label>
                             <div class="col-md-10">
@@ -123,22 +126,11 @@ Adds Management
                             </div>
                             
                         </div><!--form-group-->
-                        <div class="form-group row">
-                            <label class="col-md-2 form-control-label">Company Abbrevation</label>
-                            <div class="col-md-10">
-                            <input type="text" name="company_abbrevation" class="form-control" placeholder="Company Abbrevation">
-                            </div>
-                        </div><!--form-group-->
+                       
                         <div class="form-group row">
                             <label class="col-md-2 form-control-label">Job Location</label>
                             <div class="col-md-10">
                             <input type="text" name="job_loc" class="form-control" placeholder="Job Location" required="required">
-                            </div>
-                        </div><!--form-group-->
-                         <div class="form-group row">
-                            <label class="col-md-2 form-control-label">Gendar</label>
-                            <div class="col-md-10">
-                            <input type="text" name="gendar" class="form-control" placeholder="Gendar">
                             </div>
                         </div><!--form-group-->
                         <div class="form-group row">
@@ -165,12 +157,6 @@ Adds Management
                             <input type="text" name="work_hours" class="form-control" placeholder="Working hours">
                             </div>
                         </div><!--form-group-->
-                        <div class="form-group row">
-                            <label class="col-md-2 form-control-label">Skills</label>
-                            <div class="col-md-10">
-                            <input type="text" name="skills" class="form-control" placeholder="skills">
-                            </div>
-                        </div><!--form-group-->
                          <div class="form-group row">
                             <label class="col-md-2 form-control-label">Contact Number</label>
                             <div class="col-md-10">
@@ -188,13 +174,6 @@ Adds Management
                             <div class="col-md-10">
                             <input type="text" name="contact_email" class="form-control" placeholder="Contact Email">
                             </div>
-                        </div><!--form-group-->
-                        <div class="form-group row">
-                            <label class="col-md-2 form-control-label">Minimum Requirements</label>
-
-                            <div class="col-md-10">
-                                <input type="text" name="min_req" class="form-control" placeholder="Enter Requirements" placeholder="minimum Requirements">
-                            </div><!--col-->
                         </div><!--form-group-->
                         <div class="form-group row">
                             <label class="col-md-2 form-control-label">Description</label>

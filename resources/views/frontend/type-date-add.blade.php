@@ -61,7 +61,7 @@
                <tbody>
                   @foreach($newspaper as $news)
                   <tr>
-                     <td><img src="{{asset('/storage/app/'.$news->rel_logo)}}" width="50" height="50"> {{$news->title}}</td>
+                     <td><img src="{{asset('/storage/app/'.$news->rel_logo)}}" width="50" height="50"> <a href="{{url('detail_page/'.$news->id)}}"> {{$news->title}} </a> </td>
                      <td><a href="{{url('city/'.$news->getCity->id)}}">{{$news->getCity->title}}</a></td>
                      <td><a href="{{url('apply_date/'.$news->created_at->toDateString())}}">{{$news->created_at->format('d-m-Y')}}</a></td>
                      @if($news->created_by == "executive")

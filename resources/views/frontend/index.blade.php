@@ -9,10 +9,10 @@
                     <li>
                      <a href="{{url('city/'.$city->id)}}">
                       <div class="container">
-                        <span class="thumb" style="background-image:url({{asset('/storage/app/'.$city->logo)}})"></span>
+                        <img src="{{asset('/storage/app/'.$city->logo)}}" class="thumb">
                         <p style="font-size: 10px;display:block;
         position:absolute;
-        top:7px;
+        top:86px;
         right:8px;
         font:bold 9px/18px Arial;
         color:white;
@@ -43,7 +43,8 @@
                            <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><b><span style="color:#325465;"><br/>Date - Day<br/>&nbsp;</b></span></td>
                            <!-- <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><img alt="Date - Day" src="images/date.jpg" /></td>  -->
                            @foreach($newspapers as $newspaper)
-                           <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><a href="{{url('newspaper/'.$newspaper->id)}}" ><img alt="Jang" src="{{asset('/storage/app/'.$newspaper->logo)}}" width="50" height="50" /></a></td>
+                           <td style="border: #DBE1E6 1px solid; text-align: -webkit-center;
+}" class="Newspaper_border"><a href="{{url('newspaper/'.$newspaper->id)}}" ><img alt="Jang" src="{{asset('/storage/app/'.$newspaper->logo)}}" width="50" height="50" /></a></td>
                            @endforeach
                         </tr>
                          <tr>
@@ -189,7 +190,7 @@
                      <tbody>
                       <?php
 
-                      \App\City::chunk(4,function($cities){
+                      \App\City::has('add')->chunk(4,function($cities){
                         $c = 1;
                         echo '<tr>';
    foreach($cities as $city){
@@ -213,11 +214,11 @@
                      <tbody>
                       <?php
 
-                      \App\Category::chunk(4,function($category){
+                      \App\Category::has('add')->chunk(4,function($category){
                         $c = 1;
                         echo '<tr>';
    foreach($category as $cat){
-    $url = url('cat/'.$cat->id);
+    $url = url('category/'.$cat->id);
        echo '<td><a href="'.$url.'">'.$cat->title.'</a></td>';
    }
    echo '</tr>';
@@ -239,7 +240,7 @@
                         $c = 1;
                         echo '<tr>';
    foreach($qualification as $qualify){
-    $url = url('qualify/'.$qualify->id);
+    $url = url('qualification/'.$qualify->id);
        echo '<td><a href="'.$url.'">'.$qualify->title.'</a></td>';
    }
    echo '</tr>';
@@ -293,7 +294,7 @@
      <tbody>
         @foreach($jobs as $job)
         <tr>
-        <td>{{$job->title}}
+        <td><a href="{{url('detail_page/'.$job->id)}}"> {{$job->title}} </a>
          <br> <a href="{{url('company_add/'.$job->company_name)}}"><p style="font-size: 15px">{{$job->company_name}} </p> </a></td>
         <td><a href="{{url('apply_date/'.$job->apply_by)}}"> {{date('d-m-Y', strtotime($job->apply_by))}}</a></td>
         <td><a href="{{url('last_date/'.$job->last_date)}}">{{date('d-m-Y', strtotime($job->last_date))}}</a></td>
@@ -318,9 +319,9 @@
       </tr>
      </thead>
      <tbody>
-        @foreach($tenders as $job)
+        @foreach($admissions as $job)
         <tr>
-        <td>{{$job->title}}
+        <td><a href="{{url('detail_page/'.$job->id)}}"> {{$job->title}} </a>
         <br> <a href="{{url('company_add/'.$job->company_name)}}"><p style="font-size: 15px">{{$job->company_name}} </p> </a></td>
         <td><a href="{{url('apply_date/'.$job->apply_by)}}">{{date('d-m-Y', strtotime($job->apply_by))}}</a></td>
         <td><a href="{{url('last_date/'.$job->last_date)}}">{{date('d-m-Y', strtotime($job->last_date))}}</a></td>
@@ -344,9 +345,9 @@
       </tr>
      </thead>
      <tbody>
-        @foreach($admissions as $job)
+        @foreach($tenders as $job)
         <tr>
-        <td>{{$job->title}}
+        <td><a href="{{url('detail_page/'.$job->id)}}"> {{$job->title}} </a>
         <br> <a href="{{url('company_add/'.$job->company_name)}}"><p style="font-size: 15px">{{$job->company_name}} </p> </a></td>
         <td><a href="{{url('apply_date/'.$job->apply_by)}}">{{date('d-m-Y', strtotime($job->apply_by))}}</a></td>
         <td><a href="{{url('last_date/'.$job->last_date)}}">{{date('d-m-Y', strtotime($job->last_date))}}</a></td>

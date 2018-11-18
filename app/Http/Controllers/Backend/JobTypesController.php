@@ -37,6 +37,10 @@ class JobTypesController extends Controller
      */
     public function store(Request $request)
     {
+        $job = JobType::where('job_type_title' , $request->job_type_title)->first();
+        if($job){
+                    return redirect()->back()->withErrors(['job_type_title' => 'Job Type Title already added']);
+        }
         $job = new JobType;
         $job->job_type_title = $request->job_type_title;
         $job->save();
