@@ -236,7 +236,7 @@
                      <tbody>
                       <?php
 
-                      \App\Qualification::chunk(4,function($qualification){
+                      \App\Qualification::has('add')->chunk(4,function($qualification){
                         $c = 1;
                         echo '<tr>';
    foreach($qualification as $qualify){
