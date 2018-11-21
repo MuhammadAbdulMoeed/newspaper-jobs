@@ -55,9 +55,9 @@
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Pakistan Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Abroad Jobs</a><br/>
-                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->format('d-m-Y'))}}" @else href="#" @endif>Online Jobs</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Pakistan Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Abroad Jobs</a><br/>
+                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->toDateString())}}" @else href="#" @endif>Online Jobs</a>
                         </td>                      
                         @endforeach         
                         </tr>
@@ -69,9 +69,9 @@
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Pakistan Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Abroad Jobs</a><br/>
-                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->format('d-m-Y'))}}" @else href="#" @endif>Online Jobs</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Pakistan Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Abroad Jobs</a><br/>
+                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->toDateString())}}" @else href="#" @endif>Online Jobs</a>
                         </td>                      
                         @endforeach         
                         </tr>
@@ -83,9 +83,9 @@
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Pakistan Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Abroad Jobs</a><br/>
-                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->format('d-m-Y'))}}" @else href="#" @endif>Online Jobs</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Pakistan Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Abroad Jobs</a><br/>
+                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->toDateString())}}" @else href="#" @endif>Online Jobs</a>
                         </td>                      
                         @endforeach         
                         </tr>
@@ -97,9 +97,9 @@
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Pakistan Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link"@if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Abroad Jobs</a><br/>
-                        <a  rel="nofollow"  id="tender-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->format('d-m-Y'))}}" @else href="#" @endif>Online Jobs</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Pakistan Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"@if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Abroad Jobs</a><br/>
+                        <a  rel="nofollow"  id="tender-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->toDateString())}}" @else href="#" @endif>Online Jobs</a>
                         </td>                      
                         @endforeach         
                         </tr>
@@ -111,9 +111,9 @@
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Pakistan Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Abroad Jobs</a><br/>
-                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->format('d-m-Y'))}}" @else href="#" @endif>Online Jobs</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Pakistan Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Abroad Jobs</a><br/>
+                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->toDateString())}}" @else href="#" @endif>Online Jobs</a>
                         </td>                      
                         @endforeach         
                         </tr>
@@ -125,9 +125,9 @@
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Pakistan Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Abroad Jobs</a><br/>
-                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->format('d-m-Y'))}}" @else href="#" @endif>Online Jobs</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Pakistan Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Abroad Jobs</a><br/>
+                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->toDateString())}}" @else href="#" @endif>Online Jobs</a>
                         </td>                      
                         @endforeach         
                         </tr>
@@ -139,9 +139,9 @@
                         @foreach($newspapers as $newspaper)
                         <td valign="top" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
-                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Pakistan Jobs</a><br/>
-                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->format('d-m-Y'))}}" @else href="#" @endif>Abroad Jobs</a><br/>
-                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->format('d-m-Y'))}}" @else href="#" @endif>Online Jobs</a>
+                        <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Pakistan Jobs</a><br/>
+                        <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Abroad Jobs</a><br/>
+                        <a  rel="nofollow"  id="tender-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/tenders',$date->toDateString())}}" @else href="#" @endif>Online Jobs</a>
                         </td>                      
                         @endforeach         
                         </tr>

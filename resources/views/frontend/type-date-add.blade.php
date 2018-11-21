@@ -113,8 +113,8 @@
 <script type="text/javascript">
 function searchVal(elem){
 
-	var news = $('#newspaper').find(":selected").text();
-	var type = $('#job_type').find(":selected").text();
+	var news = $('#newspaper').find(":selected").val();
+	var type = $('#job_type').find(":selected").val();
 	var date = new Date($('#datepicker').val());
       day = date.getDate();
       month = date.getMonth() + 1;
@@ -122,7 +122,7 @@ function searchVal(elem){
       var datee = [year, day, month].join('-')
    console.log(datee , news , type   , isNaN(day));
    if(!isNaN(day)){
-	window.location = "{{url('/')}}"+"/"+news+"/"+type+"/"+datee
+	window.location = "{{url('/search')}}"+"/"+news+"/"+type+"/"+datee
    }
 
 }

@@ -200,7 +200,7 @@ class HomeController extends Controller
     public function showCalenderJob(){
       $adds = Add::where('type' , 'jobs')->groupBy(\DB::raw('Date(created_at)'))->select('created_at' , \DB::raw('count(*) as count') , 'type')->get();
       $adds->map(function ($add) {
-        $add['title'] = $add->type . ": ".$add->count;
+        $add['title'] = "Pakistan Jobs" . ": ".$add->count;
         $add['start'] = $add->created_at->toDateString();
         $add['end'] = $add->created_at->toDateString();
         $add['html'] = url('datetype/').'/'.$add->created_at->toDateString().'/'.'jobs';
@@ -213,7 +213,7 @@ class HomeController extends Controller
     public function showCalenderTender(){
       $adds = Add::where('type' , 'tenders')->groupBy(\DB::raw('Date(created_at)'))->select('created_at' , \DB::raw('count(*) as count') , 'type')->get();
       $adds->map(function ($add) {
-        $add['title'] = $add->type . ": ".$add->count;
+        $add['title'] = "Abroad Jobs" . ": ".$add->count;
         $add['start'] = $add->created_at->toDateString();
         $add['end'] = $add->created_at->toDateString();
         $add['html'] = url('datetype/').'/'.$add->created_at->toDateString().'/'.'tenders';
@@ -226,7 +226,7 @@ class HomeController extends Controller
     public function showCalenderAdmission(){
       $adds = Add::where('type' , 'admissions')->groupBy(\DB::raw('Date(created_at)'))->select('created_at' , \DB::raw('count(*) as count') , 'type')->get();
       $adds->map(function ($add) {
-        $add['title'] = $add->type . ": ".$add->count;
+        $add['title'] = "Online Jobs" . ": ".$add->count;
         $add['start'] = $add->created_at->toDateString();
         $add['end'] = $add->created_at->toDateString();
         $add['html'] = url('datetype/').'/'.$add->created_at->toDateString().'/'.'admissions';
