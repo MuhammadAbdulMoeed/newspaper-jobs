@@ -92,7 +92,13 @@ Route::group([
     });
 
 
+
+
 });
+
+
+    Route::get('adsense-create' , 'Adsense\AdsenseController@create')->name('adsense.create');
+
     // Cities Crud
     Route::get('cities' , 'CitiesController@index')->name('cities.index');
     Route::get('create-cities' , 'CitiesController@create')->name('cities.create');

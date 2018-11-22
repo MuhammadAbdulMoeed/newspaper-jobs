@@ -173,6 +173,20 @@
                 </ul>
             </li>
 
+            <li class="nav-item nav-dropdown {{ active_class(Active::checkUriPattern('admin/jobs*'), 'open') }}">
+                <a class="nav-link nav-dropdown-toggle {{ active_class(Active::checkUriPattern('admin/jobs*')) }}" href="#">
+                    <i class="nav-icon icon-list"></i> Adsens Code
+                </a>
+
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link {{ active_class(Active::checkUriPattern('admin/adsense-create')) }}" href="{{ route('admin.adsense.create') }}">
+                            Add New Adsense Code
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
                        
 
             @endif
