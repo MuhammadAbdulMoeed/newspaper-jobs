@@ -57,6 +57,9 @@ class HomeController extends Controller
     }
 
     public function viewSlug($slug , $type , $date , Request $request){
+      // $date = \Carbon\Carbon::createFromFormat('d/m/Y' , $date);
+      // dd($date , $request->all());
+
         $newspaper = Add::whereHas('getNewsPaper' , function($q) use ($slug){
            $q->where('slug' , $slug); 
         })->where('type' , $type)

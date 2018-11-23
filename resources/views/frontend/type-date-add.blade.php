@@ -80,7 +80,7 @@ function searchVal(elem){
       day = date.getDate();
       month = date.getMonth() + 1;
       year = date.getFullYear();
-      var datee = [year, day, month].join('-')
+      var datee = [year, month, day].join('-')
    console.log(datee , news , type   , isNaN(day));
    if(!isNaN(day)){
 	window.location = "{{url('/search')}}"+"/"+news+"/"+type+"/"+datee

@@ -23,7 +23,7 @@
       			</select>
       		</div>
       		<div class="col-md-3" id="date">
-      			<input type="date" name="date" id="datepicker" class="form-control" required="required">
+      			<input type="TEXT" name="date" id="datepicker" class="form-control" required="required">
       		</div>
       		<div class="col-md-3">
       			<select class="form-control" id="job_type" required="required">
@@ -115,7 +115,7 @@ function searchVal(elem){
       day = date.getDate();
       month = date.getMonth() + 1;
       year = date.getFullYear();
-      var datee = [year, day, month].join('-')
+      var datee = [year,month, day].join('-')
    console.log(datee , news , type   , isNaN(day));
    if(!isNaN(day)){
 	window.location = "{{url('/search')}}"+"/"+news+"/"+type+"/"+datee

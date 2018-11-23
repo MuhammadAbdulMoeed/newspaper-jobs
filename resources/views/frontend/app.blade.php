@@ -22,6 +22,7 @@ $cat = App\Category::where('status' , '1')->get();
        <link rel="stylesheet" href="{{asset('public/css/slider/thumbnail-slider.css')}}" />
        <link rel="stylesheet" href="{{asset('public/css/slider/thumbs2.css')}}" />
        <script src="{{asset('public/css/slider/thumbnail-slider.js')}}"></script>
+       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css">
  
       <style>
          #job-table table a:visited{background-color: black;}
@@ -131,6 +132,9 @@ $cat = App\Category::where('status' , '1')->get();
       <script src="{{asset('js/includes/moment.min.js')}}"></script>
       <script src="{{asset('js/includes/fullcalendar.min.js')}}"></script>
       <script src="{{url('js/includes/jquery.validate.js')}}"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+
       @yield('js-script')
       <script>
 
