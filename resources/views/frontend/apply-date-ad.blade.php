@@ -27,9 +27,9 @@
       		</div>
       		<div class="col-md-3">
       			<select class="form-control" id="job_type" required="required">
-      				<option value="jobs">Jobs</option>
-      				<option value="tendars">Tendars</option>
-      				<option value="admissions">Admissions</option>
+      				<option value="jobs">Pakistan Jobs</option>
+      				<option value="tendars">Abroad Jobs</option>
+      				<option value="admissions">Online Jobs</option>
       			</select>
       		</div>
       		<div class="col-md-3">

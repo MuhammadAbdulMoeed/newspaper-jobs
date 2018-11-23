@@ -60,9 +60,7 @@ class HomeController extends Controller
         $newspaper = Add::whereHas('getNewsPaper' , function($q) use ($slug){
            $q->where('slug' , $slug); 
         })->where('type' , $type)
-        ->where(function ($query) use ($date){
-          $query->whereDate('created_at' , $date)->orWhereDate('last_date' , $date)->orWhereDate('apply_by' , $date);
-        })
+        ->whereDate('created_at' , $date)
         ->with('getNewsPaper')
         ->with('getCity')->get();
         $paper = Newspaper::where('slug' , $slug)->first();
