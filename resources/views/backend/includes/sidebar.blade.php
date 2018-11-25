@@ -184,6 +184,11 @@
                             Add New Adsense Code
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ active_class(Active::checkUriPattern('admin/adsense-create')) }}" href="{{ route('admin.adsense.list') }}">
+                            All Adsense Code
+                        </a>
+                    </li>
                 </ul>
             </li>
 

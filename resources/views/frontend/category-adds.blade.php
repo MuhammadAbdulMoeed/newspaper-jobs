@@ -40,7 +40,7 @@
       </div>
       <div id=clear></div>
       <br/>
-      <img src="{{asset('public/images.jpg')}}" width="100%" height="200px">
+      @include('frontend.includes.adsense-banner')
          <div id=clear></div>
          <br>
       <div id="featured_latest_job">
@@ -86,9 +86,9 @@
                @endforeach
       </div>
       <div id=govt_div2 style="margin-top:5px;clear:right;">
-         <a href=""><img src="{{asset('public/cv.jpg')}}"/></a>
+        @include('frontend.includes.adsense-square')
          <br/><br/>
-         <a href=""><img src="{{asset('public/cv.jpg')}}" width="300"/></a>
+         @include('frontend.includes.adsense-square')
          <br/>
          <br/>
          

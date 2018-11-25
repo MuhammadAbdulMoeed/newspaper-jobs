@@ -13,16 +13,16 @@ Cities Management
 @endsection
 
 @section('content')
-    <form class="form-horizontal" action="{{route('admin.adsense.store')}}" method="POST" enctype="multipart/form-data">
+    <form class="form-horizontal" action="{{route('admin.adsense.update' , $adsense->id)}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-5">
                         <h4 class="card-title mb-0">
-                            Adsense Management
-                            <small class="text-muted">Adsense Create</small>
+                            Adsense Managemen                            <small class="text-muted">Adsense Create</small>
                         </h4>
+t
                     </div><!--col-->
 
                 </div><!--row-->
@@ -36,7 +36,7 @@ Cities Management
                             <label class="col-md-2 form-control-label">Adsense Code</label>
 
                             <div class="col-md-10">
-                                <textarea id="textarea" name="code"></textarea>
+                                <textarea id="textarea" name="code"> {{$adsense->code}} </textarea>
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->
@@ -47,8 +47,8 @@ Cities Management
                             <label class="col-md-2 form-control-label">Banner Size</label>
 
                             <select name="size">
-                                <option value="banner">Banner Size</option>
-                                <option value="square">Square Size</option>
+                                <option value="banner" @if($adsense->size == "banner") selected @endif>Banner Size</option>
+                                <option value="square" @if($adsense->size == "square") selected @endif>Square Size</option>
                             </select>
                         </div><!--form-group-->
                     </div><!--col-->

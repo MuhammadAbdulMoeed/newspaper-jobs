@@ -40,7 +40,7 @@
          <div id="s2s">
          </div>
       </div>
-      <img src="{{asset('public/images.jpg')}}" width="100%" height="200px">
+      @include('frontend.includes.adsense-banner')
       <br/>
       <div id="show-ad-page-job-details-div" >
          <div id="show-ad-img-div">
@@ -232,9 +232,9 @@
       <br>
       <br>
       <div id=govt_div style="clear:right;">
-         <a href=""><img src="{{asset('public/cv.jpg')}}"/></a>
+         @include('frontend.includes.adsense-square')
          <br/><br/>
-         <a href=""><img src="{{asset('public/cv.jpg')}}" width="300"/></a>
+         @include('frontend.includes.adsense-square')
          <br/>
          <br/>
          <!-- /43651300/Paperpk -->
@@ -294,7 +294,54 @@
             <p style="font-size: 3em; font-weight: bold; color: purple"> More Jobs By {{$add->company_name}} </p>
          </a>
       </div>
-   </div>
+      <div id="featured_latest_job">
+                  <table class="table" style="padding-top:0px;">
+                     <caption class="text-center" style="font-weight: bold; font-size: 23px;">Jobs by City</caption>
+                     <tbody>
+                      <?php
+
+                      \App\City::has('add')->chunk(4,function($cities){
+                        $c = 1;
+                        echo '<tr>';
+   foreach($cities as $city){
+    $url = url('city/'.$city->id);
+       echo '<td><a href="'.$url.'">'.$city->title.'</a></td>';
+                        $c++;
+   }
+   echo '</tr>';
+});
+                      ?>
+
+      
+                     
+                        
+                     </tbody>
+                  </table>
+               </div>
+               <div id="featured_latest_job">
+                  <table class="table" style="padding-top:0px;">
+                     <caption class="text-center" style="font-weight: bold; font-size: 23px;">Related Job Titles</caption>
+                     <tbody>
+                      <?php
+
+                      \App\Add::where('category_id' , $add->category_id)->chunk(4,function($cities){
+                        $c = 1;
+                        echo '<tr>';
+   foreach($cities as $city){
+    $url = url('city/'.$city->id);
+       echo '<td><a href="'.$url.'">'.$city->title.'</a></td>';
+                        $c++;
+   }
+   echo '</tr>';
+});
+                      ?>
+
+                     
+                        
+                     </tbody>
+                  </table>
+               </div>   </div>
+
    <div id=clear></div>
    <br/>
 </div>

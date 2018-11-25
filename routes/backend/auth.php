@@ -98,6 +98,11 @@ Route::group([
 
 
     Route::get('adsense-create' , 'Adsense\AdsenseController@create')->name('adsense.create');
+    Route::post('adsense-store' , 'Adsense\AdsenseController@store')->name('adsense.store');
+    Route::get('adsense-list' , 'Adsense\AdsenseController@index')->name('adsense.list');
+    Route::get('adsense-edit/{id}' , 'Adsense\AdsenseController@edit')->name('adsense.edit');
+    Route::get('adsense-delete/{id}' , 'Adsense\AdsenseController@delete')->name('adsense.delete');
+    Route::post('adsense-update/{id}' , 'Adsense\AdsenseController@update')->name('adsense.update');
 
     // Cities Crud
     Route::get('cities' , 'CitiesController@index')->name('cities.index');

@@ -41,7 +41,7 @@
       <div id=clear></div>
       <br/>
       <p style="font-size: 16px; font-weight: bold;">{{$news->title}}</p>
-      <img src="{{asset('public/images.jpg')}}" width="100%" height="200px">
+      @include('frontend.includes.adsense-square')
          <div id=clear></div>
          <br>
 
@@ -89,9 +89,9 @@
                @endforeach
       </div>
       <div id=govt_div2 style="margin-top:5px;clear:right;">
-         <a href=""><img src="{{asset('public/cv.jpg')}}"/></a>
+         @include('frontend.includes.adsense-square')
          <br/><br/>
-         <a href=""><img src="{{asset('public/cv.jpg')}}" width="300"/></a>
+         @include('frontend.includes.adsense-square')
          <br/>
          <br/>
          

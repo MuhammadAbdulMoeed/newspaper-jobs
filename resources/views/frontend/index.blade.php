@@ -151,7 +151,7 @@
                      <h3><a class="my-success" href="{{route('frontend.calendar.view')}}"> View more newspapers & jobs by date</a></h3>
                </div>
 
-               <img src="{{asset('public/images.jpg')}}" width="100%" height="200px">
+               @include('frontend.includes.adsense-banner')
 
                <!--
                   <button style="width:100%;" id="m-btn">Click to view more dates<img src="images/nav_table.png" style="height: 25px;" /></button>

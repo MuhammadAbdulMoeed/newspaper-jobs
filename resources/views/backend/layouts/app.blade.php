@@ -56,6 +56,13 @@
     {!! script(mix('js/backend.js')) !!}
     @stack('after-scripts')
     <script src="{{url('js/includes/jquery.validate.js')}}"></script>
+    <link rel="stylesheet" href="{{url('js/lib/codemirror.css')}}">
+<script src="{{url('js/lib/codemirror.js')}}"></script>
+<script>
+  var editor = CodeMirror.fromTextArea(textarea, {
+    lineNumbers: true
+  });
+</script>
     <script type="text/javascript">
         $.validator.addMethod("valueNotEquals", function(value, element, arg){
   return arg != value;
