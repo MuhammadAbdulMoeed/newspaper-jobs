@@ -40,11 +40,13 @@
       </div>
       <div id=clear></div>
       <br/>
-      <img src="{{asset('public/images.jpg')}}" width="100%" height="200px">
+      @include('frontend.includes.adsense-banner')
          <div id=clear></div>
          <br>
       <div id="featured_latest_job">
+        
          <div id=clear></div>
+         @include('frontend.includes.sevenintoninty')
          <br/>
          <div id="job-table">
             <table class="table">

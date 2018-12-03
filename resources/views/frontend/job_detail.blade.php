@@ -42,6 +42,8 @@
       </div>
       @include('frontend.includes.adsense-banner')
       <br/>
+      <br>
+      @include('frontend.includes.imageset' , ['data' => 'thousandnine' , 'viewonly' => 'viewonly'])
       <div id="show-ad-page-job-details-div" >
          <div id="show-ad-img-div">
             <!--
@@ -175,17 +177,8 @@
                </fieldset>
                <fieldset class="scheduler-border" style="float: right;min-height: 340px;">
                   <legend class="scheduler-border">Advertisement</legend>
-                  <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
-                  <!-- paperpk admissions 600 300 -->
-                  <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-5600064405332347"
-                     data-ad-slot="5710564550"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                  <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                  </script><br/>
+                  @include('frontend.includes.imageset' , ['data' => 'threeintothree' , 'viewonly' => 'viewonly'])
+                  <br/>
                </fieldset>
                <fieldset class="scheduler-border" style="float: right;min-height: 340px;">
                   <legend class="scheduler-border">Job Description</legend>
@@ -217,6 +210,9 @@
                <br/>
                <img id="img_path" src="{{asset('/storage/app/'.$add->newspaper_piece)}}" />
                <br/><a class="btn btn-success" style="    background-color: #019875;color:white;" href="{{url('/storage/app/'.$add->newspaper_piece)}}" target="_blank">View Full Image</a>
+               <br>
+               <br>
+               @include('frontend.includes.imageset' , ['data' => 'sevenintoninty' , 'viewonly' => 'viewonly'])
                <div id=clear></div>
                
                <div id=clear></div>
@@ -232,7 +228,7 @@
       <br>
       <br>
       <div id=govt_div style="clear:right;">
-         @include('frontend.includes.adsense-square')
+         @include('frontend.includes.imageset' , ['data' => 'threeintosix' , 'viewonly' => 'viewonly'])
          <br/><br/>
          @include('frontend.includes.adsense-square')
          <br/>
@@ -311,16 +307,13 @@
    echo '</tr>';
 });
                       ?>
-
-      
-                     
-                        
                      </tbody>
                   </table>
                </div>
                <div id="featured_latest_job">
                   <table class="table" style="padding-top:0px;">
                      <caption class="text-center" style="font-weight: bold; font-size: 23px;">Related Job Titles</caption>
+
                      <tbody>
                       <?php
 
@@ -340,7 +333,10 @@
                         
                      </tbody>
                   </table>
-               </div>   </div>
+               </div>  
+
+
+                </div>
 
    <div id=clear></div>
    <br/>

@@ -180,6 +180,7 @@
                <p>
                <h1>Latest jobs in Pakistan ads</h1>
                </p> 
+               @include('frontend.includes.sevenintoninty')
               <br/>
 
                <div id=clear></div>
@@ -292,6 +293,9 @@
       </tr>
      </thead>
      <tbody>
+        @php
+        $count = 0;
+        @endphp
         @foreach($jobs as $job)
         <tr>
         <td><a href="{{url('detail_page/'.$job->id)}}"> {{$job->title}} </a>
@@ -300,7 +304,16 @@
         <td><a href="{{url('last_date/'.$job->last_date)}}">{{date('d-m-Y', strtotime($job->last_date))}}</a></td>
         <td>@if($job->getCity) <a href="{{url('city/'.$job->getCity->id)}}">{{$job->getCity->title}}</a>@endif</td>
         <td><a href="{{url('detail_page/'.$job->id)}}">View</a></td>
-         </tr>
+         </tr>       
+        @php
+           $count++;
+           @endphp
+           @if($count > 4)
+          @include('frontend.includes.imageset' , ['data' => 'sevenintotwo'])
+          @php
+           $count = 0;
+           @endphp
+          @endif
         @endforeach
      </tbody>
 
@@ -328,6 +341,7 @@
         <td><a href="{{url('city/'.$job->getCity->id)}}">{{$job->getCity->title}}</a></td>
         <td><a href="{{url('detail_page/'.$job->id)}}">View</a></td>
          </tr>
+
         @endforeach
      </tbody>
   </table>

@@ -45,6 +45,7 @@
          <br>
       <div id="newspaper" style="margin-top:5px;clear: right;">
          <div id=clear></div>
+         @include('frontend.includes.sevenintoninty')
          <br/>
          
           @foreach($newspapers as $newspaper)

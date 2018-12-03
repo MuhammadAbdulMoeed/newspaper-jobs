@@ -44,7 +44,9 @@
          <div id=clear></div>
          <br>
       <div id="featured_latest_job">
+        
          <div id=clear></div>
+         @include('frontend.includes.sevenintoninty')
          <br/>
          <div id="job-table">
             <table class="table">

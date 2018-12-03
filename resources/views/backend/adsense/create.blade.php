@@ -47,8 +47,12 @@ Cities Management
                             <label class="col-md-2 form-control-label">Banner Size</label>
 
                             <select name="size">
-                                <option value="banner">Banner Size</option>
-                                <option value="square">Square Size</option>
+                                <option value="717x417">717px x 417px</option>
+                                <option value="700x90">700px x 90px</option>
+                                <option value="764x267">764px x 267px</option>
+                                <option value="600x300">600px x 300px</option>
+                                <option value="300x600">300px x 600px</option>
+                                <option value="348x340">348px x 340px</option>
                             </select>
                         </div><!--form-group-->
                     </div><!--col-->

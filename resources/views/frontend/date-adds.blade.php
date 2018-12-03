@@ -45,6 +45,7 @@
          <p>{{$paper->title}} 
          <p style="font-size:1em; color:black; font-weight: 100;">{{$paper->title}}</p>
          <div id=clear></div>
+         @include('frontend.includes.sevenintoninty')
          <div id="job-table">
             <table class="table">
                <thead>

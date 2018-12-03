@@ -46,7 +46,9 @@
       <div id="featured_latest_job">
         
          <div id=clear></div>
+         @include('frontend.includes.sevenintoninty')
          <br/>
+         <br>
          <div id="job-table">
             <table class="table">
                <thead>
@@ -58,6 +60,9 @@
                   </tr>
                </thead>
                <tbody>
+                  @php
+                  $count = 0;
+                  @endphp
                   @foreach($newspaper as $news)
                   <tr>
                      <td><img src="{{asset('/storage/app/'.$news->rel_logo)}}" width="50" height="50"> <a href="{{url('detail_page/'.$news->id)}}"> {{$news->title}} </a>
@@ -70,6 +75,16 @@
                      <td><a href="{{url('detail_page/'.$news->id)}}">View Detail</a></td>
                      @endif
                   </tr>
+                  @php
+           $count++;
+           @endphp
+           @if($count > 4)
+          @include('frontend.includes.imageset' , ['data' => 'sixintothree'])
+          @php
+           $count = 0;
+           @endphp
+          @endif
+
                   @endforeach
                </tbody>
             </table>

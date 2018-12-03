@@ -27,9 +27,9 @@ class HomeController extends Controller
     {
         $newspapers = Newspaper::all();
         $cities = City::all();
-        $category = Category::paginate(5, ['*'], 'categories');
-        $qualification = Qualification::paginate(5, ['*'], 'qualification');
-        $jobType = JobType::paginate(5, ['*'], 'jobtypes');
+        $category = Category::paginate(20, ['*'], 'categories');
+        $qualification = Qualification::paginate(20, ['*'], 'qualification');
+        $jobType = JobType::paginate(20, ['*'], 'jobtypes');
         $jobs = Add::with('getCity')->where('type' , 'jobs')->paginate(5, ['*'], 'jobs');
         $admissions = Add::with('getCity')->where('type' , 'admissions')->paginate(5, ['*'], 'admissions');
         $tenders = Add::with('getCity')->where('type' , 'tenders')->paginate(5, ['*'], 'tenders');
