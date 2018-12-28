@@ -85,7 +85,7 @@ $cat = App\Category::where('status' , '1')->get();
                 @if(auth()->user())
                   <a href="{{url('/account')}}">My Account</a>
                   @else
-                  <a href="{{url('/register')}}">Job Seeker</a><a href="{{url('/es-register')}}">Employee Seeker</a>
+                  <a href="{{url('/register')}}">Job Seeker</a><a href="{{url('/es-register')}}">Employer</a>
                   @endif
                </div>
                <ul>
@@ -98,9 +98,10 @@ $cat = App\Category::where('status' , '1')->get();
                </ul>
             </div>
          </div>
-         <div id="logo_div">
-            <a href=""><img alt="" src="" align="left" width=200px /></a>
-         </div>
+          <div id="logo_div">
+                    <a href="http://paperpk.com/"><img alt="PaperPk - Jobs in Pakistan" src="../pk_img/logo.png" align="left" width=200px /></a>
+                     @include('frontend.includes.sevenintoninty')
+                </div>
          <div id=clear></div>
          @yield('content')
          <div id=footer>
@@ -111,7 +112,7 @@ $cat = App\Category::where('status' , '1')->get();
                   <tr>
                      <td bgcolor="white">
                         <p>  
-                           
+                           CopyRight & Copy; 2018 & Trademark Test.Com Pvt Ltd.
                         </p>
                      </td>
                   </tr>
