@@ -199,6 +199,11 @@
                   </table>
                </fieldset>
                <fieldset class="scheduler-border" style="float: right;min-height: 340px;">
+                  <legend class="scheduler-border">Advertisement</legend>
+                  @include('frontend.includes.imageset' , ['data' => 'threeintothree' , 'viewonly' => 'viewonly'])
+                  <br/>
+               </fieldset>
+               <fieldset class="scheduler-border" style="float: right;min-height: 340px;">
                   <legend class="scheduler-border">Related</legend>
                   @foreach($rel as $re)
                   <a href="{{url('detail_page/'.$re->id)}}">{{$re->title}}</a>
