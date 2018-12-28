@@ -81,7 +81,16 @@
       </div>
       <div id="newspaper" style="margin-top:5px;clear: right;">
          <div id=clear></div>
+         <?php
+         $sub = App\subscription::where('qualification_id' , $qualification_id)->where('user_id' , \Auth::user()->id)->first();
+         ?>
+         @if($sub)
+         <a class="btn btn-primary" href="{{url('user-unscribe-qual/'.$qualification_id)}}">Un-subscribe</a>
+         @else
+         <a class="btn btn-primary" href="{{url('user-scribe-qual/'.$qualification_id)}}">Subscribe</a>
+         @endif
          <br/>
+         <br>
          
         @foreach($newspapers as $newspaper)
                <a href="{{url('newspaper/'.$newspaper->id)}}"><img alt="The News" src="{{asset('/storage/app/'.$newspaper->logo)}}"  /></a>

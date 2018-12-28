@@ -31,8 +31,11 @@ Route::post('upload/user/speciality' , [HomeController::class , 'userSpeciality'
 Route::get('donwload-file', [HomeController::class , 'downloadFile']);
 Route::get('apply_job/{id}' , [HomeController::class , 'applyJob']);
 Route::get('user-scribe-news/{id}' , [HomeController::class , 'subscribeNews']);
-Route::get('user-scribe-category/{id}' , [HomeController::class , 'subscribeCate']);    
+Route::get('user-scribe-news/{id}' , [HomeController::class , 'unSubscribeNews']);
+Route::get('user-scribe-category/{id}' , [HomeController::class , 'subscribeCate']);  
+Route::get('user-unscribe-category/{id}' , [HomeController::class , 'unSubscribeCate']);  
 Route::get('user-scribe-qual/{id}' , [HomeController::class , 'subscribeQual']);    
+Route::get('user-unscribe-qual/{id}' , [HomeController::class , 'unSubscribeQual']);    
 Route::get('showcalenderjobs' , [HomeController::class , 'showCalenderJob']);    
 Route::get('showcalendertender' , [HomeController::class , 'showCalenderTender']);    
 Route::get('showcalenderadmissions' , [HomeController::class , 'showCalenderAdmission']);    

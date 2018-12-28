@@ -1,2 +1,4 @@
 Hello ,
-You had subscribed
+You had subscribed 
+<br>
+New Job has been uploaded in {{$test}}

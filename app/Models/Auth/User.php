@@ -88,4 +88,7 @@ class User extends Authenticatable
         $array = in_array($id, $explode);
         return $array;
     }
+    public function subscribe(){
+        return $this->hasMany('\App\subscription' , 'user_id' , 'id');
+    }
 }

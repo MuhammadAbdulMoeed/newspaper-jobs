@@ -295,8 +295,10 @@
                      <caption class="text-center" style="font-weight: bold; font-size: 23px;">Jobs by City</caption>
                      <tbody>
                       <?php
-
-                      \App\City::has('add')->chunk(4,function($cities){
+$cat_id = $add->id;
+                      \App\City::whereHas('add' , function($q) use ($cat_id) {
+                        $q->where('category_id' , $cat_id);
+                      })->chunk(4,function($cities){
                         $c = 1;
                         echo '<tr>';
    foreach($cities as $city){
@@ -321,7 +323,7 @@
                         $c = 1;
                         echo '<tr>';
    foreach($cities as $city){
-    $url = url('city/'.$city->id);
+    $url = url('detail_page/'.$city->id);
        echo '<td><a href="'.$url.'">'.$city->title.'</a></td>';
                         $c++;
    }

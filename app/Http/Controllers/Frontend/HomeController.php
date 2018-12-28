@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $newspapers = Newspaper::all();
-        $cities = City::all();
+        $cities = City::has('add')->get();
         $category = Category::paginate(20, ['*'], 'categories');
         $qualification = Qualification::paginate(20, ['*'], 'qualification');
         $jobType = JobType::paginate(20, ['*'], 'jobtypes');
@@ -186,6 +186,11 @@ class HomeController extends Controller
       $subscription->save();
       return redirect()->back();
     }
+    public function unSubscribeCate($id){
+      $news = subscription::where('user_id' , \Auth::user()->id)->where('category_id' , $id)->first();
+      $news->delete();
+      return redirect()->back();
+    }
     public function subscribeQual($id){
       $news = subscription::where('user_id' , \Auth::user()->id)->where('qualification_id' , $id)->first();
       if($news){
@@ -195,6 +200,16 @@ class HomeController extends Controller
       $subscription->qualification_id = $id;
       $subscription->user_id = \Auth::user()->id;
       $subscription->save();
+      return redirect()->back();
+    }
+    public function unSubscribeQual($id){
+       $news = subscription::where('user_id' , \Auth::user()->id)->where('qualification_id' , $id)->first();
+      $news->delete();
+      return redirect()->back();
+    }
+    public function unSubscribeNews($id){
+       $news = subscription::where('user_id' , \Auth::user()->id)->where('newspaper_id' , $id)->first();
+      $news->delete();
       return redirect()->back();
     }
 

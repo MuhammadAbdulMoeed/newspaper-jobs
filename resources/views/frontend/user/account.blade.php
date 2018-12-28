@@ -140,7 +140,7 @@
                             @foreach($subs as $sub)
                             <tr>
                                 <td>@if($sub->newspaper) {{$sub->newspaper->title}} @elseif($sub->qualification) {{$sub->qualification->title}} @else {{$sub->category->title}} @endif</td>
-                                <td>unsubscribe</td>
+                                <td>@if($sub->newspaper) <a href="{{url('user-unscribe-news/'.$sub->newspaper->id)}}">unsubscribe</a> @elseif($sub->qualification) <a href="{{url('user-unscribe-qual/'.$sub->qualification->id)}}">unsubscribe</a> @else <a href="{{url('user-unscribe-category/'.$sub->category->id)}}">unsubscribe</a> @endif</td>
                             </tr>
                             @endforeach
                         </tbody>

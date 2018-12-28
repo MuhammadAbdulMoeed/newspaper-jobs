@@ -52,6 +52,7 @@ class AddsController extends Controller
      */
     public function store(Request $request)
     {
+
         $validation = $request->validate([
         'newspaper_piece' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048',
         'rel_logo' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
@@ -94,14 +95,17 @@ class AddsController extends Controller
         $adds->newspaper_piece = $path;
         $adds->rel_logo = $path1;
         $adds->save();
-        $user = User::all();
+        $user = User::with('subscribe')->get();
         foreach ($user as $key => $value) {
-            $array = $value->findExplo($request->category_id);
-            if($array){
-                // \Mail::to($value->email)->send(new TestMail);
-            }
+                $array = $value->subscribe;
+                foreach ($array as $key2 => $value2) {
+                    if($value2->category_id == $adds->category_id || $value2->newspaper_id == $adds->newspaper_id || $value2->qualification_id == $adds->qualification_id){
+                    $title = $adds->title;
+                    \Mail::to($value->email)->send(new TestMail($title));
+                    }
+                }
+            
         }
-
         return redirect()->back();
     }
 
