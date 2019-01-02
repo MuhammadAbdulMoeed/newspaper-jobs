@@ -175,29 +175,7 @@
                      </tr>
                   </table>
                </fieldset>
-               <fieldset class="scheduler-border" style="float: right;min-height: 340px;">
-                  <legend class="scheduler-border">Advertisement</legend>
-                  @include('frontend.includes.imageset' , ['data' => 'threeintothree' , 'viewonly' => 'viewonly'])
-                  <br/>
-               </fieldset>
-               <fieldset class="scheduler-border" style="float: right;min-height: 340px;">
-                  <legend class="scheduler-border">Job Description</legend>
-                  <table width=100%>
-                     <tr>
-                        <td>{{$add->description}}</td>
-                     </tr>
-                     <tr>
-                        <td>
-                           @if($add->created_by == "executive")
-                           <a href="{{url('apply_job/'.$add->id)}}"> 
-                           <img src="../images/Apply-Button.jpg" witdth="200"/></a>
-                           @else
-                           <img src="../images/Apply-Button.jpg" witdth="200"/>
-                           @endif
-                        </td>
-                     </tr>
-                  </table>
-               </fieldset>
+               
                <fieldset class="scheduler-border" style="float: right;min-height: 340px;">
                   <legend class="scheduler-border">Advertisement</legend>
                   @include('frontend.includes.imageset' , ['data' => 'threeintothree' , 'viewonly' => 'viewonly'])
