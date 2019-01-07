@@ -209,4 +209,8 @@ class AddsController extends Controller
         Add::destroy($id);
         return redirect()->back();
     }
+
+    public function createmessage(){
+       return view('backend.custom.create'); 
+    }
 }

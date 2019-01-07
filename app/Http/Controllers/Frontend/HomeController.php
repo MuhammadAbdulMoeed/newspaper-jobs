@@ -68,7 +68,7 @@ class HomeController extends Controller
         ->with('getCity')->get();
         $paper = Newspaper::where('slug' , $slug)->first();
         $newspapers = Newspaper::all();
-        return view('frontend.date-adds' , compact('paper' , 'newspaper' , 'newspapers' , 'slug'));
+        return view('frontend.date-adds' , compact('paper' , 'newspaper' , 'newspapers' , 'slug' , 'date'));
     }
     public function jobType($id){
         $newspaper = Add::where('job_type_id' , $id)->get();

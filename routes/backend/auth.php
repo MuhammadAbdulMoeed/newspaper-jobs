@@ -151,6 +151,13 @@ Route::group([
     Route::get('edit-adds/{id}' , 'AddsController@edit')->name('adds.edit');
     Route::post('update-adds/{id}' , 'AddsController@update')->name('adds.update');
     Route::get('del-adds/{id}' , 'AddsController@destroy')->name('adds.delete');
+    // Custom Controller
+    Route::get('message' , 'CustomMessage@index')->name('message.index');
+    Route::get('create-message' , 'CustomMessage@create')->name('message.create');
+    Route::post('store-message' , 'CustomMessage@store')->name('message.store');
+    Route::get('edit-message/{id}' , 'CustomMessage@edit')->name('message.edit');
+    Route::post('update-message/{id}' , 'CustomMessage@update')->name('message.update');
+    Route::get('del-message/{id}' , 'CustomMessage@destroy')->name('message.delete');
 
     Route::group(['namespace' => 'Executive'], function () {
     // For executive User
@@ -165,6 +172,8 @@ Route::group([
 
     // Ads Managment
     Route::get('create-addsen' , 'AddsController@createAdd')->name('mgmt.create');
+
+    
 
 
     });

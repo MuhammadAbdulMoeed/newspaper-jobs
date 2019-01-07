@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdsenseCodesTable extends Migration
+class AddDateToCustomMessageTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateAdsenseCodesTable extends Migration
      */
     public function up()
     {
-        Schema::create('adsense_codes', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('code');
-            $table->string('size');
-            $table->timestamps();
+        Schema::table('custom_message', function (Blueprint $table) {
+            $table->date('date');
         });
     }
 
@@ -28,6 +25,8 @@ class CreateAdsenseCodesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('adsense_codes');
+        Schema::table('custom_message', function (Blueprint $table) {
+            $table->dropColumn('date');
+        });
     }
 }

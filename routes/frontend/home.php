@@ -43,6 +43,7 @@ Route::get('company_add/{slug}' , [HomeController::class , 'showCompanyAdd']);
 Route::get('apply_date/{slug}' , [HomeController::class , 'showDateApply']);
 Route::get('last_date/{slug}' , [HomeController::class , 'showDateLast']);
 Route::get('datetype/{slug}/{type}' , [HomeController::class , 'showDateType']);
+Route::get('datetype/{slug}/{type}' , [HomeController::class , 'showDateType']);
 
 /*
  * These frontend controllers require the user to be logged in

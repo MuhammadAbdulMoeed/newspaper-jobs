@@ -46,6 +46,11 @@
          <p style="font-size:1em; color:black; font-weight: 100;">{{$paper->title}}</p>
          <div id=clear></div>
          @include('frontend.includes.sevenintoninty')
+         
+         <?php
+         $message = App\CustomMessagee::where('status' , '1')->whereDate('date' , $date)->first();
+         ?>
+         @if($message == null)
          <div id="job-table">
             <table class="table">
                <thead>
@@ -77,6 +82,12 @@
             <div id=clear></div>
             <br/>
          </div>
+         @else
+         <div class="alert alert-info">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+   {{$message->message}}
+</div>
+         @endif
       </div>
       <div id="newspaper" style="margin-top:5px;clear: right;">
          <div id=clear></div>
