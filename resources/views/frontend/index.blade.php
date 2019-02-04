@@ -51,9 +51,9 @@
                            <?php
                            $date = \Carbon\Carbon::today();
                            ?>
-                        <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->format('d-m-Y')}}<br/>{{\Carbon\Carbon::today()->format('l')}}</b></span> </td>
+                        <td align="center" style="border: #DBE1E6 1px solid;" ><b><span style="color:#325465;">{{$date->format('d-m-Y')}}<br/>{{\Carbon\Carbon::today()->format('l')}}</b></span> </td>
                         @foreach($newspapers as $newspaper)
-                        <td valign="top" class="Newspaper_border">
+                        <td valign="top" align="center" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
                         <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Pakistan Jobs</a><br/>
                         <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Abroad Jobs</a><br/>
@@ -67,7 +67,7 @@
                            ?>
                         <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->format('d-m-Y')}}<br/>{{\Carbon\Carbon::today()->subDays('1')->format('l')}}</b></span> </td>
                         @foreach($newspapers as $newspaper)
-                        <td valign="top" class="Newspaper_border">
+                        <td valign="top" align="center" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
                         <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Pakistan Jobs</a><br/>
                         <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Abroad Jobs</a><br/>
@@ -81,7 +81,7 @@
                            ?>
                         <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->format('d-m-Y')}}<br/>{{\Carbon\Carbon::today()->subDays('2')->format('l')}}</b></span> </td>
                         @foreach($newspapers as $newspaper)
-                        <td valign="top" class="Newspaper_border">
+                        <td valign="top" align="center" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
                         <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Pakistan Jobs</a><br/>
                         <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Abroad Jobs</a><br/>
@@ -95,7 +95,7 @@
                            ?>
                         <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->format('d-m-Y')}}<br/>{{\Carbon\Carbon::today()->subDays('3')->format('l')}}</b></span> </td>
                         @foreach($newspapers as $newspaper)
-                        <td valign="top" class="Newspaper_border">
+                        <td valign="top" align="center" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
                         <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Pakistan Jobs</a><br/>
                         <a  rel="nofollow" id="admission-link"@if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Abroad Jobs</a><br/>
@@ -109,7 +109,7 @@
                            ?>
                         <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->format('d-m-Y')}}<br/>{{\Carbon\Carbon::today()->subDays('4')->format('l')}}</b></span> </td>
                         @foreach($newspapers as $newspaper)
-                        <td valign="top" class="Newspaper_border">
+                        <td valign="top" align="center" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
                         <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Pakistan Jobs</a><br/>
                         <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Abroad Jobs</a><br/>
@@ -123,7 +123,7 @@
                            ?>
                         <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->format('d-m-Y')}}<br/>{{\Carbon\Carbon::today()->subDays('5')->format('l')}}</b></span> </td>
                         @foreach($newspapers as $newspaper)
-                        <td valign="top" class="Newspaper_border">
+                        <td valign="top" align="center" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
                         <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Pakistan Jobs</a><br/>
                         <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Abroad Jobs</a><br/>
@@ -137,7 +137,7 @@
                            ?>
                         <td align="center" style="border: #DBE1E6 1px solid;"><b><span style="color:#325465;">{{$date->format('d-m-Y')}}<br/>{{\Carbon\Carbon::today()->subDays('6')->format('l')}}</b></span> </td>
                         @foreach($newspapers as $newspaper)
-                        <td valign="top" class="Newspaper_border">
+                        <td valign="top" align="center" class="Newspaper_border">
                         <!-- <a id="job-link" href="paper-ads.php?type=1&paper=8&date=2018-09-12">Jobs</a><br/> -->
                         <a id="job-link" @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/jobs/'.$date->toDateString())}}" @else href="#" @endif>Pakistan Jobs</a><br/>
                         <a  rel="nofollow" id="admission-link"  @if($newspaper->slug) href="{{url('search/'.$newspaper->slug.'/admissions/'.$date->toDateString())}}" @else href="#" @endif>Abroad Jobs</a><br/>
@@ -151,7 +151,7 @@
                      <h3><a class="my-success" href="{{route('frontend.calendar.view')}}"> View more newspapers & jobs by date</a></h3>
                </div>
 
-               @include('frontend.includes.adsense-banner')
+               
 
                <!--
                   <button style="width:100%;" id="m-btn">Click to view more dates<img src="images/nav_table.png" style="height: 25px;" /></button>
@@ -187,7 +187,7 @@
                <br/>
                <div id="job-table">
                   <table class="table" style="padding-top:0px;">
-                     <caption class="text-center" style="font-weight: bold; font-size: 23px;">Jobs by City</caption>
+                     <caption style="font-weight: bold; font-size: 23px;">Jobs by City</caption>
                      <tbody>
                       <?php
 
@@ -211,7 +211,7 @@
               
                <div id="job-table">
                   <table class="table" style="padding-top:0px;">
-                     <caption class="text-center" style="font-weight: bold; font-size: 23px;">Jobs by Category </caption>
+                     <caption style="font-weight: bold; font-size: 23px;">Jobs by Category </caption>
                      <tbody>
                       <?php
 
@@ -233,7 +233,7 @@
                <br/>
                <div id="job-table">
                   <table class="table" style="padding-top:0px;">
-                     <caption class="text-center" style="font-weight: bold; font-size: 23px;">Jobs by Qualification </caption>
+                     <caption style="font-weight: bold; font-size: 23px;">Jobs by Qualification </caption>
                      <tbody>
                       <?php
 
@@ -254,7 +254,7 @@
                 <div id="job-table">
                    
                   <table class="table" style="padding-top:0px;">
-                     <caption class="text-center" style="font-weight: bold; font-size: 23px;">Jobs by Type </caption>
+                     <caption style="font-weight: bold; font-size: 23px;">Jobs by Type </caption>
                      <tbody>
                       <?php
 

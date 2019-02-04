@@ -54,20 +54,26 @@ class AddsController extends Controller
     {
 
         $validation = $request->validate([
-        'newspaper_piece' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048',
-        'rel_logo' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
+        'newspaper_piece' => 'file|image|mimes:jpeg,png,gif,webp|max:2048',
+        'rel_logo' => 'file|image|mimes:jpeg,png,gif,webp|max:2048'
         // for multiple file uploads
         // 'photo.*' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
         ]);
         $file      = $validation['newspaper_piece']; // get the validated file
+        $adds = new Add;
+        if(!empty($file){
+
         $extension = $file->getClientOriginalExtension();
         $filename  = 'newspaper-piece-' . time() . '.' . $extension;
         $path      = $file->storeAs('photos', $filename);
+        })
         $file      = $validation['rel_logo']; // get the validated file
+            if(!empty($file){
+                
         $extension = $file->getClientOriginalExtension();
         $filename  = time() . '.' . $extension;
         $path1      = $file->storeAs('photos', $filename);
-        $adds = new Add;
+            })
         $adds->title = $request->adds_title;
         $adds->company_name = $request->company_name;
         $adds->total_pos = $request->total_pos;
@@ -92,8 +98,14 @@ class AddsController extends Controller
         $adds->apply_by = $request->apply_by;
         $adds->last_date = $request->last_date;
         $adds->description = $request->description;
+        if(isset($path){
+
         $adds->newspaper_piece = $path;
+        })
+            if(isset($path1){
+
         $adds->rel_logo = $path1;
+            })
         $adds->save();
         $user = User::with('subscribe')->get();
         foreach ($user as $key => $value) {
@@ -153,15 +165,20 @@ class AddsController extends Controller
         // for multiple file uploads
         // 'photo.*' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
         ]);
-        $file      = $validation['newspaper_piece']; // get the validated file
+        $adds = Add::find($id);
+        if(!empty($file){
+
         $extension = $file->getClientOriginalExtension();
         $filename  = 'newspaper-piece-' . time() . '.' . $extension;
         $path      = $file->storeAs('photos', $filename);
+        })
         $file      = $validation['rel_logo']; // get the validated file
+            if(!empty($file){
+                
         $extension = $file->getClientOriginalExtension();
         $filename  = time() . '.' . $extension;
         $path1      = $file->storeAs('photos', $filename);
-        $adds = Add::find($id);
+            })
         $adds->title = $request->adds_title;
         $adds->company_name = $request->company_name;
         $adds->total_pos = $request->total_pos;
@@ -192,8 +209,14 @@ class AddsController extends Controller
         $adds->apply_by = $request->apply_by;
         $adds->last_date = $request->last_date;
         $adds->description = $request->description;
+        if(isset($path){
+
         $adds->newspaper_piece = $path;
+        })
+            if(isset($path1){
+                
         $adds->rel_logo = $path1;
+            })
         $adds->save();
         return redirect()->back();
     }

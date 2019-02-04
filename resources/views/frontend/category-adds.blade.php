@@ -56,6 +56,7 @@
                      <th>City</th>
                      <th>Date</th>
                      <th>Apply Now</th>
+                     <th>Action</th>
                   </tr>
                </thead>
                <tbody>
@@ -90,9 +91,7 @@
                @endforeach
       </div>
       <div id=govt_div2 style="margin-top:5px;clear:right;">
-        @include('frontend.includes.adsense-square')
-         <br/><br/>
-         @include('frontend.includes.adsense-square')
+       
          <br/>
          <br/>
          

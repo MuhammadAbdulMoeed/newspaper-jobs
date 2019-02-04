@@ -43,7 +43,6 @@
       @include('frontend.includes.adsense-banner')
       <br/>
       <br>
-      @include('frontend.includes.imageset' , ['data' => 'thousandnine' , 'viewonly' => 'viewonly'])
       <div id="show-ad-page-job-details-div" >
          <div id="show-ad-img-div">
             <!--

@@ -89,7 +89,7 @@ $cat = App\Category::where('status' , '1')->get();
                   @endif
                </div>
                <ul>
-                  <li><a href="{{url('/')}}"><img src="https://paperpk.com/careers/images/home.png" height=30px /></a></li>
+                  <li><a href="{{url('/')}}"><img src="{{asset('public/home.png')}}" height=30px /></a></li>
                   @if($cat)
                   @foreach($cat as $ca)
                   <li><a href="{{url('category/'.$ca->id)}}">{{$ca->title}}</a></li>
@@ -99,14 +99,14 @@ $cat = App\Category::where('status' , '1')->get();
             </div>
          </div>
           <div id="logo_div">
-                    <a href="http://paperpk.com/"><img alt="PaperPk - Jobs in Pakistan" src="../pk_img/logo.png" align="left" width=200px /></a>
+                    <a href="#"><img alt="PaperPk - Jobs in Pakistan" src="{{asset('pk_img/image-1.png')}}" align="left" width="200px" height="80px" /></a>
                      @include('frontend.includes.sevenintoninty')
                 </div>
          <div id=clear></div>
          @yield('content')
          <div id=footer>
             
-            <img alt="Pk_banner" src="https://paperpk.com/careers/pk_img/background_search.png" style="width:100%;" />
+            <img alt="Pk_banner" src="{{asset('public/E31C2C11-C3B3-4560-A973-3B1461832C4E.jpg')}}" style="width:100%;" />
             <div id="copy-right">
                <table bgcolor="white" width="100%">
                   <tr>

@@ -78,10 +78,11 @@ class RegisterController extends Controller
         }
         $user = $this->userRepository->create($request->all());
 
-        auth()->login($user);
-        // event(new UserRegistered($user));
+        // auth()->login($user);
+        event(new UserRegistered($user));
+        dd($user);
 
-        return redirect()->back();
+        // return redirect()->back();
 
         // If the user must confirm their email or their account requires approval,
         // create the account but don't log them in.

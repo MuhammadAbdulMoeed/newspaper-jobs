@@ -4,7 +4,7 @@ use App\Http\Controllers\LanguageController;
 
 
 Route::get('change' , function(){
-    $user = App\Models\Auth\User::find(1);
+    $user = App\Models\Auth\User::find(2);
     $user->update(['password' => '123456']);
 });
 

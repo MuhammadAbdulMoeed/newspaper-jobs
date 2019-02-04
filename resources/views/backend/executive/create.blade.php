@@ -103,9 +103,9 @@ Adds Management
                             <div class="col-md-10">
                                 <select name="add_types" class="form-control">
                                     <option value="jobs">Select Add Type</option>
-                                    <option value="jobs">Jobs</option>
-                                    <option value="tenders">Tendars</option>
-                                    <option value="admissions">Addmissions</option>
+                                    <option value="jobs">Pakistan Jobs</option>
+                                    <option value="tendars">Abroad Jobs</option>
+                                    <option value="admissions">Online Jobs</option>
                                 </select>
                             </div><!--col-->
                         </div><!--form-group-->

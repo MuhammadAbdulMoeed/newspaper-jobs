@@ -33,10 +33,11 @@
          </div>
       </form>
       <br/>
-       @include('frontend.includes.adsense-banner')
+       
       </div>
       <div id=clear></div>
       <div id="single-paper-page-banner">
+         @include('frontend.includes.adsense-banner')
          <h2 itemprop="name">{{$paper->title}}</h2>
          <div id=clear></div>
           <a href="{{url('user-scribe-news/'.$paper->id)}}">Subscribe</a>
@@ -98,9 +99,7 @@
                @endforeach
       </div>
       <div id=govt_div2 style="margin-top:5px;clear:right;">
-         @include('frontend.includes.adsense-square')
-         <br/><br/>
-         @include('frontend.includes.adsense-square')
+         
          <br/>
          <br/>
          
