@@ -4,6 +4,12 @@ use App\Http\Controllers\LanguageController;
 
 
 Route::get('change' , function(){
+    \Mail::send('errors.404', [], function ($m) {
+        $m->to('mashhoodr.rehman@gmail.com');
+        $m->subject('Welcome to my app!');
+        $m->from('noreply@example.com');
+    });
+    dd('dsf');
     $user = App\Models\Auth\User::find(2);
     $user->update(['password' => '123456']);
 });
