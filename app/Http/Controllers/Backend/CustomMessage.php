@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\CustomMessagee;
+use App\Newspaper;
 
 class CustomMessage extends Controller
 {
@@ -15,7 +16,8 @@ class CustomMessage extends Controller
     }
 
     public function create(){
-    	return view('backend.custom.create');
+        $newspapers = Newspaper::all();
+    	return view('backend.custom.create' , compact('newspapers'));
     }
 
     public function store(Request $request)
@@ -27,7 +29,9 @@ class CustomMessage extends Controller
         	$custom->status = "1";
         }
         $custom->date = $request->date;
+        $custom->newspaper_id = $request->newspaper;
         $custom->save();
+
         return redirect()->back();
     }
 
@@ -43,13 +47,15 @@ class CustomMessage extends Controller
         else{
          $custom->status = "0";   
         }
+        $custom->newspaper_id = $request->newspaper;
         $custom->save();
         return redirect()->back();
     }
 
     public function edit($id){
+        $newspapers = Newspaper::all();
         $message = CustomMessagee::find($id);
-        return view('backend.custom.edit' , compact('message'));
+        return view('backend.custom.edit' , compact('message' , 'newspapers'));
     }
 
     public function destroy($id){

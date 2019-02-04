@@ -49,7 +49,7 @@
          @include('frontend.includes.sevenintoninty')
          
          <?php
-         $message = App\CustomMessagee::where('status' , '1')->whereDate('date' , $date)->first();
+         $message = App\CustomMessagee::where('status' , '1')->where('newspaper_id' , $paper->id)->whereDate('date' , $date)->first();
          ?>
          @if($message == null)
          <div id="job-table">

@@ -54,6 +54,23 @@ Category Management
                 <div class="row mt-4 mb-4">
                     <div class="col">
                         <div class="form-group row">
+                            <label class="col-md-2 form-control-label">Newspapers</label>
+
+                            <div class="col-md-10">
+                                <select name="newspaper">
+                                    @foreach($newspapers as $newspaper)
+                                    <option value="{{$newspaper->id}}">{{$newspaper->title}}</option>
+                                    @endforeach
+                                </select>
+                            </div><!--col-->
+                        </div><!--form-group-->
+
+                    </div><!--col-->
+                </div>
+
+                <div class="row mt-4 mb-4">
+                    <div class="col">
+                        <div class="form-group row">
                             <label class="col-md-2 form-control-label">Date</label>
 
                             <div class="col-md-10">

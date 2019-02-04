@@ -3,6 +3,7 @@ $cat = App\Category::where('status' , '1')->get();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="https://www.w3.org/1999/xhtml" lang="en">
+
    <link rel="canonical" href="index.html">
    <!-- Mirrored from paperpk.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Sep 2018 02:20:01 GMT -->
    <!-- Added by HTTrack -->
@@ -187,5 +188,14 @@ var url3 = "{{url('showcalenderadmissions')}}"
          });
          
       </script>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124198877-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-124198877-2');
+</script>
    </head>
 </html>

@@ -80,7 +80,6 @@ class RegisterController extends Controller
 
         // auth()->login($user);
         event(new UserRegistered($user));
-        dd($user);
 
         // return redirect()->back();
 
