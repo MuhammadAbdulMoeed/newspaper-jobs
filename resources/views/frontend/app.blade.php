@@ -1,6 +1,7 @@
 <?php
 $cat = App\Category::where('status' , '1')->get();
 ?>
+<link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="https://www.w3.org/1999/xhtml" lang="en">
 
@@ -100,7 +101,7 @@ $cat = App\Category::where('status' , '1')->get();
             </div>
          </div>
           <div id="logo_div">
-                    <a href="#"><img alt="PaperPk - Jobs in Pakistan" src="{{asset('pk_img/test.jpg')}}" align="left" width="200px" height="80px" /></a>
+                    <a href="#"><img alt="" src="{{asset('pk_img/test.jpg')}}" align="left" width="200px" height="80px" /></a>
                      @include('frontend.includes.sevenintoninty')
                 </div>
          <div id=clear></div>
