@@ -42,7 +42,7 @@
                         <tr>
                         <td>{{$add->getAdds->title}}</td>
                         <td>{{$add->getAdds->getNewsPaper->title}}</td>
-                        <td> {{$add->getUser->name}}</td>
+                        <td>@if($add->getUser) {{$add->getUser->name}} @else N/A @endif</td>
                         <td>{{$add->created_at}}</td>
                         <td>@if($add->status == "pending") <a href="{{route('admin.ex.adds.status' , $add->id)}}">Pending</a> @else <a href="{{route('admin.ex.adds.status', $add->id)}}">Approved</a>  @endif</td>
                         @endforeach

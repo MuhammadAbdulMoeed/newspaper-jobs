@@ -57,6 +57,7 @@
                      <th>City</th>
                      <th>Date</th>
                      <th>Apply Now</th>
+                     <th>View Detail</th>
                   </tr>
                </thead>
                <tbody>

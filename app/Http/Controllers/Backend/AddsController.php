@@ -61,19 +61,19 @@ class AddsController extends Controller
         ]);
         $file      = $validation['newspaper_piece']; // get the validated file
         $adds = new Add;
-        if(!empty($file){
+        if(!empty($file)) {
 
         $extension = $file->getClientOriginalExtension();
         $filename  = 'newspaper-piece-' . time() . '.' . $extension;
         $path      = $file->storeAs('photos', $filename);
-        })
+        }
         $file      = $validation['rel_logo']; // get the validated file
-            if(!empty($file){
+            if(!empty($file)){
                 
         $extension = $file->getClientOriginalExtension();
         $filename  = time() . '.' . $extension;
         $path1      = $file->storeAs('photos', $filename);
-            })
+            }
         $adds->title = $request->adds_title;
         $adds->company_name = $request->company_name;
         $adds->total_pos = $request->total_pos;
@@ -98,14 +98,14 @@ class AddsController extends Controller
         $adds->apply_by = $request->apply_by;
         $adds->last_date = $request->last_date;
         $adds->description = $request->description;
-        if(isset($path){
+        if(isset($path)){
 
         $adds->newspaper_piece = $path;
-        })
-            if(isset($path1){
+        }
+            if(isset($path1)){
 
         $adds->rel_logo = $path1;
-            })
+            }
         $adds->save();
         $user = User::with('subscribe')->get();
         foreach ($user as $key => $value) {
@@ -166,19 +166,19 @@ class AddsController extends Controller
         // 'photo.*' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
         ]);
         $adds = Add::find($id);
-        if(!empty($file){
+        if(!empty($file)){
 
         $extension = $file->getClientOriginalExtension();
         $filename  = 'newspaper-piece-' . time() . '.' . $extension;
         $path      = $file->storeAs('photos', $filename);
-        })
+        }
         $file      = $validation['rel_logo']; // get the validated file
-            if(!empty($file){
+            if(!empty($file)){
                 
         $extension = $file->getClientOriginalExtension();
         $filename  = time() . '.' . $extension;
         $path1      = $file->storeAs('photos', $filename);
-            })
+            }
         $adds->title = $request->adds_title;
         $adds->company_name = $request->company_name;
         $adds->total_pos = $request->total_pos;
@@ -209,14 +209,14 @@ class AddsController extends Controller
         $adds->apply_by = $request->apply_by;
         $adds->last_date = $request->last_date;
         $adds->description = $request->description;
-        if(isset($path){
+        if(isset($path)){
 
         $adds->newspaper_piece = $path;
-        })
-            if(isset($path1){
+        }
+            if(isset($path1)){
                 
         $adds->rel_logo = $path1;
-            })
+            }
         $adds->save();
         return redirect()->back();
     }
