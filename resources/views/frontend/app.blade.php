@@ -100,7 +100,7 @@ $cat = App\Category::where('status' , '1')->get();
             </div>
          </div>
           <div id="logo_div">
-                    <a href="#"><img alt="PaperPk - Jobs in Pakistan" src="{{asset('pk_img/image-1.png')}}" align="left" width="200px" height="80px" /></a>
+                    <a href="#"><img alt="PaperPk - Jobs in Pakistan" src="{{asset('pk_img/test.jpg')}}" align="left" width="200px" height="80px" /></a>
                      @include('frontend.includes.sevenintoninty')
                 </div>
          <div id=clear></div>
