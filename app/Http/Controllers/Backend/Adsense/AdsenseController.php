@@ -17,6 +17,10 @@ class AdsenseController extends Controller
     }
 
     public function store(Request $request){
+        if(empty($request->code))
+        {
+            return redirect()->back()->withErrors('Code Required');
+        }
     	$adsense = new AdsenseCode;
     	$adsense->code = $request->code;
     	$adsense->size = $request->size;
@@ -29,6 +33,10 @@ class AdsenseController extends Controller
     }
 
     public function update($id , Request $request){
+        if(empty($request->code))
+        {
+            return redirect()->back()->withErrors('Code Required');
+        }
     	$adsense = AdsenseCode::find($id);
     	$adsense->code = $request->code;
     	$adsense->size = $request->size;
