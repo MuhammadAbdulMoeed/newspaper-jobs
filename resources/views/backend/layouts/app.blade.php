@@ -57,9 +57,34 @@
     @stack('after-scripts')
     <script src="{{url('js/includes/jquery.validate.js')}}"></script>
     <link rel="stylesheet" href="{{url('js/lib/codemirror.css')}}">
-<script src="{{url('js/lib/codemirror.js')}}"></script>
+    <script src="{{url('js/lib/codemirror.js')}}"></script>
+
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <script>
-  var editor = CodeMirror.fromTextArea(textarea, {
+
+$(document).ready(function(){
+    $('.toggle-one').change(function(){
+        var id = $(this).attr('data-value');
+        if($(this).prop("checked")==true){
+            var status = 'Active';
+        }else{
+            var status = 'Inactive';
+        }
+        $.ajax({
+                    url:"{{url('admin/changeStatus')}}",
+                    type: 'get',
+                    dataType: 'json',
+                    data:     {id:id,status:status},
+                    success: function(data) {
+                        console.log(data);
+                    }
+                });
+    });
+});
+
+
+  var editor = CodeMirror.fromTextArea($('textarea'), {
     lineNumbers: true
   });
 </script>

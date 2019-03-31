@@ -24,6 +24,7 @@ class AddsController extends Controller
     public function index()
     {
         $adds = Add::with('getCity' , 'getNewsPaper' , 'getCategory' , 'getJobType' , 'getQualification')->get();
+        
         return view('backend.adds.index' , compact('adds'));
         
     }
@@ -52,14 +53,16 @@ class AddsController extends Controller
      */
     public function store(Request $request)
     {
-
         $validation = $request->validate([
         'newspaper_piece' => 'file|image|mimes:jpeg,png,gif,webp|max:2048',
         'rel_logo' => 'file|image|mimes:jpeg,png,gif,webp|max:2048'
         // for multiple file uploads
         // 'photo.*' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
         ]);
-        $file      = $validation['newspaper_piece']; // get the validated file
+        if($request->newspaper_piece){
+            $file      = $validation['newspaper_piece']; // get the validated file
+        }
+        
         $adds = new Add;
         if(!empty($file)) {
 
@@ -67,8 +70,11 @@ class AddsController extends Controller
         $filename  = 'newspaper-piece-' . time() . '.' . $extension;
         $path      = $file->storeAs('photos', $filename);
         }
-        $file      = $validation['rel_logo']; // get the validated file
-            if(!empty($file)){
+        if($request->rel_logo){
+            $file      = $validation['rel_logo']; // get the validated file
+        }
+        
+        if(!empty($file)){
                 
         $extension = $file->getClientOriginalExtension();
         $filename  = time() . '.' . $extension;
@@ -98,6 +104,7 @@ class AddsController extends Controller
         $adds->apply_by = $request->apply_by;
         $adds->last_date = $request->last_date;
         $adds->description = $request->description;
+        $adds->status = 'Inactive';
         if(isset($path)){
 
         $adds->newspaper_piece = $path;
@@ -236,4 +243,14 @@ class AddsController extends Controller
     public function createmessage(){
        return view('backend.custom.create'); 
     }
+    
+
+    public function changeStatus(request $request){
+        $update = Add::where('id','=',$request->id)->update(['status' => $request->status]);
+        if($update == 1){
+            return json_encode($request->status);
+        }else{
+            return json_encode('Not Updated.');
+        }
+      }
 }

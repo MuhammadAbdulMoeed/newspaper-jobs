@@ -151,6 +151,8 @@ Route::group([
     Route::get('edit-adds/{id}' , 'AddsController@edit')->name('adds.edit');
     Route::post('update-adds/{id}' , 'AddsController@update')->name('adds.update');
     Route::get('del-adds/{id}' , 'AddsController@destroy')->name('adds.delete');
+    Route::get('changeStatus/' , 'AddsController@changeStatus')->name('adds.changeStatus');
+
     // Custom Controller
     Route::get('message' , 'CustomMessage@index')->name('message.index');
     Route::get('create-message' , 'CustomMessage@create')->name('message.create');

@@ -11,8 +11,8 @@ $cat = App\Category::where('status' , '1')->get();
    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
    <!-- /Added by HTTrack -->
    <head>
+   <title>@yield('title', app_name())</title>
       <meta http-equiv="Content-Type" content="text/html; charset=BIG5">
-      <title>Newspaper Jobs | Ads | Pakistani | Abroad | Online</title>
       <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="stylesheet" href="{{asset('css/includes/bootstrap.min.css')}}" />
@@ -64,6 +64,15 @@ $cat = App\Category::where('status' , '1')->get();
          font-size:0.8em;
          } 
       </style>
+      
+      <link rel="stylesheet" href="{{asset('css/includes/my_style.css')}}" />
+      @stack('before-styles')
+
+        <!-- Check if the language is set to RTL, so apply the RTL layouts -->
+        <!-- Otherwise apply the normal LTR layouts -->
+        {{ style(mix('css/frontend.css')) }}
+
+        @stack('after-styles')
    </head>
    <body>
       <div id="wrapper">
@@ -101,10 +110,8 @@ $cat = App\Category::where('status' , '1')->get();
                </ul>
             </div>
          </div>
-          <div id="logo_div">
-                    <a href="{{url('/')}}"><img alt="JobyLogo" src="{{asset('pk_img/test.jpg')}}" align="left" width="200px" height="80px" /></a>
-                     @include('frontend.includes.sevenintoninty')
-                </div>
+            <div id="logo_div">
+            </div>
          <div id=clear></div>
          @yield('content')
          
@@ -131,6 +138,12 @@ $cat = App\Category::where('status' , '1')->get();
             </script>
          </div>
       </div>
+      @stack('before-scripts')
+        {!! script(mix('js/manifest.js')) !!}
+        {!! script(mix('js/vendor.js')) !!}
+        {!! script(mix('js/frontend.js')) !!}
+        @stack('after-scripts')
+
    </body>
    <head>
       <script src="{{asset('js/includes/my_js.js')}}"></script>

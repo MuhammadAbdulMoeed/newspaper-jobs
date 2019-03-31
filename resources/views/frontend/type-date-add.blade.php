@@ -43,13 +43,52 @@
       @include('frontend.includes.adsense-banner')
          <div id=clear></div>
          <br>
+         <div id="featured_latest_job">
+        
+        <div id=clear></div>
+        @include('frontend.includes.sevenintoninty')
+        <br/>
+        <div id="job-table">
+           <table class="table">
+               <thead>
+                  <tr>
+                     <th colspan='2'>Title</th>
+                     <th>City</th>
+                     <th>Date</th>
+                     <th>Apply</th>
+                  </tr>
+               </thead>
+              <tbody>
+                 @foreach($newspaper as $news)
+                 <tr>
+                     <td><img src="{{asset('/storage/app/'.$news->rel_logo)}}" width="50" height="50"> 
+                    </td>
+                    <td><a href="{{url('detail_page/'.$news->id)}}"> {{$news->title}} </a>
+                       <br> <a href="{{url('company_add/'.$news->company_name)}}"><p style="font-size: 15px">{{$news->company_name}} </p> </a></td>
+                    <td><a href="{{url('city/'.$news->getCity->id)}}">{{$news->getCity->title}}</a></td>
+                    <td><a href="{{url('apply_date/'.$news->created_at->toDateString())}}">{{$news->created_at->format('d-m-Y')}}</a></td>
+                    @if($news->created_by == "executive")
+                    <td><a href="{{url('apply_job/'.$news->id)}}">Apply Now</a></td>
+                    @else
+                    <td><a href="{{url('detail_page/'.$news->id)}}">View Detail</a></td>
+                    @endif
+                 </tr>
+                 @endforeach
+              </tbody>
+           </table>
+           <br/>
+           <div id=clear></div>
+           <br/>
+        </div>
+     </div>
+
       <div id="newspaper" style="margin-top:5px;clear: right;">
          <div id=clear></div>
          @include('frontend.includes.sevenintoninty')
          <br/>
          
           @foreach($newspapers as $newspaper)
-               <a href="{{url('newspaper/'.$newspaper->id)}}"><img alt="The News" src="{{asset('/storage/app/'.$newspaper->logo)}}"  /></a>
+               <a href="{{url('newspaper/'.$newspaper->id)}}"><img alt="{{$newspaper->title}}" src="{{asset('/storage/app/'.$newspaper->logo)}}"  /></a>
                @endforeach
       </div>
       <div id=govt_div2 style="margin-top:5px;clear:right;">

@@ -34,6 +34,7 @@
                     <table class="table">
                         <thead>
                         <tr>
+                            <th>CreatedDate</th>
                             <th>Title</th>
                             <th>News Papaer</th>
                             <th>Category</th>
@@ -44,12 +45,16 @@
                             <th>Description</th>
                             <th>Appy Date</th>
                             <th>Last Date</th>
+                            @if(\Auth::user()->email=='admin@admin.com')
+                            <th>Status</th>
+                            @endif
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($adds as $add)
                         <tr>
+                        <td>{{$add->created_at}}</td>
                         <td>{{$add->title}}</td>
                         <td>@if($add->getNewsPaper) {{$add->getNewsPaper->title}} @endif</td>
                         <td>@if($add->getCategory) {{$add->getCategory->title}} @endif</td>
@@ -60,6 +65,13 @@
                         <td>{{$add->description}}</td>
                         <td>{{$add->apply_by}}</td>
                         <td>{{$add->last_date}}</td>
+                        @if(\Auth::user()->email=='admin@admin.com')
+                        @if($add->status == 'Active')
+                        <td><input class="toggle-one" data-value="{{$add->id}}" data-toggle="toggle" data-on="Active" data-off="Inactive" type="checkbox" checked></td>
+                        @else
+                        <td><input class="toggle-one" data-value="{{$add->id}}" data-toggle="toggle" data-on="Active" data-off="Inactive" type="checkbox"></td>
+                        @endif
+                        @endif
                         <td><a href="{{route('admin.adds.edit' , $add->id)}}"> <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button></a>
                         <a href="{{route('admin.adds.delete' , $add->id)}}"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></a></td>
                         </tr>

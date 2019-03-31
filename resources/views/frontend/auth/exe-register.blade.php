@@ -1,10 +1,10 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.apps')
 
-@section('title', app_name() . ' | ' . __('labels.frontend.auth.register_box_title'))
+@section('title', 'Jobs | Employeer Registration')
 
 @section('content')
-    <div class="row justify-content-center align-items-center">
-        <div class="col col-sm-8 align-self-center">
+<div id=wrapper_total>
+    <div id="navigate">
             <div class="card">
                 <div class="card-header">
                     <strong>

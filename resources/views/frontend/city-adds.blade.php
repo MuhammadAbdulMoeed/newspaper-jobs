@@ -101,7 +101,7 @@
          <br/>
          
           @foreach($newspapers as $newspaper)
-               <a href="{{url('newspaper/'.$newspaper->id)}}"><img alt="The News" src="{{asset('/storage/app/'.$newspaper->logo)}}"  /></a>
+               <a href="{{url('newspaper/'.$newspaper->id)}}"><img alt="{{$newspaper->title}}" src="{{asset('/storage/app/'.$newspaper->logo)}}"  /></a>
                @endforeach
       </div>
       <div id=govt_div2 style="margin-top:5px;clear:right;">

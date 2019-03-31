@@ -44,7 +44,7 @@
                            <!-- <td style="border: #DBE1E6 1px solid;" class="Newspaper_border"><img alt="Date - Day" src="images/date.jpg" /></td>  -->
                            @foreach($newspapers as $newspaper)
                            <td style="border: #DBE1E6 1px solid; text-align: -webkit-center;
-}" class="Newspaper_border"><a href="{{url('newspaper/'.$newspaper->id)}}" ><img alt="Jang" src="{{asset('/storage/app/'.$newspaper->logo)}}" width="50" height="50" /></a></td>
+}" class="Newspaper_border"><a href="{{url('newspaper/'.$newspaper->id)}}" ><img alt="{{$newspaper->title}}" src="{{asset('/storage/app/'.$newspaper->logo)}}" width="50" height="50" /></a></td>
                            @endforeach
                         </tr>
                          <tr>
@@ -164,7 +164,7 @@
                <p>Latest Newspaper Ads</p>
                <br/>
                @foreach($newspapers as $newspaper)
-               <a href="{{url('newspaper/'.$newspaper->id)}}"><img alt="The News" src="{{asset('/storage/app/'.$newspaper->logo)}}"  /></a>
+               <a href="{{url('newspaper/'.$newspaper->id)}}"><img alt="{{$newspaper->title}}" src="{{asset('/storage/app/'.$newspaper->logo)}}"  /></a>
                @endforeach
             </div>
             <div id="govt_div2" style="margin-top:5px;clear:right;">

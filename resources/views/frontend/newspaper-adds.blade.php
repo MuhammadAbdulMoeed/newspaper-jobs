@@ -17,8 +17,9 @@
       	<div class="row">
       		<div class="col-md-3">
       			<select class="form-control" id="newspaper" required="required">
-      				@foreach($newspapers as $news)
-      				<option value="{{$news->slug}}">{{$news->title}}</option>
+               
+      				@foreach($newspapers as $newss)
+      				<option value="{{$newss->slug}}">{{$newss->title}}</option>
       				@endforeach
       			</select>
       		</div>
@@ -39,11 +40,11 @@
       </form>
       </div>
       <div id=clear></div>
-      <br/>
-      <p style="font-size: 16px; font-weight: bold;">{{$news->title}}</p>
+      <div id="single-paper-page-banner">
       @include('frontend.includes.adsense-banner')
+      <h2 itemprop="name">{{$news->title}}</h2>
          <div id=clear></div>
-         <br>
+         </div>
       <div id="featured_latest_job">
         
          <div id=clear></div>
@@ -88,7 +89,7 @@
          <br/>
          
           @foreach($newspapers as $newspaper)
-               <a href="{{url('newspaper/'.$newspaper->id)}}"><img alt="The News" src="{{asset('/storage/app/'.$newspaper->logo)}}"  /></a>
+               <a href="{{url('newspaper/'.$newspaper->id)}}"><img alt="{{$newspaper->title}}" src="{{asset('/storage/app/'.$newspaper->logo)}}"  /></a>
                @endforeach
       </div>
       <div id=govt_div2 style="margin-top:5px;clear:right;">
