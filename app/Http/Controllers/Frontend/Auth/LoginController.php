@@ -67,15 +67,18 @@ class LoginController extends Controller
 
             // If the user is pending (account approval is on)
             if ($user->isPending()) {
-                throw new GeneralException(__('exceptions.frontend.auth.confirmation.pending'));
+                // throw new GeneralException(__('exceptions.frontend.auth.confirmation.pending'));
+                return redirect()->back()->withErrors('confirmation is needed!');
             }
 
             // Otherwise see if they want to resent the confirmation e-mail
 
-            throw new GeneralException(__('exceptions.frontend.auth.confirmation.resend', ['url' => route('frontend.auth.account.confirm.resend', $user->{$user->getUuidName()})]));
+            // throw new GeneralException(__('exceptions.frontend.auth.confirmation.resend', ['url' => route('frontend.auth.account.confirm.resend', $user->{$user->getUuidName()})]));
+            return redirect()->back()->withErrors('Resend Confirmation Email');
         } elseif (! $user->isActive()) {
             auth()->logout();
-            throw new GeneralException(__('exceptions.frontend.auth.deactivated'));
+            return redirect()->back()->withErrors('Account is Blocked!');
+            // throw new GeneralException(__('exceptions.frontend.auth.deactivated'));
         }
 
         event(new UserLoggedIn($user));

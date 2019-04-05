@@ -68,7 +68,7 @@
                     <td><a href="{{url('city/'.$news->getCity->id)}}">{{$news->getCity->title}}</a></td>
                     <td><a href="{{url('apply_date/'.$news->created_at->toDateString())}}">{{$news->created_at->format('d-m-Y')}}</a></td>
                     @if($news->created_by == "executive")
-                    <td><a href="{{url('apply_job/'.$news->id)}}">Apply Now</a></td>
+                    <td><a href="{{url('detail_page/'.$news->id)}}">View Detail</a></td>
                     @else
                     <td><a href="{{url('detail_page/'.$news->id)}}">View Detail</a></td>
                     @endif

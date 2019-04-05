@@ -10,6 +10,7 @@ use App\Events\Frontend\Auth\UserRegistered;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Repositories\Frontend\Auth\UserRepository;
 use Illuminate\Http\Request;
+use App\Notifications\Frontend\Auth\UserNeedsConfirmation;
 
 /**
  * Class RegisterController.
@@ -74,32 +75,35 @@ class RegisterController extends Controller
     {
         $user = User::where('email' , '=' , $request->email)->first();
         if($user){
-            return redirect()->back()->withFlashDanger('sorry Email was already found');
+            return redirect()->back()->withErrors('sorry Email was already found');
         }
         $user = $this->userRepository->create($request->all());
 
         // auth()->login($user);
-        event(new UserRegistered($user));
+        // event(new UserRegistered($user));
 
         // return redirect()->back();
 
         // If the user must confirm their email or their account requires approval,
         // create the account but don't log them in.
-        if (config('access.users.confirm_email') || config('access.users.requires_approval')) {
-            event(new UserRegistered($user));
+        $user->notify(new UserNeedsConfirmation($user->confirmation_code));
+        event(new UserRegistered($user));
+            return redirect()->back()->withErrors('Confirmation needed , Email has been sent to Your Account');
+        // if (config('access.users.confirm_email') || config('access.users.requires_approval')) {
+        //     event(new UserRegistered($user));
 
-            return redirect($this->redirectPath())->withFlashSuccess(
-                config('access.users.requires_approval') ?
-                    __('exceptions.frontend.auth.confirmation.created_pending') :
-                    __('exceptions.frontend.auth.confirmation.created_confirm')
-            );
-        } else {
-            auth()->login($user);
+        //     return redirect($this->redirectPath())->withFlashSuccess(
+        //         config('access.users.requires_approval') ?
+        //             __('exceptions.frontend.auth.confirmation.created_pending') :
+        //             __('exceptions.frontend.auth.confirmation.created_confirm')
+        //     );
+        // } else {
+        //     auth()->login($user);
 
-            event(new UserRegistered($user));
+        //     event(new UserRegistered($user));
 
-            return redirect($this->redirectPath());
-        }
+        //     return redirect($this->redirectPath());
+        // }
     }
 
     public function employeeRegistrationForm(Request $request)
