@@ -17,5 +17,5 @@ h2 {
 </style>
 
 <div class="image">
-<img src="{{asset('public/images.jpg')}}" width="100%" height="200px">
+<img class="img-responsive" src="{{asset('public/images.jpg')}}" width="100%" height="200px">
 </div>

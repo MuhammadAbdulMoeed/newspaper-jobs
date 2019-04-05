@@ -123,7 +123,7 @@ $cat = App\Category::where('status' , '1')->get();
                   <tr>
                      <td bgcolor="white">
                         <p>  
-                           CopyRight & Copy; 2018 & Trademark Test.Com Pvt Ltd.
+                           CopyRight & Copy; 2019 & Trademark Jobssu.com Pvt Ltd.
                         </p>
                      </td>
                   </tr>

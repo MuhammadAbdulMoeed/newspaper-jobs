@@ -84,7 +84,10 @@
       <div id="newspaper" style="margin-top:5px;clear: right;">
          <div id=clear></div>
          <?php
+         $sub= null;
+         if(\Auth::user() != null){
          $sub = App\subscription::where('qualification_id' , $qualification_id)->where('user_id' , \Auth::user()->id)->first();
+         }
          ?>
          @if($sub)
          <a class="btn btn-primary" href="{{url('user-unscribe-qual/'.$qualification_id)}}">Un-subscribe</a>
