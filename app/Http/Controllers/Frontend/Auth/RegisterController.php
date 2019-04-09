@@ -114,27 +114,30 @@ class RegisterController extends Controller
         }
         $user = $this->userRepository->create($request->all());
 
-        auth()->login($user);
-        // event(new UserRegistered($user));
+        $user->notify(new UserNeedsConfirmation($user->confirmation_code));
+        event(new UserRegistered($user));
+            return redirect()->back()->withErrors('Confirmation needed , Email has been sent to Your Account');
+        // auth()->login($user);
+        // // event(new UserRegistered($user));
 
-        return redirect()->back();
+        // return redirect()->back();
 
-        // If the user must confirm their email or their account requires approval,
-        // create the account but don't log them in.
-        if (config('access.users.confirm_email') || config('access.users.requires_approval')) {
-            event(new UserRegistered($user));
+        // // If the user must confirm their email or their account requires approval,
+        // // create the account but don't log them in.
+        // if (config('access.users.confirm_email') || config('access.users.requires_approval')) {
+        //     event(new UserRegistered($user));
 
-            return redirect($this->redirectPath())->withFlashSuccess(
-                config('access.users.requires_approval') ?
-                    __('exceptions.frontend.auth.confirmation.created_pending') :
-                    __('exceptions.frontend.auth.confirmation.created_confirm')
-            );
-        } else {
-            auth()->login($user);
+        //     return redirect($this->redirectPath())->withFlashSuccess(
+        //         config('access.users.requires_approval') ?
+        //             __('exceptions.frontend.auth.confirmation.created_pending') :
+        //             __('exceptions.frontend.auth.confirmation.created_confirm')
+        //     );
+        // } else {
+        //     auth()->login($user);
 
-            event(new UserRegistered($user));
+        //     event(new UserRegistered($user));
 
-            return redirect($this->redirectPath());
-        }
+        //     return redirect($this->redirectPath());
+        
     }
 }
