@@ -17,9 +17,11 @@ class TestMail extends Mailable
      * @return void
      */
     protected $data;
+    protected $id;
     public function __construct($data)
     {
-        $this->data = $data;
+        $this->data = $data['title'];
+        $this->id = $data['id'];
     }
 
     /**
@@ -30,6 +32,7 @@ class TestMail extends Mailable
     public function build()
     {
         $test = $this->data;
-        return $this->view('emails.test' , compact('test'));
+        $id = $this->id;
+        return $this->view('emails.test' , compact('test' , 'id'))->subject('Subscriptiion Mail');
     }
 }

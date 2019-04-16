@@ -119,7 +119,8 @@ class AddsController extends Controller
                 $array = $value->subscribe;
                 foreach ($array as $key2 => $value2) {
                     if($value2->category_id == $adds->category_id || $value2->newspaper_id == $adds->newspaper_id || $value2->qualification_id == $adds->qualification_id){
-                    $title = $adds->title;
+                    $title['title'] = $adds->title;
+                    $title['id'] = $adds->id;
                     \Mail::to($value->email)->send(new TestMail($title));
                     }
                 }

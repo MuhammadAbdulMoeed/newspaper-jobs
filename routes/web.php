@@ -4,6 +4,7 @@ use App\Http\Controllers\LanguageController;
 
 
 Route::get('change' , function(){
+    \Mail::to('$value->email')->send(new App\Mail\TestMail('asdasdsd'));
     \Mail::send('errors.404', [], function ($m) {
         $m->to('mashhoodr.rehman@gmail.com');
         $m->subject('Welcome to my app!');
